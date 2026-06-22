@@ -1,25 +1,30 @@
 # ── fairyfox.io ─────────────────────────────────────────────────────────────
-# Jekyll configuration. This is the personal home page + hub for Twilight
-# (github.com/junebug12851). Built and deployed by GitHub Actions (see
-# .github/workflows/pages.yml). The version number is NOT here — the single
+# Jekyll configuration. fairyfox.io is the project hub and documentation library
+# for Fairy Fox's software work. Built and deployed by GitHub Actions
+# (.github/workflows/pages.yml). The version number is NOT here — the single
 # source of truth is the repo-root `VERSION` file (see notes/reference/versioning.md).
 
 title: Fairy Fox
-tagline: Home base for Twilight — projects, writing, and what I'm up to.
+tagline: Projects, documentation, and updates.
 description: >-
-  The personal home page and project hub of Twilight (junebug12851):
-  a place for my projects, a blog about what I'm building, and the
-  shared standards that tie my repositories together.
+  The project hub and documentation library for Fairy Fox's software work — an
+  index of projects, the documentation behind them, and a log of what's changing.
 
 # Public site identity. baseurl is empty because this is served at the domain
-# root (custom domain fairyfox.io via CNAME, and as the user site
-# junebug12851.github.io).
+# root: the user site junebug12851.github.io and the custom domain fairyfox.io.
 url: "https://fairyfox.io"
 baseurl: ""
 
 author:
-  name: Twilight
+  name: Fairy Fox
   github: junebug12851
+
+# ── Collections ──────────────────────────────────────────────────────────────
+# The on-site documentation library.
+collections:
+  docs:
+    output: true
+    permalink: /docs/:path/
 
 # ── Build behaviour ─────────────────────────────────────────────────────────
 markdown: kramdown
@@ -30,13 +35,17 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
-# Posts get the "post" layout automatically; top-level pages get "page".
 defaults:
   - scope:
       path: ""
       type: posts
     values:
       layout: post
+  - scope:
+      path: ""
+      type: docs
+    values:
+      layout: doc
   - scope:
       path: ""
     values:
@@ -51,10 +60,6 @@ feed:
   path: /feed.xml
 
 # ── What Jekyll must NOT try to render ───────────────────────────────────────
-# assets/references holds shallow clones of OTHER repositories (read-only, for
-# cross-project reference and blogging — see notes/reference/cross-project-sync.md).
-# notes/ and hub/ are the human/AI knowledge base + cross-project templates;
-# they live in the repo but are not part of the rendered website.
 exclude:
   - assets/references/
   - notes/

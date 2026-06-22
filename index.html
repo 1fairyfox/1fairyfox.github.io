@@ -4,15 +4,15 @@ title: null
 ---
 <section class="hero">
   <div class="wrap">
-    <h1>Twilight — <span class="grad">software projects and writing.</span></h1>
+    <h1><span class="grad">Fairy Fox</span> — projects &amp; documentation.</h1>
     <p class="lede">
-      I build open-source software. This site is the hub for my projects, a blog
-      about what I'm working on, and the shared standards that tie my
-      repositories together.
+      The hub for Fairy Fox's software work: an index of the projects, a
+      documentation library covering them and the standards behind them, and a
+      log of what's changing.
     </p>
     <div class="cta">
-      <a class="btn primary" href="{{ '/projects/' | relative_url }}">See my projects →</a>
-      <a class="btn" href="{{ '/blog/' | relative_url }}">Read the blog</a>
+      <a class="btn primary" href="{{ '/projects/' | relative_url }}">Browse projects →</a>
+      <a class="btn" href="{{ '/docs/' | relative_url }}">Documentation</a>
       <a class="btn" href="https://github.com/{{ site.author.github }}">GitHub</a>
     </div>
   </div>
@@ -20,20 +20,24 @@ title: null
 
 <section class="wrap" style="margin-top:2.4rem">
   <div class="section-head">
-    <h2 class="mb0">Featured projects</h2>
+    <h2 class="mb0">Projects</h2>
     <a class="more" href="{{ '/projects/' | relative_url }}">All projects →</a>
   </div>
   <div class="grid cols-2" style="margin-top:1rem">
     {%- for proj in site.data.projects -%}
       {%- if proj.featured -%}
-      <a class="card" href="{{ proj.site | default: proj.repo }}">
+      <div class="card">
         <h3>{{ proj.name }}</h3>
         <p>{{ proj.blurb }}</p>
-        <div>
+        <div style="margin-bottom:.6rem">
           {%- for t in proj.tags limit: 3 -%}<span class="tag">{{ t }}</span>{%- endfor -%}
           {%- if proj.status -%}<span class="tag muted">{{ proj.status }}</span>{%- endif -%}
         </div>
-      </a>
+        <div class="card-links">
+          {%- if proj.docs -%}<a href="{{ proj.docs }}">Documentation ↗</a>{%- endif -%}
+          <a href="{{ proj.repo }}">Repository ↗</a>
+        </div>
+      </div>
       {%- endif -%}
     {%- endfor -%}
   </div>
@@ -41,8 +45,33 @@ title: null
 
 <section class="wrap" style="margin-top:2.8rem">
   <div class="section-head">
-    <h2 class="mb0">From the blog</h2>
-    <a class="more" href="{{ '/blog/' | relative_url }}">All posts →</a>
+    <h2 class="mb0">Documentation</h2>
+    <a class="more" href="{{ '/docs/' | relative_url }}">Full library →</a>
+  </div>
+  <p class="muted" style="margin:.4rem 0 1rem">
+    Reference material for the projects and the shared standards behind them.
+  </p>
+  <div class="grid cols-2">
+    {%- for cat in site.data.doc_categories -%}
+      {%- assign items = site.docs | where: "category", cat.slug | sort: "order" -%}
+      {%- if items.size > 0 -%}
+      <div class="card">
+        <h3>{{ cat.name }}</h3>
+        <div class="dd-links">
+          {%- for d in items -%}
+          <a href="{{ d.url | relative_url }}">{{ d.nav_title | default: d.title }}</a>
+          {%- endfor -%}
+        </div>
+      </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+<section class="wrap" style="margin-top:2.8rem">
+  <div class="section-head">
+    <h2 class="mb0">Latest updates</h2>
+    <a class="more" href="{{ '/blog/' | relative_url }}">All updates →</a>
   </div>
   <ul class="post-list" style="margin-top:.4rem">
     {%- for post in site.posts limit: 4 -%}
@@ -52,7 +81,7 @@ title: null
       <p>{{ post.subtitle | default: post.excerpt | strip_html | truncate: 140 }}</p>
     </li>
     {%- else -%}
-    <li><p class="muted">No posts yet — the first one is on its way.</p></li>
+    <li><p class="muted">No updates yet.</p></li>
     {%- endfor -%}
   </ul>
 </section>

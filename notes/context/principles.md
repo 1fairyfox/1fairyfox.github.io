@@ -10,7 +10,12 @@ specifics live in the reference files.
 - **Always current.** The projects list, blog, and feeds are generated, so they
   never drift. Adding a project is one edit to `_data/projects.yml`.
 - **Professional and clear.** A plain, direct voice — no gimmicks, no fox/fairy
-  puns, no cutesy filler. Personal without being unprofessional.
+  puns, no cutesy filler.
+- **Neutral documentation voice.** The site is written *about* the projects and
+  the work, not in the owner's first person and not as a personal brand. Refer to
+  Fairy Fox by name only for attribution; never multiple lines of third-person
+  praise or elevation. The site documents and indexes the work — it does not boast
+  about it. Mentioning and referencing capabilities is fine; glorifying is not.
 
 ## What the repo should feel like
 
@@ -43,5 +48,5 @@ specifics live in the reference files.
 - **No external Jekyll theme.** Keep the layout/CSS hand-owned.
 - **No secrets in the repo.** It's public.
 - **Don't commit the reference clones** (`assets/references/*`) or build output.
-- **Don't bump MAJOR** (`→ 1.0.0`) automatically — that's Twilight's call. See
+- **Don't bump MAJOR** (`→ 1.0.0`) automatically — that's Fairy Fox's call. See
   [`../reference/versioning.md`](../reference/versioning.md).

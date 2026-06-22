@@ -1,14 +1,57 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="{{ '/' | relative_url }}">
-      <span class="name">Fairy<b>Fox</b></span>
+      <span class="brand-logo" aria-hidden="true">FF</span>
+      <span class="brand-name">Fairy&nbsp;Fox</span>
     </a>
-    <nav class="nav">
-      {%- assign p = page.url -%}
-      <a href="{{ '/' | relative_url }}"         class="{% if p == '/' %}active{% endif %}">Home</a>
-      <a href="{{ '/projects/' | relative_url }}" class="{% if p contains '/projects' %}active{% endif %}">Projects</a>
-      <a href="{{ '/blog/' | relative_url }}"     class="{% if p contains '/blog' %}active{% endif %}">Blog</a>
-      <a href="{{ '/about/' | relative_url }}"    class="{% if p contains '/about' %}active{% endif %}">About</a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    {%- assign p = page.url -%}
+    <nav class="nav" aria-label="Primary">
+      <a href="{{ '/' | relative_url }}" class="{% if p == '/' %}active{% endif %}">Home</a>
+
+      <details class="dd">
+        <summary class="{% if p contains '/projects' %}active{% endif %}">Projects</summary>
+        <div class="dd-panel">
+          {%- for proj in site.data.projects -%}
+          <div class="dd-group">
+            <span class="dd-group-title">{{ proj.name }}</span>
+            <div class="dd-links">
+              {%- if proj.docs -%}<a href="{{ proj.docs }}">Documentation site ↗</a>{%- endif -%}
+              {%- if proj.notes -%}<a href="{{ proj.notes }}">Notes ↗</a>{%- endif -%}
+              <a href="{{ proj.repo }}">Repository ↗</a>
+            </div>
+          </div>
+          {%- endfor -%}
+          <a class="dd-foot" href="{{ '/projects/' | relative_url }}">All projects →</a>
+        </div>
+      </details>
+
+      <details class="dd">
+        <summary class="{% if p contains '/docs' %}active{% endif %}">Docs</summary>
+        <div class="dd-panel">
+          {%- for cat in site.data.doc_categories -%}
+            {%- assign items = site.docs | where: "category", cat.slug | sort: "order" -%}
+            {%- if items.size > 0 -%}
+            <div class="dd-group">
+              <span class="dd-group-title">{{ cat.name }}</span>
+              <div class="dd-links">
+                {%- for d in items -%}
+                <a href="{{ d.url | relative_url }}">{{ d.nav_title | default: d.title }}</a>
+                {%- endfor -%}
+              </div>
+            </div>
+            {%- endif -%}
+          {%- endfor -%}
+          <a class="dd-foot" href="{{ '/docs/' | relative_url }}">Documentation library →</a>
+        </div>
+      </details>
+
+      <a href="{{ '/blog/' | relative_url }}" class="{% if p contains '/blog' %}active{% endif %}">Blog</a>
+      <a href="{{ '/about/' | relative_url }}" class="{% if p contains '/about' %}active{% endif %}">About</a>
     </nav>
   </div>
 </header>

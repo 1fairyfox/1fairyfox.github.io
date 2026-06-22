@@ -1,39 +1,37 @@
 ---
 layout: page
-title: About
-subtitle: A bit about me and this place.
+title: About this site
+subtitle: What fairyfox.io is and how it's organised.
 permalink: /about/
 ---
 
-I'm **Twilight** — I build things for fun and out of stubbornness: desktop apps,
-creative tooling, the occasional deep rabbit hole into a 1996 save-file format.
-Most of what I make ends up open source on
-[GitHub](https://github.com/{{ site.author.github }}).
+fairyfox.io is the project hub and documentation library for the software work of
+Fairy Fox ([@junebug12851](https://github.com/junebug12851) on GitHub). It brings
+together three things in one place:
 
-## What this site is
+- **An index of the projects** — see [Projects](/projects/), generated from a
+  single registry so it stays current.
+- **A documentation library** — see [Docs](/docs/): an overview of how the
+  projects fit together, the shared engineering standards behind them, and an
+  entry point into each project's own documentation.
+- **An updates log** — see the [Blog](/blog/): notes on what's changing, including
+  round-ups of changes across the projects.
 
-`fairyfox.io` is my home base. It does three jobs:
+## How it's built
 
-- **A hub for my projects** — a single, always-current place to find what I'm
-  working on, with links straight to the code and live sites.
-- **A blog** — short write-ups of what I'm building and learning, including
-  automatic round-ups when something meaningful changes in one of my repos.
-- **Shared scaffolding** — the common standards, templates, and structure that
-  all my projects share live here, so I'm not reinventing the same conventions
-  in every repo.
+The site is a static [Jekyll](https://jekyllrb.com/) site with no external theme,
+built and deployed by GitHub Actions on every push — there is no manual publishing
+step. It is hosted on GitHub Pages as a user site and served at the custom domain
+`fairyfox.io`. Because the custom domain is set on the user site, each project's
+own GitHub Pages site is served under the same domain (for example,
+`fairyfox.io/pokered-save-editor-2/`), so the navigation links straight into a
+project's documentation.
 
 ## How it stays current
 
-The site is plain [Jekyll](https://jekyllrb.com/), built and deployed by GitHub
-Actions on every push — no manual publishing step. Behind the scenes it keeps a
-living set of notes (the same notes system my other projects use) so that
-anyone — me six months from now, or an AI assistant opening the repo cold — can
-get oriented fast. Nothing important lives only in my head.
+Behind the site is a structured, living set of notes — the same notes system the
+projects use — so the repository documents itself and anyone opening it can get
+oriented without external context. The documentation in the [library](/docs/)
+covers the conventions shared across the repositories.
 
-## Find me
-
-- GitHub — [{{ site.author.github }}](https://github.com/{{ site.author.github }})
-- This site's source — it's open; the repo is the user site itself.
-
-> Want the technical tour? The repo's `README.md`, `CLAUDE.md`, and `notes/`
-> folder document how everything fits together.
+The source for this site is public: it is the repository that hosts it.

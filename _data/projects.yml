@@ -1,29 +1,44 @@
 # ── Project registry ─────────────────────────────────────────────────────────
-# The single list of my projects, rendered on the home page (featured) and the
-# /projects/ page. This is also the human-readable companion to hub/registry.yml
-# (the machine registry used for cross-project git sync). Keep them in step.
+# The single list of projects, rendered on the home page, the /projects/ page,
+# and the header "Projects" dropdown. Companion to hub/registry.yml (the machine
+# registry used for cross-project git sync). Keep them in step.
 #
-# Fields: name, repo (github URL), blurb, tags [], status, featured (bool),
-#         site (optional live URL), reference (bool — pulled into assets/references).
+# Fields:
+#   name      display name
+#   key       slug = repo name = path under the domain (fairyfox.io/<key>/)
+#   repo      GitHub repository URL
+#   docs      project documentation site URL (its GitHub Pages site, served under
+#             the fairyfox.io custom domain). null if no Pages site yet.
+#   notes     browsable documentation/notes location (repo notes folder). null if none.
+#   blurb     one-line description
+#   tags []   technologies
+#   status    short status string
+#   featured  show on the home page
+#   reference pulled into assets/references for cross-project sync
 
 - name: Pokered Save Editor 2
+  key: pokered-save-editor-2
   repo: https://github.com/junebug12851/pokered-save-editor-2
-  site: https://junebug12851.github.io/pokered-save-editor-2/
+  docs: https://fairyfox.io/pokered-save-editor-2/
+  notes: https://github.com/junebug12851/pokered-save-editor-2/tree/main/notes
   blurb: >-
-    A polished desktop save-file editor for Pokémon Red & Blue — Qt 6 C++/QML.
-    Byte-exact save read/write, full team/box/item/randomizer editing, and an
-    in-game font keyboard. Originally built 2017–2020, revived in 2026.
-  tags: [Qt 6, C++, QML, desktop, open source]
+    A desktop save-file editor for Pokémon Red & Blue, built in Qt 6 (C++/QML):
+    byte-exact save read/write, full team/box/item/randomiser editing, and an
+    in-game font keyboard.
+  tags: [Qt 6, C++, QML, desktop]
   status: Active · alpha
   featured: true
   reference: true
 
 - name: Random AI Prompt
+  key: random-ai-prompt
   repo: https://github.com/junebug12851/random-ai-prompt
+  docs: null
+  notes: https://github.com/junebug12851/random-ai-prompt#readme
   blurb: >-
-    A JavaScript prompt generator for Stable Diffusion — endless creative,
-    controllable prompts, a full WebUI, and one-click image-to-animation export.
-  tags: [JavaScript, Stable Diffusion, WebUI, tooling]
+    A JavaScript prompt generator for Stable Diffusion — controllable prompt
+    generation, a web UI, and one-click image-to-animation export.
+  tags: [JavaScript, Stable Diffusion, web UI]
   status: Released
   featured: true
   reference: true

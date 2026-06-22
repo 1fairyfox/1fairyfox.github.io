@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<div class="doc-wrap wrap">
+  <aside class="doc-sidebar" aria-label="Documentation">
+    <a class="doc-sidebar-home" href="{{ '/docs/' | relative_url }}">Documentation library</a>
+    {%- for cat in site.data.doc_categories -%}
+      {%- assign items = site.docs | where: "category", cat.slug | sort: "order" -%}
+      {%- if items.size > 0 -%}
+      <div class="doc-sidebar-group">
+        <span class="doc-sidebar-title">{{ cat.name }}</span>
+        <ul>
+          {%- for d in items -%}
+          <li><a href="{{ d.url | relative_url }}" class="{% if d.url == page.url %}active{% endif %}">{{ d.nav_title | default: d.title }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </aside>
+
+  <article class="doc-content">
+    <p class="doc-crumbs"><a href="{{ '/docs/' | relative_url }}">Docs</a> <span aria-hidden="true">/</span> {{ page.title }}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.summary %}<p class="lead">{{ page.summary }}</p>{% endif %}
+    <div class="content">
+      {{ content }}
+    </div>
+  </article>
+</div>

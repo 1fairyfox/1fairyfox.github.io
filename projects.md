@@ -1,38 +1,42 @@
 ---
 layout: page
 title: Projects
-subtitle: Things I've built, am building, or keep coming back to.
+subtitle: Fairy Fox's software projects, with links into each one's documentation.
 permalink: /projects/
 ---
 
-This page is generated from a single registry (`_data/projects.yml`), which also
-feeds the home page and mirrors the cross-project sync registry. So it's always
-current — add a project once, it shows up everywhere.
+This list is generated from a single registry (`_data/projects.yml`), which also
+drives the home page and the navigation menu, so it stays current. Each project
+links to its documentation site, its notes, and its repository.
 
 <div class="grid cols-2" style="margin-top:1.5rem">
 {%- for proj in site.data.projects -%}
-  <a class="card" href="{{ proj.site | default: proj.repo }}">
+  <div class="card">
     <h3>{{ proj.name }}</h3>
     <p>{{ proj.blurb }}</p>
-    <div style="margin-bottom:.5rem">
+    <div style="margin-bottom:.6rem">
       {%- for t in proj.tags -%}<span class="tag">{{ t }}</span>{%- endfor -%}
+      {%- if proj.status -%}<span class="tag muted">{{ proj.status }}</span>{%- endif -%}
     </div>
-    <div class="muted" style="font-size:.85rem">
-      {% if proj.status %}{{ proj.status }} · {% endif %}
-      {{ proj.repo | remove: "https://github.com/" }}
-      {%- if proj.site %} · live ↗{% endif %}
+    <div class="card-links">
+      {%- if proj.docs -%}<a href="{{ proj.docs }}">Documentation ↗</a>{%- endif -%}
+      {%- if proj.notes -%}<a href="{{ proj.notes }}">Notes ↗</a>{%- endif -%}
+      <a href="{{ proj.repo }}">Repository ↗</a>
     </div>
-  </a>
+  </div>
 {%- endfor -%}
 </div>
 
-<h2>How this hub connects to my projects</h2>
+## How the projects connect
 
-This site is more than a homepage — it's the **hub** that ties my repositories
-together. Shared standards (git workflow, the notes system, versioning,
-templates) live here in [`hub/`](https://github.com/{{ site.author.github }}/{{ site.author.github }}.github.io/tree/main/hub),
-and each project pulls them in on demand. In return, this hub keeps shallow,
-read-only clones of those projects so I can track what changed and write about
-it. The wiring is deliberately loose — git only, no live coupling — so each
-repo stays simple and independent. The full model is written up in the repo
-under `notes/reference/cross-project-sync.md`.
+This site is the hub for the projects above. The shared engineering standards they
+follow are documented in the [documentation library](/docs/), and each project
+pulls those standards from the hub on demand. In the other direction, the hub
+keeps read-only copies of the projects so their changes can be tracked and written
+up. The connections are deliberately loose — git only, no live coupling — which
+keeps each repository independent. The full model is described under
+[cross-project sync](/docs/cross-project-sync/).
+
+Because the hub uses a custom domain, the projects' own GitHub Pages sites are
+served under it too — for example, `fairyfox.io/pokered-save-editor-2/` — so the
+navigation can lead straight into a project's documentation.

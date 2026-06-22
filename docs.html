@@ -1,0 +1,49 @@
+---
+layout: page
+title: Documentation library
+subtitle: Reference material for the projects and the standards behind them.
+permalink: /docs/
+---
+
+<p>
+  This library collects the documentation maintained across Fairy Fox's
+  repositories: an overview of how the projects fit together, the shared
+  engineering standards they follow, and a documentation entry point for each
+  project. Each project also keeps its own full documentation site — linked from
+  its page below.
+</p>
+
+{%- for cat in site.data.doc_categories -%}
+  {%- assign items = site.docs | where: "category", cat.slug | sort: "order" -%}
+  {%- if items.size > 0 -%}
+<section style="margin-top:2rem">
+  <h2>{{ cat.name }}</h2>
+  <div class="grid cols-2" style="margin-top:.8rem">
+    {%- for d in items -%}
+    <a class="card" href="{{ d.url | relative_url }}">
+      <h3>{{ d.title }}</h3>
+      {%- if d.summary %}<p>{{ d.summary }}</p>{% endif -%}
+    </a>
+    {%- endfor -%}
+  </div>
+</section>
+  {%- endif -%}
+{%- endfor -%}
+
+<section style="margin-top:2.4rem">
+  <h2>Project documentation sites</h2>
+  <p>Each project is also published with its own documentation site, served under
+  this domain.</p>
+  <ul class="post-list">
+    {%- for proj in site.data.projects -%}
+    <li>
+      <h3 style="margin:0 0 .2rem">{{ proj.name }}</h3>
+      <p>
+        {%- if proj.docs -%}<a href="{{ proj.docs }}">Documentation site ↗</a> · {% endif -%}
+        {%- if proj.notes -%}<a href="{{ proj.notes }}">Notes ↗</a> · {% endif -%}
+        <a href="{{ proj.repo }}">Repository ↗</a>
+      </p>
+    </li>
+    {%- endfor -%}
+  </ul>
+</section>

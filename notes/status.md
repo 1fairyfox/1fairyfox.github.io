@@ -3,16 +3,27 @@
 _Current state only._ For the chronological history see [`sessions/`](sessions/README.md);
 for the commit-by-commit changelog see [`version.md`](version.md).
 
-**Version:** `0.1.0` (single source of truth: repo-root `VERSION`; see
+**Version:** `0.2.0` (single source of truth: repo-root `VERSION`; see
 [`reference/versioning.md`](reference/versioning.md)).
 
 ## Current state (read this first)
 
-**The site is live** at https://junebug12851.github.io/ (2026-06-22). It's a
+**The site is live** at https://junebug12851.github.io/ (2026-06-22), with the
+`fairyfox.io` custom domain configured (DNS pointing, HTTPS cert pending). It's a
 clean, custom Jekyll build — no external theme — deployed to GitHub Pages by
-GitHub Actions on every push to `main`; the first deploy ran green (build +
-deploy) and the home/projects/blog/about pages, feed, and sitemap all serve. The
-structure is in place end to end:
+GitHub Actions on every push to `main`.
+
+The site is framed as a **project hub + documentation library** for Fairy Fox's
+work, written in a neutral documentation voice (not first-person, not glorifying;
+see [`context/principles.md`](context/principles.md)). It now includes:
+
+- A redesigned header with **dropdown navigation** (monogram wordmark; Projects
+  and Docs menus) that links straight into each project's own Pages docs site,
+  served under the custom domain (e.g. `fairyfox.io/pokered-save-editor-2/`).
+- An on-site **documentation library** (`/docs/`, the `_docs` collection):
+  ecosystem overview, the shared engineering standards, and a per-project doc page.
+
+The rest of the structure is in place end to end:
 
 - **Site:** home, `/projects/`, `/blog/`, `/about/`, a first blog post, RSS feed,
   SEO tags, sitemap. Custom responsive CSS with light/dark.

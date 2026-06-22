@@ -1,6 +1,6 @@
 # fairyfox.io
 
-The personal home page and project **hub** of Twilight ([@junebug12851](https://github.com/junebug12851)).
+The personal home page and project **hub** of Fairy Fox ([@junebug12851](https://github.com/junebug12851)).
 A clean, custom [Jekyll](https://jekyllrb.com/) site — home, projects, blog, about
 — deployed to GitHub Pages by GitHub Actions, plus the shared standards and
 templates that tie my repositories together.
@@ -63,4 +63,4 @@ hub/  (standards · templates · registry)       ← cross-project hub
 assets/references/  (git-ignored clones)        ← inbound sync
 ```
 
-Built by Twilight. Open source.
+Built by Fairy Fox. Open source.

@@ -1,9 +1,14 @@
 # fairyfox.io — AI Context
 
-Personal home page **and** cross-project hub for Twilight (github.com/junebug12851).
-A clean, custom Jekyll site deployed to GitHub Pages by GitHub Actions, plus the
-shared standards/templates that tie my repositories together. Served at
-`junebug12851.github.io` and the `fairyfox.io` custom domain.
+Project hub, **documentation library**, and home page for Fairy Fox's software work
+(github.com/junebug12851). A clean, custom Jekyll site deployed to GitHub Pages by
+GitHub Actions, plus the shared standards/templates that tie the repositories
+together. Served at `junebug12851.github.io` and the `fairyfox.io` custom domain.
+
+**Voice:** the site is written in a neutral, professional documentation voice —
+not first-person-as-Fairy-Fox, and not glorifying. Refer to Fairy Fox by name for
+attribution only; never multi-line third-person praise. No fox/fairy puns, no
+forced-casual tone. See `notes/context/principles.md`.
 
 ## Start Here
 
@@ -36,7 +41,7 @@ The full notes system is in `notes/` (map: `notes/README.md`). Quick index:
 - **One source of truth per fact:** version → `VERSION`; project list →
   `_data/projects.yml` (+ `hub/registry.yml`); shared standards → `hub/`. Don't
   duplicate; link.
-- **Don't bump MAJOR** (`→ 1.0.0`) — Twilight's call only.
+- **Don't bump MAJOR** (`→ 1.0.0`) — Fairy Fox's call only.
 - **Cross-project pulls are on-request only, never auto-chained** (anti-recursion;
   see `notes/reference/cross-project-sync.md`).
 

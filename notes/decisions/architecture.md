@@ -2,6 +2,29 @@
 
 Key structural choices and why. Newest on top.
 
+### Documentation library as a Jekyll collection (2026-06-22)
+
+The on-site docs are a `_docs` collection (output pages, `/docs/:path/`) rendered
+with a `doc` layout that builds a sidebar from `_data/doc_categories.yml`. Chosen
+over ad-hoc pages so the library has consistent ordering/sidebar and the header
+"Docs" dropdown can be generated from the same collection. Public docs summarise
+and link to the canonical machine copies in `hub/standards/` (some overlap is
+accepted; the public pages are the readable view).
+
+### Navigation links into project Pages sites under the custom domain (2026-06-22)
+
+Setting the custom domain on the user site causes project Pages sites to be served
+under it (confirmed: GitHub reports pokered-save-editor-2 at
+`https://fairyfox.io/pokered-save-editor-2/`). The Projects dropdown links there
+directly, so the hub and the project docs read as one connected set. Project doc
+URLs live in `_data/projects.yml` (`docs`/`notes`).
+
+### Neutral documentation voice; owner is Fairy Fox (2026-06-22)
+
+The site is written in a neutral, professional voice about the work — not the
+owner's first person, not a personal brand, no glorifying, no puns. The owner is
+Fairy Fox (git author identity unchanged). Recorded in `context/principles.md`.
+
 ### Track the `dev` branch for cross-project sync (2026-06-22)
 
 Both sync flows (hub-reads-projects, projects-read-hub) track **`dev`**, not

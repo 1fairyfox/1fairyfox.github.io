@@ -2,7 +2,7 @@
 
 ## What It Is
 
-`fairyfox.io` — the personal home page and project **hub** of Twilight
+`fairyfox.io` — the personal home page and project **hub** of Fairy Fox
 (GitHub `junebug12851`). It is two things at once:
 
 1. **A website** — a clean, fast Jekyll site that serves as the front door to my
@@ -44,4 +44,4 @@ https://github.com/junebug12851/junebug12851.github.io  (served at https://fairy
 
 ## Developer
 
-Built by Twilight. Open source.
+Built by Fairy Fox. Open source.

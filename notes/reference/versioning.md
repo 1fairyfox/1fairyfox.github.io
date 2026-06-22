@@ -10,7 +10,7 @@ The project uses **Semantic Versioning 2.0.0** as the people-facing number.
 `MAJOR.MINOR.PATCH`
 
 - **MAJOR** — `0` while pre-1.0. Going to `1.0.0` is a deliberate "this is real
-  and stable" promise — **Twilight's call only, never bumped automatically.**
+  and stable" promise — **Fairy Fox's call only, never bumped automatically.**
 - **MINOR** — a genuine milestone (a real new section/feature of the site or hub).
 - **PATCH** — **the default**: content updates, fixes, styling, ordinary changes.
   Not capped at 9 — let it run (0.1.7 … 0.1.42 …). When unsure, choose PATCH.
