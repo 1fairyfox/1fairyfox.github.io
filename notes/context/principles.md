@@ -9,7 +9,8 @@ specifics live in the reference files.
   and respects light/dark. No heavy frameworks, no tracking, no clutter.
 - **Always current.** The projects list, blog, and feeds are generated, so they
   never drift. Adding a project is one edit to `_data/projects.yml`.
-- **Personal, not corporate.** It's a den, not a landing page. Warm, plain voice.
+- **Professional and clear.** A plain, direct voice — no gimmicks, no fox/fairy
+  puns, no cutesy filler. Personal without being unprofessional.
 
 ## What the repo should feel like
 
