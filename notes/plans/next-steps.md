@@ -5,15 +5,14 @@ Ordered, current. Check off / remove as done; the history lives in
 
 ## Now (get it live)
 
-1. **Create the GitHub repo** `junebug12851.github.io` (public) and push `dev`
-   + `main`.
-2. **Enable Pages via Actions** — Settings → Pages → Source = "GitHub Actions".
-3. **Confirm the first deploy is green** — `gh run watch` the `pages` workflow;
-   fix forward if red.
-4. **Wire the custom domain** — DNS for `fairyfox.io` → GitHub Pages, set the
-   domain in Settings → Pages, enable Enforce HTTPS once the cert issues.
-5. **Local build check** — once Ruby finishes installing, `bundle install` +
-   `bundle exec jekyll build` to catch anything CI would.
+- [x] Create the GitHub repo `junebug12851.github.io` (public), push `dev` + `main`.
+- [x] Enable Pages via Actions; first deploy green.
+- [x] Local build check (`bundle install` + `jekyll build`, Ruby 3.3.11).
+- [ ] **Wire the custom domain** — at the registrar, point `fairyfox.io` at GitHub
+  Pages (apex A/AAAA to `185.199.108–111.153` + IPv6, or ALIAS/ANAME →
+  `junebug12851.github.io`); optionally `www` CNAME → `junebug12851.github.io`.
+  Then set the domain in Settings → Pages and enable Enforce HTTPS once the cert
+  issues. (The `CNAME` file is already committed.)
 
 ## Soon (make it real)
 

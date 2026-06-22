@@ -8,9 +8,11 @@ for the commit-by-commit changelog see [`version.md`](version.md).
 
 ## Current state (read this first)
 
-The site is **freshly scaffolded** (2026-06-22). It's a clean, custom Jekyll
-build — no external theme — deployed to GitHub Pages by GitHub Actions on every
-push to `main`. The structure is in place end to end:
+**The site is live** at https://junebug12851.github.io/ (2026-06-22). It's a
+clean, custom Jekyll build — no external theme — deployed to GitHub Pages by
+GitHub Actions on every push to `main`; the first deploy ran green (build +
+deploy) and the home/projects/blog/about pages, feed, and sitemap all serve. The
+structure is in place end to end:
 
 - **Site:** home, `/projects/`, `/blog/`, `/about/`, a first blog post, RSS feed,
   SEO tags, sitemap. Custom responsive CSS with light/dark.
@@ -24,12 +26,14 @@ push to `main`. The structure is in place end to end:
 
 ## In flight / awaiting
 
-- **GitHub repo + first deploy.** Repo `junebug12851.github.io` to be created,
-  pushed, and Pages enabled (build via Actions). Until then nothing is live.
-- **Custom domain `fairyfox.io`.** `CNAME` is committed; DNS must point at GitHub
-  Pages and the domain must be set in repo Settings → Pages for HTTPS to issue.
-- **Local build check.** Ruby/Jekyll being installed locally to verify the build
-  before relying on CI.
+- **Custom domain `fairyfox.io`.** `CNAME` is committed and the site builds it,
+  but the domain is **not yet active**: DNS has no records pointing at GitHub
+  Pages, and the domain isn't set in Settings → Pages yet. Add the DNS records
+  (apex A/AAAA to GitHub Pages IPs, or ALIAS/ANAME → `junebug12851.github.io`),
+  then set the custom domain in Settings → Pages and enable Enforce HTTPS once
+  the cert issues. Until then the site lives at `junebug12851.github.io`.
+- **First project round-up post.** Pending a real diff to report (see
+  [`reference/blogging-workflow.md`](reference/blogging-workflow.md)).
 
 ## Next
 
@@ -42,7 +46,7 @@ first real "what changed in my projects" round-up once there's a diff to report.
 | Area | Status |
 |------|--------|
 | Jekyll config + layouts | ✅ Scaffolded |
-| Content pages (home/projects/blog/about) | ✅ In place |
-| Pages deploy workflow | ✅ Written — not yet run |
-| Custom domain | ⏳ CNAME committed; DNS pending |
-| Local build verification | ⏳ Pending Ruby install |
+| Content pages (home/projects/blog/about) | ✅ Live |
+| Pages deploy workflow | ✅ First run green; site live |
+| Custom domain | ⏳ CNAME committed; DNS + Settings pending |
+| Local build verification | ✅ `bundle install` + `jekyll build` green (Ruby 3.3.11) |
