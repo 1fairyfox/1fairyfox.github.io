@@ -88,8 +88,6 @@ permalink: /about/
   <a href="/docs/cross-project-sync/">cross-project sync</a>.</p>
 
   <h2>A note on voice</h2>
-  <p>The site is written <em>about</em> the work rather than in the first person, and
-  it does not set out to glorify anything — it documents and indexes. Fairy Fox is
-  named for attribution; the work itself is meant to be the subject. The source for
-  this site is public: it is the repository that hosts it.</p>
+  <p>The site is written <em>about</em> the work rather than in the first person.
+  The source is public — it is the repository that hosts it.</p>
 </div>

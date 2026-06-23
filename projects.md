@@ -8,15 +8,17 @@ permalink: /projects/
 
 <div class="grid cols-3" style="margin-bottom:2.4rem">
 {%- for proj in site.data.projects -%}
-  <article class="card proj-card">
+  <article class="card proj-card" style="--pc:{{ proj.color | default: '#8b6cff' }}">
     <div class="proj-top">
-      <span class="proj-glyph" aria-hidden="true">{{ proj.name | slice: 0, 1 }}</span>
-      <h3>{{ proj.name }}</h3>
+      <span class="proj-glyph" aria-hidden="true">{%- if proj.icon -%}<img src="{{ '/assets/icons/' | append: proj.icon | append: '.png' | relative_url }}" alt="">{%- endif -%}</span>
+      <div>
+        <h3>{{ proj.name }}</h3>
+        {%- if proj.status %}<div class="proj-status"><span class="sdot"></span>{{ proj.status }}</div>{% endif -%}
+      </div>
     </div>
     <p class="blurb">{{ proj.blurb }}</p>
     <div class="tags">
-      {%- for t in proj.tags -%}<span class="tag">{{ t }}</span>{%- endfor -%}
-      {%- if proj.status -%}<span class="tag muted">{{ proj.status }}</span>{%- endif -%}
+      {%- for t in proj.tags -%}<span class="tag{% if forloop.first %} accent{% endif %}">{{ t }}</span>{%- endfor -%}
     </div>
     <div class="card-links">
       <a href="{{ proj.key | prepend: '/docs/' | append: '/' | relative_url }}">Documentation →</a>
