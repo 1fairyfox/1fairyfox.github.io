@@ -90,8 +90,8 @@ start at 1000 and increment per line; an explicit `[n]` overrides:
 ```text
 Start
 ===
-[100] masterpiece, best quality   # sorts to the front
-detailed background               # auto-weighted (1000, 1001, …)
+[100] wide shot, dramatic lighting   # low weight → sorts to the front
+ancient forest, morning mist         # auto-weighted (1000, 1001, …)
 ```
 
 ## Built in phases
