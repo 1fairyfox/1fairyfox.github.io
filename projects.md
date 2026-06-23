@@ -19,6 +19,8 @@ links to its documentation site, its notes, and its repository.
       {%- if proj.status -%}<span class="tag muted">{{ proj.status }}</span>{%- endif -%}
     </div>
     <div class="card-links">
+      {%- assign dl = site.data.downloads | where: "key", proj.key | first -%}
+      {%- if dl -%}<a href="{{ '/downloads/' | relative_url }}#{{ proj.key }}">Downloads</a>{%- endif -%}
       {%- if proj.docs -%}<a href="{{ proj.docs }}">Documentation ↗</a>{%- endif -%}
       {%- if proj.notes -%}<a href="{{ proj.notes }}">Notes ↗</a>{%- endif -%}
       <a href="{{ proj.repo }}">Repository ↗</a>
