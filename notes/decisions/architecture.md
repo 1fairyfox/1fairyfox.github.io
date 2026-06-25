@@ -2,6 +2,14 @@
 
 Key structural choices and why. Newest on top.
 
+### fairyfox.io is a listed meta-project (2026-06-24)
+
+The hub/site itself (`fairyfox.io`, repo `junebug12851.github.io`) is a **first-class
+listed project** — an entry in `_data/projects.yml` and `hub/registry.yml`, treated
+identically to the siblings: its own card/node, lifecycle / version / activity, docs, and
+day-centric blog coverage. It was already *implied* (blogged and talked about); now it's
+an actual listed project. Nothing else about it changes.
+
 ### Two-layer projection architecture + standardized status taxonomy (2026-06-24)
 
 The site is a **read-only projection** of mesh state. The **display layer** (Jekyll now,

@@ -23,6 +23,8 @@ Ordered, current. Check off / remove as done; the history lives in
   [`../reference/blogging-workflow.md`](../reference/blogging-workflow.md).
 - Going forward, write **day-centric updates** (work + discussion across all projects in
   one post per day), per the same doc.
+- **List `fairyfox.io` as a project** — add it to `_data/projects.yml` + `hub/registry.yml`
+  (lifecycle beta, active, its own docs), treated the same as the siblings.
 - Flesh out `/about/` with whatever I want public.
 - Add an Open Graph share image (`assets/og.png`) referenced by `jekyll-seo-tag`.
 - Decide whether to schedule a recurring day-centric update pass.
