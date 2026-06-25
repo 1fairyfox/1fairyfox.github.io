@@ -101,3 +101,13 @@ projects into `assets/references/` (to blog about changes — see
 `notes/reference/blogging-workflow.md`), and projects read `hub/` to adopt
 standards. Both track the `dev` branch. Full model:
 `notes/reference/cross-project-sync.md`.
+
+**"Check for updates" here means the inbound side, not adoption.** This repo is the
+source of the shared standards, so it never adopts them *from* itself. When the
+user asks (in whatever words) to check the system for updates, for the hub that
+means: scan the registered siblings in `assets/references/` for new commits past
+their `hub/.last-seen.yml` markers (the round-up — see
+`notes/reference/blogging-workflow.md`), and confirm the hub's own docs/registry
+are internally consistent. Same posture as a node: **check and report first, act
+only on an explicit go-ahead.** The node-side adopting flow (the version projects
+run against this hub) is defined in `hub/standards/adopting-updates.md`.

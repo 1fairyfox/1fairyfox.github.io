@@ -19,6 +19,36 @@ relevant pieces into the project by hand — then commit them locally.** Adoptin
 standard is a *copy*, not a live link, so applying an update is always a
 deliberate, reviewable edit.
 
+## Checking for updates — what to do when asked
+
+Treat the project as a **node that knows how to check the system for updates.**
+When the user asks — in whatever words — whether the system/hub has anything
+newer, to sync or refresh the standards, to get the latest version, or to pull a
+particular standard or runbook, that's this flow. It's an intent to recognize in
+natural conversation, not a fixed command or magic phrase; read it the way a
+colleague would (e.g. "are we up to date with the hub?", "grab the newest sync
+doc", "anything change upstream?").
+
+**The default is check-and-report, then stop:**
+
+1. **Refresh** the read-only hub clone — step 1 below (with the re-clone
+   fallback).
+2. **Diff** what changed against what the project has adopted — step 2.
+3. **Report** a short summary: what changed in the hub, which project files
+   adopting it would touch, and a recommended action.
+4. **Stop and wait.** Apply **nothing** yet.
+
+Continue into applying (steps 3–5: apply by hand → record → commit) only when the
+user clearly says to go ahead — again, in whatever words ("yeah do it", "adopt
+it", "apply those"). Reporting changes nothing on disk; applying is always a
+separate, confirmed act.
+
+**Why bounded this way (the integration that won't surprise you):** the node can
+*discover and explain* updates on its own, but never *changes itself* without a
+clear go-ahead. Combined with the anti-recursion rules below — on-request only,
+read-only on the hub side, git-ignored clone — this gives real hub-awareness with
+zero risk of an unprompted edit or a cross-repo loop.
+
 ## Steps
 
 ### 1. Refresh the read-only hub clone

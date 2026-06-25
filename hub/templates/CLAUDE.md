@@ -66,8 +66,24 @@ The notes are a living document — keep them current as you work, by default.
 | Made / rejected a decision | `notes/decisions/architecture.md` / `rejected.md` |
 | A change warrants a version | Bump `VERSION`, same commit |
 
-## Cross-project standards
+## Cross-project standards & checking for updates
 
-This project pulls shared standards from the fairyfox.io hub on request — see
-`notes/reference/cross-project-sync.md`. Don't add automation that pulls across
-repos automatically (anti-recursion).
+This project is a **node in the fairyfox.io hub mesh**: it pulls shared standards
+from the hub on request — see `notes/reference/cross-project-sync.md`.
+
+**When the user asks — in whatever natural words — whether the system/hub has
+anything newer, to sync the standards, get the latest version, or pull a
+particular standard/runbook:** treat it as the *check-for-updates* flow. Read it
+as an intent in plain conversation (e.g. "are we up to date with the hub?",
+"anything change upstream?", "grab the newest sync doc"), not a fixed command.
+
+The default is **check, report, then wait**: refresh the read-only hub clone under
+`assets/references/`, diff it against what this project has adopted, and **report
+what changed + what adopting it would touch — then stop.** Apply nothing until the
+user clearly says go ahead; applying is a separate, confirmed act. Full procedure:
+the shared `adopting-updates` runbook (in the hub's `hub/standards/`).
+
+**Guardrails (don't break these):** on-request only — never auto-pull or schedule
+cross-repo syncs (anti-recursion); the reference clone is read-only and
+git-ignored; never apply changes or rewrite history without an explicit go-ahead;
+reconcile with local edits, don't clobber them.
