@@ -12,7 +12,7 @@ is excluded from the rendered website.
 
 | Path | What it is |
 |------|------------|
-| [`standards/`](standards/) | The canonical, project-agnostic standards (the version other repos adopt): [git workflow](standards/git-workflow.md), [versioning](standards/versioning.md), [the notes system](standards/notes-system.md), [cross-project sync](standards/cross-project-sync.md), [AI context](standards/ai-context.md). |
+| [`standards/`](standards/) | The canonical, project-agnostic standards (the version other repos adopt): [git workflow](standards/git-workflow.md), [versioning](standards/versioning.md), [the notes system](standards/notes-system.md), [cross-project sync](standards/cross-project-sync.md), [AI context](standards/ai-context.md), plus the runbooks [new-project setup](standards/new-project-setup.md) and [adopting updates](standards/adopting-updates.md). |
 | [`templates/`](templates/) | Copy-paste starting files for a new or adopting project: a `CLAUDE.md`, a `VERSION`, a `.gitignore` snippet, and a `notes/` skeleton. See [`templates/README.md`](templates/README.md). |
 | [`registry.yml`](registry.yml) | The machine-readable list of my projects — what to clone, on which branch, for the sync + blog round-ups. The human-facing companion is `../_data/projects.yml`. |
 
@@ -42,3 +42,7 @@ cp -r assets/references/fairyfox.io/hub/templates/notes-skeleton ./notes
 
 Copying (not linking) is deliberate: the standard becomes part of the project, not
 a runtime dependency. Re-pull later to see what changed and merge by hand.
+
+Full step-by-step runbooks: [`standards/new-project-setup.md`](standards/new-project-setup.md)
+(bootstrapping a fresh project) and [`standards/adopting-updates.md`](standards/adopting-updates.md)
+(pulling later hub changes in).
