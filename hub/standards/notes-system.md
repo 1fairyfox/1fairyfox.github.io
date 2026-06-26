@@ -61,3 +61,15 @@ ASCII, present tense, project's-eye view.
 The notes are a **living document**, kept current **by default, not on request.**
 If something doesn't fit an existing file, make a new one in the right folder —
 the structure is meant to grow.
+
+## Verify (is it being followed?)
+
+The per-standard slice the [compliance audit](compliance.md) aggregates — report
+`done`/`partial`/`missing`:
+
+| Passes only when… | How to check |
+|-------------------|--------------|
+| The `notes/` tree has its core pieces (`status.md`, `version.md`, `version/`, `sessions/`, `context/`) | `ls notes/` |
+| `status.md` reads as **current-state only** and is actually current | open it; compare to recent work |
+| The newest `sessions/` entry covers the latest substantive work | `ls notes/sessions/**` newest |
+| Changelog entries ride **inside** their commit — no hash markers/bylines, no separate "update changelog" commits | scan `version/*.md`; `git log` for notes-only commits |

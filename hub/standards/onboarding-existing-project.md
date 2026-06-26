@@ -210,7 +210,9 @@ single switch — say where on the path it actually is.
 
 Run **every** row and report each with its real status — `done`, `partial`, or
 **`missing`**. This same audit is what you run to check a project that's *claimed*
-to be onboarded; finding `missing` rows means it isn't.
+to be onboarded; finding `missing` rows means it isn't. This is the **join-time**
+gate; the recurring whole-set check (every standard, re-runnable anytime) is the
+[standards compliance audit](compliance.md).
 
 | # | Dimension | Passes only when… |
 |---|-----------|-------------------|

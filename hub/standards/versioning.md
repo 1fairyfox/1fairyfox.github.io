@@ -45,3 +45,15 @@ checkout shows the plain number with no `+g…`.
 
 `VERSION` is the *label* (where you are); the changelog (`notes/version/`) is the
 *story* (what changed, per commit). Complementary — see the notes-system standard.
+
+## Verify (is it being followed?)
+
+The per-standard slice the [compliance audit](compliance.md) aggregates — report
+`done`/`partial`/`missing`:
+
+| Passes only when… | How to check |
+|-------------------|--------------|
+| `VERSION` is a single SemVer line | `cat VERSION` |
+| It equals the newest `vX.Y.Z` tag on `main` | `git describe --tags --abbrev=0 main` vs `VERSION` |
+| No version is hardcoded anywhere else | grep the tree for a stray `X.Y.Z` |
+| MAJOR was never bumped without the project leader's call | tag history shows no auto `→ 1.0.0` |
