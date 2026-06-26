@@ -121,7 +121,9 @@ itself: when asked to check the fairyfox system for updates, for this repo that
 means scan the registered siblings in
 `assets/references/` for new commits past their `hub/.last-seen.yml` markers (the
 round-up — see `notes/reference/blogging-workflow.md`), and confirm the standards
-docs/registry are internally consistent. Same posture as a node: **check and
+docs/registry are internally consistent — the **whole-set check is the standards
+compliance audit** (`hub/standards/compliance.md`), which runs every standard's
+`Verify` section against the hub or a node. Same posture as a node: **check and
 report first, act only on an explicit go-ahead.** The node-side adopting flow (the
 version projects run against this system) is defined in
 `hub/standards/adopting-updates.md`.

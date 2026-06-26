@@ -32,3 +32,15 @@ re-briefed each session. A template is in
   being asked" belongs here explicitly.
 - **Keep the tooling note current.** Which shell, which CI, which account — the
   practical facts an assistant needs on line one.
+
+## Verify (is it being followed?)
+
+The per-standard slice the [compliance audit](compliance.md) aggregates — report
+`done`/`partial`/`missing`:
+
+| Passes only when… | How to check |
+|-------------------|--------------|
+| A root `CLAUDE.md` exists | `ls CLAUDE.md` |
+| It contains all six required pieces (identity · start-here→`status.md` · landmines · build/run · default workflow · notes-maintenance table) | open it and confirm each |
+| Its **Default workflow** matches the current [git-workflow standard](git-workflow.md) — no stale `--ff-only`/"fast-forward `main`" wording | grep `CLAUDE.md` for `ff-only`/`fast-forward` |
+| Capabilities are stated honestly (build/test/commit named, not denied) | read the Build/run section |
