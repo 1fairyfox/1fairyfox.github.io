@@ -6,10 +6,12 @@ subtitle: Fairy Fox's software projects, each linking into its documentation, do
 permalink: /projects/
 ---
 
-{%- assign ff_projs = site.data.projects | where_exp: "p", "p.meta != true" | sort: "updated_iso" | reverse -%}
+{%- assign ff_projs = site.data.projects | where_exp: "p", "p.meta != true and p.integrated != true" | sort: "updated_iso" | reverse -%}
+{%- assign ff_integrated = site.data.projects | where_exp: "p", "p.integrated == true" | sort: "updated_iso" | reverse -%}
 {%- assign ff_metas = site.data.projects | where: "meta", true -%}
 <div class="grid cols-3" style="margin-bottom:2.4rem">
 {%- for proj in ff_projs -%}{% include project-card.html proj=proj %}{%- endfor -%}
+{%- for proj in ff_integrated -%}{% include project-card.html proj=proj %}{%- endfor -%}
 {%- for proj in ff_metas -%}{% include project-card.html proj=proj %}{%- endfor -%}
 </div>
 

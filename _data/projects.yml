@@ -83,6 +83,31 @@
   featured: true
   reference: false
 
+# Integrated with the site (the /fun/ page embeds it). A real tracked mesh node,
+# but rendered specially — pinned just before the site's own (meta) card, not
+# sorted by date among the others. See the `integrated` tier in index.html /
+# projects.md.
+- name: Fairy Fox Games
+  key: fairyfox-games
+  repo: https://github.com/junebug12851/fairyfox-games
+  docs: https://fairyfox.io/fairyfox-games/
+  doc_url: "https://fairyfox.io/fairyfox-games/"
+  notes: https://github.com/junebug12851/fairyfox-games/tree/main/notes
+  blurb: >-
+    A collection of small, self-contained canvas games — the one-mechanic,
+    beat-your-own-score kind, with a fresh experiment most days. Each game splits
+    pure, tested logic from rendering; play them embedded on the Fun page.
+  tags: [JavaScript, Canvas, Web]
+  lifecycle: alpha
+  version: "0.1.0"
+  activity: active
+  updated: "Jun 29, 2026"
+  updated_iso: "2026-06-29"
+  integrated: true
+  color: "#8b7bff"
+  featured: true
+  reference: true
+
 - name: fairyfox.io
   key: fairyfox-io
   repo: https://github.com/junebug12851/junebug12851.github.io

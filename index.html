@@ -41,10 +41,12 @@ title: null
       <h2>Projects</h2>
       <a class="more" href="{{ '/projects/' | relative_url }}">All projects →</a>
     </div>
-    {%- assign ff_projs = site.data.projects | where_exp: "p", "p.meta != true" | sort: "updated_iso" | reverse -%}
+    {%- assign ff_projs = site.data.projects | where_exp: "p", "p.meta != true and p.integrated != true" | sort: "updated_iso" | reverse -%}
+    {%- assign ff_integrated = site.data.projects | where_exp: "p", "p.integrated == true" | sort: "updated_iso" | reverse -%}
     {%- assign ff_metas = site.data.projects | where: "meta", true -%}
     <div class="grid cols-3">
       {%- for proj in ff_projs -%}{%- if proj.featured -%}{% include project-card.html proj=proj %}{%- endif -%}{%- endfor -%}
+      {%- for proj in ff_integrated -%}{%- if proj.featured -%}{% include project-card.html proj=proj %}{%- endif -%}{%- endfor -%}
       {%- for proj in ff_metas -%}{%- if proj.featured -%}{% include project-card.html proj=proj %}{%- endif -%}{%- endfor -%}
     </div>
   </div>
