@@ -32,7 +32,11 @@ full width and pays double. And **Loft**: keep the glowing orbs aloft by tapping
 as it *falls* — a rhythm rather than a mash, where reading a cluster and batting several up
 in a row pays a bonus. And **Poise**: a balance game — tilt a beam to keep a rolling ball on
 it and roll it over the target, the ball carrying its momentum through each catch while gravity
-ramps stage by stage, so a target near the beam's edge is a real risk. The existing games don't
+ramps stage by stage, so a target near the beam's edge is a real risk. And **Symmetry**: a
+mirror-coordination game — one control sets the *spread* of two catchers locked in a mirror about a
+centre line, and because the pair moves together you often can't save both sides at once, so each
+falling orb is a forced choice; gold-ringed **twins** fall as a matched pair you can catch with a
+single spread for a bonus. The existing games don't
 stand still either: every game now shares a **growth architecture** — a readable stage arc,
 persistent meta-progression with skill-safe badges, and its own core-fun hook — and each
 daily pass tends to deepen one a little further without cluttering the clean single-screen

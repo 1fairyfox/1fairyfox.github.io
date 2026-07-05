@@ -8,21 +8,19 @@
 # changes : recent micro-changes for the scrolling ticker (newest first)
 #           c = a CSS colour var so it adapts to light/dark
 
-bars: [29, 17, 10, 8, 15, 25, 31, 14, 6, 11, 20, 34, 22, 10, 13, 24, 30, 9, 28, 6, 27, 42, 3, 38, 33, 78, 52, 41, 70, 6]
+bars: [17, 10, 8, 15, 25, 31, 14, 6, 11, 20, 34, 22, 10, 13, 24, 30, 9, 28, 6, 27, 42, 3, 38, 33, 78, 52, 41, 70, 6, 46]
 
 changes:
-  - { c: "var(--green)", text: "Fairy Fox Games 0.12.0 — Poise: a balance game, a ball on a tilting beam — eight games now", when: "1d" }
-  - { c: "var(--green)", text: "Fairy Fox Games — Skyline grew a near-miss nudge on the game-over card", when: "1d" }
-  - { c: "var(--green)", text: "Random AI Prompt 2.41.0 — release signing modernized to cosign 3.x Sigstore bundles; build tool bumped", when: "1d" }
-  - { c: "var(--coral)", text: "Site 0.12.3 — maintenance pass: reconciled the project cards, pulse, and Games node to the siblings' latest", when: "today" }
-  - { c: "var(--green)", text: "Random AI Prompt 2.40–2.41.0 — responsive UI foundation: fluid layout tiers, phone drawers, touch-sized controls, a tablet split-screen tier", when: "2d" }
-  - { c: "var(--green)", text: "Random AI Prompt — repo flattened: one project at the root, the pre-revival engine split retired", when: "2d" }
-  - { c: "var(--green)", text: "Random AI Prompt — main branch-protected, releases through a PR, keyless-signed release assets", when: "2d" }
-  - { c: "var(--green)", text: "Fairy Fox Games 0.7.0 — Loft: a keepy-uppy juggle", when: "2d" }
-  - { c: "var(--green)", text: "Fairy Fox Games 0.10–0.11.0 — a growth architecture (stages + meta-progression + badges) rolled across all games", when: "2d" }
-  - { c: "var(--green)", text: "Fairy Fox Games 0.11.1 — Netlify retired; GitHub Pages is the sole host", when: "2d" }
-  - { c: "var(--coral)", text: "Site 0.12.0 — six new/updated hub standards folded in (supply-chain, dependencies, legal-docs, agent-tooling, badges, git-workflow fix)", when: "2d" }
-  - { c: "var(--green)", text: "Random AI Prompt 2.37.0 — CSS overhaul + theming framework: System/Dark/Light, 9 accents, importable custom themes", when: "3d" }
-  - { c: "var(--green)", text: "Random AI Prompt 2.38.0 — online build prerenders its first paint to static HTML, then hydrates", when: "3d" }
-  - { c: "var(--green)", text: "Random AI Prompt 2.38.1 — tech-debt sweep: all 70 SonarCloud code smells cleared (debt ratio ~0)", when: "3d" }
-  - { c: "var(--green)", text: "Fairy Fox Games 0.6.0 — Skyline: a stack-and-slice tower builder", when: "3d" }
+  - { c: "var(--green)", text: "Fairy Fox Games 0.13.0 — Symmetry: a mirror-coordination game where two catchers move together, so you can't always save both sides — nine games now", when: "1d" }
+  - { c: "var(--green)", text: "Fairy Fox Games — Poise grew an honest near-miss line on the game-over card", when: "1d" }
+  - { c: "var(--green)", text: "Random AI Prompt 2.42.0 — large-scale performance: the gallery virtualized to 100k images, placeholder-first chunked generation, per-provider concurrency limits, and a perf test suite", when: "1d" }
+  - { c: "var(--green)", text: "Random AI Prompt 2.41.2 — an explicit Random-seed control: free-text seeds and reproducible rolls", when: "1d" }
+  - { c: "var(--green)", text: "Random AI Prompt 2.42.1 — a dark-mode DPL autocomplete contrast fix, plus automated per-release screenshots and GIF walkthroughs", when: "1d" }
+  - { c: "var(--coral)", text: "Site 0.12.4 — maintenance pass: reconciled the project cards, pulse, and the Games/RAP nodes to the siblings' latest", when: "today" }
+  - { c: "var(--green)", text: "Fairy Fox Games 0.12.0 — Poise: a balance game, a ball on a tilting beam", when: "2d" }
+  - { c: "var(--green)", text: "Fairy Fox Games — Skyline grew a near-miss nudge on the game-over card", when: "2d" }
+  - { c: "var(--green)", text: "Random AI Prompt 2.41.0 — release signing modernized to cosign 3.x Sigstore bundles; build tool bumped", when: "2d" }
+  - { c: "var(--green)", text: "Random AI Prompt 2.40–2.41.0 — responsive UI foundation: fluid layout tiers, phone drawers, touch-sized controls, a tablet split-screen tier", when: "3d" }
+  - { c: "var(--green)", text: "Fairy Fox Games 0.7.0 — Loft: a keepy-uppy juggle", when: "3d" }
+  - { c: "var(--green)", text: "Fairy Fox Games 0.10–0.11.0 — a growth architecture (stages + meta-progression + badges) rolled across all games", when: "3d" }
+  - { c: "var(--coral)", text: "Site 0.12.0 — six new/updated hub standards folded in (supply-chain, dependencies, legal-docs, agent-tooling, badges, git-workflow fix)", when: "3d" }

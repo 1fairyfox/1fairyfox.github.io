@@ -15,7 +15,7 @@
 pokered-save-editor-2:
   commit: 1bae326187b72c9eb8c67d716c44e1a887d52738
   branch: dev
-  seen: 2026-07-04
+  seen: 2026-07-05
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-06-26-adopting-updates.md             # folded into standards 0.9.1
     - 2026-06-26-adopting-updates-express-auth.md # folded into standards 0.9.3 (verification floor + this marker scheme)
@@ -50,11 +50,13 @@ pokered-save-editor-2:
   # reconcile or blog. Marker unchanged; seen → 2026-07-03.
   # 2026-07-04 round-up: still "Already up to date" at 1bae326 (still 0.14.2-alpha). Nothing to
   # reconcile or blog. Marker unchanged; seen → 2026-07-04.
+  # 2026-07-05 round-up: still "Already up to date" at 1bae326 (still 0.14.2-alpha). Nothing to
+  # reconcile or blog. Marker unchanged; seen → 2026-07-05.
 
 random-ai-prompt:
-  commit: cdfaf7cf3c2e8717e4ea9bc393f6b9d8ed4e7cd4
+  commit: 5dcd6213bb9b4437713a2ffb016ccf3fa7c185e5
   branch: dev
-  seen: 2026-07-04
+  seen: 2026-07-05
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-06-26-adopting-updates.md             # folded into standards 0.9.1
     - 2026-06-26-adopting-updates-2.md           # digested 0.9.8 — CI-owns-tag release callout (git-workflow) + hub_version-placeholder backfill note (process-reports)
@@ -165,11 +167,24 @@ random-ai-prompt:
   # pinned v3.1.1; deployment.md verify updated) + an in-range Vite build-tool bump. No product change, so
   # projects.yml/downloads left at 2.41.0 / Jul 2; the signing thread was folded into the 2026-07-03 day
   # post ("An eighth game, and a modernized release signature"). Marker → cdfaf7c.
+  # 2026-07-05 round-up: clean fast-forward cdfaf7c → 5dcd621, VERSION 2.41.0 → 2.42.1 (all commits dated
+  # 2026-07-04). The 2.41.1–2.42.1 line: a mobile composer settings-gear backdrop fix + a standing
+  # "every fix ships a regression test" rule (2.41.1); an explicit **Random-seed control** replacing the
+  # -1 magic-number sentinel that had pinned every roll to one prompt — free-text seeds, reproducible rolls
+  # (2.41.2); seed-preview independence + zero SonarCloud debt (2.41.3); the headline **large-scale
+  # performance** pass (2.42.0) — gallery **virtualized** to a bounded window at 100k images, results list
+  # bounded, **placeholder-first chunked** image generation with per-provider image/text concurrency limiters
+  # via a new folder-based shared-settings system, and a real perf test suite asserting scroll quality at the
+  # stated max load; and a **dark-mode DPL autocomplete contrast fix** (unlayered CodeMirror tooltip theme
+  # beat the app's cascade layers) + an automated per-release screenshot/GIF pipeline (2.42.1). Reconciled:
+  # projects.yml (RAP → 2.42.1 / Jul 4). Folded into the 2026-07-04 day post ("A ninth game, and prompts
+  # that scale to 100k"). Marker → 5dcd621, VERSION 2.41.0 → 2.42.1. (New sibling report
+  # 2026-07-04-propose-regression-testing-standard.md left for the inbound report-review pass.)
 
 fairyfox-games:
-  commit: 1994e12db17abbf7422a87797b3a2f439378c746
+  commit: 0a8db920d8ca1f8a6b16206bc02648b52e362b5c
   branch: dev
-  seen: 2026-07-04
+  seen: 2026-07-05
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-06-29-setup.md                 # digested 0.10.0 — collection/monorepo as a recorded exception; static site doubles as docs
     - 2026-06-29-onboarding-verify.md     # digested 0.10.0 — same-day setup cross-ref added to onboarding
@@ -213,3 +228,12 @@ fairyfox-games:
   # no-drift regression) + grew Skyline with a **near-miss line** ("N floors short of your best", +2
   # tests). 244 tests green. Reconciled: projects.yml (games → 0.12.0 / Jul 3), _projects/fairyfox-games.md
   # (added Poise). Folded into the 2026-07-03 day post. Marker → 1994e12, VERSION 0.12.0.
+  # 2026-07-05 round-up: clean fast-forward 1994e12 → 0a8db92, VERSION 0.12.0 → 0.13.1 (commits dated
+  # 2026-07-04). A ninth, mechanically-distinct game **Symmetry** (mirror coordination — one spread control
+  # drives two mirror-locked catchers, so you often can't save both sides; gold-ringed twins catch as a pair
+  # for a bonus; pure normalised core + external shell, full growth stack, 23 tests incl. a frame-one guard,
+  # the twin all-or-nothing bonus, and a determinism check) + grew **Poise** with the honest near-miss line
+  # (+5 tests). 272 tests green. Also a release-policy change (0.13.1): the games repo now ships dev → main by
+  # default on green (the old approve-first gate had frozen the live site at 0.11.2). Reconciled: projects.yml
+  # (games → 0.13.1 / Jul 4), _projects/fairyfox-games.md (added Symmetry). Folded into the 2026-07-04 day
+  # post. Marker → 0a8db92, VERSION 0.13.1.
