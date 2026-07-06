@@ -10,26 +10,28 @@ permalink: /blog/
   {%- for post in site.posts -%}
     {%- comment -%} Colour + label come from the post's PRIMARY subject: the first tag
       that names a project (tags are authored most-prominent-first). {%- endcomment -%}
-    {%- assign pc = '#f59f0a' -%}{%- assign pname = 'Site' -%}{%- assign matched = false -%}
+    {%- assign pc = '#f59f0a' -%}{%- assign pname = 'Site' -%}{%- assign pkey = '' -%}{%- assign matched = false -%}
     {%- for t in post.tags -%}{%- unless matched -%}{%- for proj in site.data.projects -%}
-      {%- if proj.key == t -%}{%- assign pc = proj.color -%}{%- assign pname = proj.name -%}{%- assign matched = true -%}{%- endif -%}
+      {%- if proj.key == t -%}{%- assign pc = proj.color -%}{%- assign pname = proj.name -%}{%- assign pkey = proj.key -%}{%- assign matched = true -%}{%- endif -%}
     {%- endfor -%}{%- endunless -%}{%- endfor -%}
     {%- assign dt = post.title -%}
     {%- if pname != 'Site' -%}{%- assign dt = post.title | remove_first: pname | remove_first: ": " | strip -%}{%- endif -%}
+    {%- comment -%} Secondary chips = the OTHER tags: every tag except the primary project
+      (shown in the meta) and the structural update/site tags. {%- endcomment -%}
+    {%- assign sec = '' | split: '' -%}
+    {%- for t in post.tags -%}{%- unless t == 'update' or t == 'site' or t == pkey -%}{%- assign sec = sec | push: t -%}{%- endunless -%}{%- endfor -%}
   <li style="--pc:{{ pc }}">
     <div class="meta"><span class="pdot" aria-hidden="true"></span><span>{{ pname }}</span> · {{ post.date | date: "%b %-d, %Y" }}</div>
     <h3><a href="{{ post.url | relative_url }}">{{ dt }}</a></h3>
     <p>{{ post.subtitle | default: post.excerpt | strip_html | truncate: 180 }}</p>
-    {%- assign othertags = '' | split: '' -%}
-    {%- for t in post.tags -%}
-      {%- unless t == 'update' or t == 'site' -%}
-        {%- assign tn = t | capitalize -%}
-        {%- for proj in site.data.projects -%}{%- if proj.key == t -%}{%- assign tn = proj.name -%}{%- endif -%}{%- endfor -%}
-        {%- assign othertags = othertags | push: tn -%}
-      {%- endunless -%}
-    {%- endfor -%}
-    {%- if othertags.size > 1 -%}
-    <div class="post-tags">{%- for tn in othertags -%}<span class="tag">{{ tn }}</span>{%- endfor -%}</div>
+    {%- if sec.size > 0 -%}
+    <div class="post-tags">
+      {%- for t in sec -%}
+        {%- assign isproj = false -%}{%- assign tn = t | capitalize -%}{%- assign tc = '' -%}
+        {%- for proj in site.data.projects -%}{%- if proj.key == t -%}{%- assign isproj = true -%}{%- assign tn = proj.name -%}{%- assign tc = proj.color -%}{%- endif -%}{%- endfor -%}
+        {%- if isproj -%}<span class="tag tag-proj" style="--pc:{{ tc }}">{{ tn }}</span>{%- else -%}<span class="tag">{{ tn }}</span>{%- endif -%}
+      {%- endfor -%}
+    </div>
     {%- endif -%}
   </li>
   {%- else -%}
