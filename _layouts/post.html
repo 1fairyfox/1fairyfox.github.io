@@ -12,7 +12,7 @@ layout: default
       {%- comment -%} Project tags render as colour chips (project's accent); topical tags
         as plain chips. The structural "update" tag is hidden. {%- endcomment -%}
       {%- for t in page.tags -%}
-        {%- unless t == 'update' -%}
+        {%- unless t == 'update' or t == 'site' -%}
           {%- assign isproj = false -%}{%- assign tn = t | capitalize -%}{%- assign tc = '' -%}
           {%- for proj in site.data.projects -%}{%- if proj.key == t -%}{%- assign isproj = true -%}{%- assign tn = proj.name -%}{%- assign tc = proj.color -%}{%- endif -%}{%- endfor -%}
           {%- if isproj -%}<span class="tag tag-proj" style="--pc:{{ tc }}">{{ tn }}</span>{%- else -%}<span class="tag">{{ tn }}</span>{%- endif -%}
