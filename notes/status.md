@@ -3,7 +3,7 @@
 _Current state only._ For the chronological history see [`sessions/`](sessions/README.md);
 for the commit-by-commit changelog see [`version.md`](version.md).
 
-**Version:** `0.14.5` (single source of truth: repo-root `VERSION`; see
+**Version:** `0.15.0` (single source of truth: repo-root `VERSION`; see
 [`reference/versioning.md`](reference/versioning.md)).
 
 ## Current state (read this first)
@@ -42,7 +42,8 @@ through the `0.4.x` line; it now includes:
   data) and the **duplicated on-site per-project docs** (each project links to its own docs
   from its card); the Projects submenu no longer auto-enables (reserved for future project
   categories); the About page's projects list was dropped as a duplicate of `/projects/`.
-  Fixed global nav is now **Home · Projects · Games · Docs · Updates · About**.
+  Fixed global nav is now **Home · Projects · Stories · Games · Docs · Updates · About**
+  (**Stories** added `0.15.0`, left of Games — a `/stories/` stub → `/fairyfox-stories/`).
 - A plain-link header nav (Projects · Updates · Docs; no dropdowns) and an
   **on-site documentation library** (`/docs/`, the `_docs` collection): the ecosystem
   overview, a **"This site"** group surfacing the whole `notes/` tree, the **shared

@@ -27,14 +27,18 @@ flow below.**
 This is the design-system half of bringing a project into the mesh. Do it alongside
 the lifecycle runbooks:
 
-1. **Read the spec** — all of [`README.md`](README.md) and files `01`–`08`.
-2. **Implement in the project's stack** — reproduce the tokens, shell, components,
-   layout, and the required cross-links, in whatever the project is built on. Match
-   as closely as the stack allows.
-3. **Publish at `fairyfox.io/<key>/`** and confirm the main site links *in* resolve
+1. **Read the spec** — all of [`README.md`](README.md) and files `01`–`12`.
+2. **Vendor the chrome bundle** — pull [`chrome/`](chrome/) (and the master
+   `main.css`/`reader.js`/`nav.js`) over git and wire it in via the matching
+   [adapter](chrome/adapters/); record the adopted `chrome/VERSION`
+   ([`12-shared-chrome.md`](12-shared-chrome.md)).
+3. **Reproduce the rest in the project's stack** — the tokens, page/content components,
+   layout, and the required cross-links, in whatever the project is built on. Match as
+   closely as the stack allows.
+4. **Publish at `fairyfox.io/<key>/`** and confirm the main site links *in* resolve
    (registry `docs:`/`repo:` accurate).
-4. **Run [`08-compliance-checklist.md`](08-compliance-checklist.md)**; fix gaps.
-5. **Record any deviation** with its reason (next section).
+5. **Run [`08-compliance-checklist.md`](08-compliance-checklist.md)**; fix gaps.
+6. **Record any deviation** with its reason (next section).
 
 Sequencing with the rest of onboarding lives in
 [`../new-project-setup.md`](../new-project-setup.md) /
@@ -53,8 +57,12 @@ For a theme change that means:
    need to touch.
 3. On go-ahead, update the project's implementation and re-run the checklist.
 
-Re-apply the **intent** of the change to the project's stack — this is a spec, so
-adoption is always reimplementation, never a file copy.
+Re-apply the **intent** of the change to the project's stack — for tokens, layout, and
+components, this is a spec, so adoption is reimplementation. **The chrome is the
+exception:** the bar/subnav/footer/reader/palette adopt as a **verbatim copy** of the
+[`chrome/`](chrome/) bundle pulled over git (see
+[`12-shared-chrome.md`](12-shared-chrome.md)) — for it, a refresh is re-pulling the
+bundle and re-diffing its `VERSION`, not a reimplementation.
 
 ## Recording deviations
 

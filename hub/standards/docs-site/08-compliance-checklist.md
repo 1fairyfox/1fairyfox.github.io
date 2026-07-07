@@ -45,8 +45,13 @@ record the deviation (see [`09-adopting-and-maintaining.md`](09-adopting-and-mai
 
 **Required:**
 
+- [ ] The chrome is the **vendored [`chrome/`](chrome/) bundle** (copied verbatim +
+      pulled over git), **not** a hand-built lookalike: header/subnav/footer markup and
+      the `main.css`/`reader.js`/`nav.js` match the master; only `{{FF_*}}` slots +
+      `.active` differ; no runtime hot-link to fairyfox.io; the adopted `chrome/VERSION`
+      is recorded. Full check: [`12-shared-chrome.md`](12-shared-chrome.md#verify-is-it-being-followed).
 - [ ] The **shared header** is present with the **global primary nav** in the fixed
-      order **Home · Projects · Games · Docs · Updates · About** (not
+      order **Home · Projects · Stories · Games · Docs · Updates · About** (not
       reordered or trimmed per project).
 - [ ] The **brand mark and `Home` nav item link to `https://fairyfox.io/`** — this is
       the way home. There is **no separate "← Back to Fairy Fox" back-button**.

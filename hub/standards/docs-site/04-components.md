@@ -4,6 +4,13 @@ The shared UI pieces. Reproduce their **appearance and behaviour**; class names 
 fairyfox.io's and are given for reference, not required. All colours/sizes refer to
 the tokens in [`02-design-tokens.md`](02-design-tokens.md).
 
+> **Chrome components are copied, not reimplemented.** The brand lockup, primary nav,
+> submenu, reader menu, and footer ship as the [`chrome/`](chrome/) bundle a project
+> **vendors verbatim** (see [`12-shared-chrome.md`](12-shared-chrome.md)) — for those,
+> the class names and markup below **are** the contract, not just reference. The rest
+> of this file (buttons, cards, badges, code, tables, callouts) is reproduced in your
+> stack as usual.
+
 > For the **exact** padding/gap/size/position of every element here, see
 > [`11-measurements-reference.md`](11-measurements-reference.md) and the bundled
 > [`reference/main.css`](reference/main.css). This file describes intent; `11` pins
@@ -29,7 +36,7 @@ A round logo image + the wordmark, used in the header and footer.
 - Hover: `--text` on a `--panel-2` fill. **Active page**: `--text` on a faint
   accent wash (`color-mix(--accent 16%, transparent)`).
 - **No dropdowns.** Plain top-level links in the fixed mesh-wide order
-  **Home · Projects · Games · Docs · Updates · About**. This is the
+  **Home · Projects · Stories · Games · Docs · Updates · About**. This is the
   **shared global nav** — every project carries the same set in the same order (a
   project's *own* pages go in the submenu below, not in the primary nav).
 - **Mobile (`≤820px`):** the row hides behind a `.nav-toggle` (42px square, `--panel-2`
