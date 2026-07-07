@@ -71,11 +71,13 @@ is what carries membership.
 
 ## Shared chrome: primary nav + submenu
 
-A project does **not** invent its own header. It wears the **same chrome as the main
-site** so there is no visible "jump":
+A project does **not** invent its own header, and no longer hand-rebuilds one either.
+It wears the **same chrome as the main site** by **copying the [`chrome/`](chrome/)
+bundle verbatim** (see [`12-shared-chrome.md`](12-shared-chrome.md)) so there is no
+visible "jump":
 
 - **Primary nav (global, identical on every page).** Slot order:
-  **Home · Projects · Games · Docs · Updates · About** (About last). These
+  **Home · Projects · Stories · Games · Docs · Updates · About** (About last). These
   point at the main-site sections (same origin for Pages projects). The set and order
   are fixed across the mesh — don't reorder, drop, or add items per project. The exact
   markup is in [`reference/`](reference/); mark the current top-level section `.active`.

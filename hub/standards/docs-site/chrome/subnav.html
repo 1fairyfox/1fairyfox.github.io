@@ -1,0 +1,22 @@
+<!--
+  chrome/subnav.html — the shared secondary nav (the section/context row).
+
+  RECOMMENDED, not required. Place directly below the header. Same flat pill style as
+  the primary nav; it's the layer that CHANGES between pages while the primary nav
+  stays constant. Inside a project it lists THAT project's own pages; mark the current
+  one class="active" aria-current="page".
+
+  The wrapper (nav.subnav > div.wrap) and the pill style are fixed — copy them. Only
+  the links inside {{FF_SUBNAV_ITEMS}} are yours to fill.
+-->
+<nav class="subnav" aria-label="Section">
+  <div class="wrap">
+    {{FF_SUBNAV_ITEMS}}
+    <!-- Example — replace with this project's real pages:
+    <a href="./" class="active" aria-current="page">Overview</a>
+    <a href="./guides/">Guides</a>
+    <a href="./reference/">Reference</a>
+    <a href="./changelog/">Changelog</a>
+    -->
+  </div>
+</nav>

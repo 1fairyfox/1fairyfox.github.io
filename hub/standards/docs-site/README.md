@@ -4,8 +4,11 @@ The shared look, structure, and cross-linking that make **every project's
 documentation site feel like one continuous site with fairyfox.io** — so moving
 from the main site into a project's docs (and back) is seamless.
 
-> Canonical, project-agnostic standard. Projects **read this and implement it in
-> their own stack** — they do not copy a CSS file. Companion lifecycle runbooks:
+> Canonical, project-agnostic standard. Projects **read this and implement the tokens,
+> layout, and components in their own stack** — but the **chrome** (bar, subnav, footer,
+> reader/theme, palette) is now a **vendored bundle they copy verbatim and pull over
+> git**, not reimplemented (see [`12-shared-chrome.md`](12-shared-chrome.md)). Companion
+> lifecycle runbooks:
 > [`../new-project-setup.md`](../new-project-setup.md),
 > [`../onboarding-existing-project.md`](../onboarding-existing-project.md),
 > [`../adopting-updates.md`](../adopting-updates.md). The mesh model:
@@ -13,11 +16,18 @@ from the main site into a project's docs (and back) is seamless.
 
 ## How this standard works (read this first)
 
-This is a **specification, not a theme package.** Each project is built on
-different tooling — Jekyll, a JS app, Doxygen, MkDocs, hand-rolled HTML — and each
-project's AI/maintainer is trusted to **read these files and reproduce the design
-faithfully in whatever system it uses.** The goal is a result a visitor can't tell
-apart from fairyfox.io, not byte-identical source.
+This is a **specification, not a theme package** — for the *tokens, layout, and
+components.* Each project is built on different tooling — Jekyll, a JS app, Doxygen,
+MkDocs, hand-rolled HTML — and each project's AI/maintainer is trusted to **read these
+files and reproduce the design faithfully in whatever system it uses.** The goal is a
+result a visitor can't tell apart from fairyfox.io.
+
+**The one exception is the chrome.** The header/nav, submenu, footer, reader menu, and
+palette are a fixed, framework-agnostic shell, so they are **not** reimplemented — they
+ship as the [`chrome/`](chrome/) bundle a project **copies verbatim and pulls over git
+at build time** (still decoupled: vendored copies, never a runtime link). Reimplementing
+the shell per project is exactly what made every project's bar/reader/footer drift; the
+bundle removes that. Full spec: [`12-shared-chrome.md`](12-shared-chrome.md).
 
 The bar: **as close a match as the project's stack allows.** Where a generator
 can't match exactly (e.g. Doxygen's API pages), match what you can and keep the
@@ -50,7 +60,9 @@ Full rule: [`09-adopting-and-maintaining.md`](09-adopting-and-maintaining.md).
 | [`09-adopting-and-maintaining.md`](09-adopting-and-maintaining.md) | How to adopt this, keep it current, and record deliberate deviations. |
 | [`10-domain-and-publishing.md`](10-domain-and-publishing.md) | How a project joins the `fairyfox.io` domain on GitHub Pages (served at `fairyfox.io/<key>/`) — the infrastructure under the one-domain model. |
 | [`11-measurements-reference.md`](11-measurements-reference.md) | Every exact value pinned — per-element dimensions, spacing, placement, breakpoints. The precision appendix to `02`–`04`. |
-| [`reference/`](reference/) | The master stylesheet bundled read-only (`main.css`) as the ultimate exact reference. Reimplement, don't link. |
+| [`12-shared-chrome.md`](12-shared-chrome.md) | The **chrome bundle** spec: the bar/subnav/footer/reader/palette a project **copies verbatim and pulls over git**, not reimplemented — with a `## Verify`. |
+| [`chrome/`](chrome/) | The **vendored chrome bundle itself** — the static `head`/`header`/`subnav`/`footer` HTML, per-generator adapters, `VERSION`, and the pull contract. What a project actually copies. |
+| [`reference/`](reference/) | The master stylesheet bundled read-only (`main.css`) as the ultimate exact **value** reference for the tokens/layout/components you reimplement. (The chrome you copy from [`chrome/`](chrome/), not here.) |
 
 ## In one paragraph
 
