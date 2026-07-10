@@ -348,8 +348,24 @@ a.card:hover{text-decoration:none;transform:translateY(-4px);box-shadow:var(--sh
 .activity.active .adot{background:var(--hue-released)}
 .activity.inactive .adot{background:var(--text-faint)}
 .proj-bottom{margin-top:auto;padding-top:.6rem}
-.proj-bottom .updated{font-family:var(--sans);font-size:.78rem;color:var(--text-faint);margin:0 0 .5rem}
-.proj-bottom .tags{margin:0 0 .6rem}
+/* Tech row — platform + language icons (Font Awesome) in place of the text tag chips */
+.tech{position:relative;z-index:2;display:flex;flex-wrap:wrap;align-items:center;gap:.95rem;margin:0 0 1rem;font-size:1.02rem}
+.tech-item{position:relative;display:inline-flex;color:var(--text-faint);line-height:1;
+  transition:color .15s var(--ease),transform .15s var(--ease)}
+.tech-item i{width:1.1em;text-align:center}
+.tech-item:hover{color:var(--pc,var(--accent));transform:translateY(-2px)}
+.tech-item .tech-label{position:absolute;left:50%;bottom:calc(100% + .5rem);
+  transform:translateX(-50%) translateY(.2rem);
+  padding:.24rem .5rem;border-radius:.42rem;
+  background:var(--panel);border:1px solid var(--line-2);box-shadow:var(--shadow-lg);
+  font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.01em;
+  color:var(--text-soft);white-space:nowrap;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .13s var(--ease),transform .13s var(--ease),visibility .13s;z-index:7}
+.tech-item:hover .tech-label{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+/* Updated — now the card's closing line, under the links, set off by a hairline */
+.proj-bottom .updated{margin:.9rem 0 0;padding-top:.75rem;border-top:1px solid var(--line);
+  font-family:var(--sans);font-size:.76rem;color:var(--text-faint)}
 .card-links a{display:inline-flex;align-items:center;gap:.15rem}
 .card-links a.ext::after{content:"↗";margin-left:.02em;font-size:.92em;opacity:.8}
 /* whole project card clickable → node page (stretched link); other links stay above */

@@ -32,13 +32,36 @@
     </div>
   </div>
   <div class="proj-bottom">
-    {%- if p.updated -%}<p class="updated">Updated {{ p.updated }}</p>{%- endif -%}
-    <div class="tags">
-      {%- for t in p.tags -%}<span class="tag">{{ t }}</span>{%- endfor -%}
+    {%- if p.tags and p.tags.size > 0 -%}
+    <div class="tech">
+      {%- for t in p.tags -%}
+        {%- case t -%}
+          {%- when 'JavaScript' -%}{%- assign ic = 'fa-brands fa-js' -%}
+          {%- when 'Node 24' -%}{%- assign ic = 'fa-brands fa-node-js' -%}
+          {%- when 'Node' -%}{%- assign ic = 'fa-brands fa-node-js' -%}
+          {%- when 'Angular' -%}{%- assign ic = 'fa-brands fa-angular' -%}
+          {%- when 'GitHub Pages' -%}{%- assign ic = 'fa-brands fa-github' -%}
+          {%- when 'Ruby' -%}{%- assign ic = 'fa-solid fa-gem' -%}
+          {%- when 'Jekyll' -%}{%- assign ic = 'fa-solid fa-flask' -%}
+          {%- when 'Electron' -%}{%- assign ic = 'fa-solid fa-atom' -%}
+          {%- when 'Qt 6' -%}{%- assign ic = 'fa-solid fa-cubes' -%}
+          {%- when 'C++' -%}{%- assign ic = 'fa-solid fa-code' -%}
+          {%- when 'QML' -%}{%- assign ic = 'fa-solid fa-paintbrush' -%}
+          {%- when 'TypeScript' -%}{%- assign ic = 'fa-solid fa-code' -%}
+          {%- when 'Web UI' -%}{%- assign ic = 'fa-solid fa-globe' -%}
+          {%- when 'Web' -%}{%- assign ic = 'fa-solid fa-globe' -%}
+          {%- when 'Desktop' -%}{%- assign ic = 'fa-solid fa-desktop' -%}
+          {%- when 'Canvas' -%}{%- assign ic = 'fa-solid fa-palette' -%}
+          {%- else -%}{%- assign ic = 'fa-solid fa-tag' -%}
+        {%- endcase -%}
+        <span class="tech-item" role="img" aria-label="{{ t }}"><i class="{{ ic }}" aria-hidden="true"></i><span class="tech-label" aria-hidden="true">{{ t }}</span></span>
+      {%- endfor -%}
     </div>
+    {%- endif -%}
     <div class="card-links">
       <a class="stretch" href="{{ target_href }}" aria-label="{{ p.name }} documentation">Docs&nbsp;↗</a>
       <a class="ext" href="{{ p.repo }}">Repository</a>
     </div>
+    {%- if p.updated -%}<p class="updated">Updated {{ p.updated }}</p>{%- endif -%}
   </div>
 </article>
