@@ -13,13 +13,42 @@
 # pass — see hub/standards/process-reports.md. [] = none digested yet.
 
 pokered-save-editor-2:
-  commit: 93756b74c456fad4bf6b44aeaf3b2b11bcdfd693
+  commit: 0686b588af66156adbefe835931dd0c6a60e5318
   branch: dev
-  seen: 2026-07-12
+  seen: 2026-07-13
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-06-26-adopting-updates.md             # folded into standards 0.9.1
     - 2026-06-26-adopting-updates-express-auth.md # folded into standards 0.9.3 (verification floor + this marker scheme)
     - 2026-06-26-check-for-updates.md            # digested 2026-06-28 report-review (0.9.8) — no-change confirming pass, nothing to fold
+  # 2026-07-13 round-up: clean fast-forward 93756b7 → 0686b58, 23 commits ALL dated 2026-07-11/12,
+  # VERSION 0.16.6-alpha → 0.24.4-alpha — the project's single biggest day so far, and one long theme:
+  # THE ORACLE. (1) The MAP is now genuinely emulated (0.17.0) — the game's own overworld pipeline
+  # (wOverworldMap → wSurroundingTiles → wTileMap), not a picture of it — and a legally backed-up
+  # cartridge booted headless in PyBoy became the judge (0.18.0, tst_emu_parity; the ROM is git-ignored,
+  # refused by .gitignore anywhere in the tree, and every emulator case SKIPs without it). It matched on
+  # four arrays and FAILED on the border ring, held as an explicit QEXPECT_FAIL. Connection strips closed
+  # it (0.19.0): the `connection` macro re-derived from the cartridge, all 11 compiled bytes of all
+  # 78 connections verified, zero mismatches; the ring is the neighbouring maps bleeding in, not a wall of
+  # border block. (2) The SIX GLITCH PALETTES are real and render (0.20.0) — wMapPalOffset is SUBTRACTED
+  # from a pointer into eight contiguous 3-byte fade palettes, so multiples of 3 give the four contrast
+  # levels and everything else straddles two entries: exactly four and exactly six, verified 10/10 on the
+  # console. Then the player is drawn (0.21.0) and the two "harmless" palettes stop being harmless (their
+  # damage is to the OBJECT palettes). (3) MUSIC, end to end: imported from pret/pokered and lockstep-
+  # verified against the cartridge (0.22.0); a DMG APU + a transliterated Gen 1 sequencer in C++
+  # (`pse-audio`); then tst_sound_parity — the cartridge's own 256 bytes of engine state photographed EVERY
+  # FRAME, all 46 tracks byte-for-byte (0.22.1). It immediately caught three bugs of *tidiness* (the port
+  # had done the right thing where the game does the wrong one) and, best of all, caught the ORACLE ITSELF
+  # being wrong (a map fade reads the new track ids while the OLD bank is still mapped). Glitch music turned
+  # out not to exist: ids are computed from header addresses, so a 3-channel song occupies 3 ids and the
+  # other two are its inner voices — 46 tracks + 105 inner voices, ZERO garbage ids, all 151 now in the
+  # panel (0.23.0). (4) The map's MEANING layer (0.24.0) uncovered a SAVE-CORRUPTING bug: the collision
+  # lists are SHARED in the cartridge (RedsHouse1/2 are one list), the v1 importer walked the chain one step
+  # out of phase for three tilesets, and the editor WRITES that pointer — so a Poké Mart got a bedroom's
+  # walls. Fixed in 3 lines, negative-controlled. (5) The Map screen overhaul: a chassis (0.24.2), a real
+  # layer system (0.24.3), and ANIMATION (0.24.4) — writing which exposed two more invented facts (the water
+  # ROTATES −1→+3, it does not slide 0→4; the flowers run 1,1,2,3, not 2,3,1,1). Reconciled: projects.yml
+  # (PSE2 → 0.24.4 / Jul 12; blurb gains the emulated map + soundtrack). Folded into the new 2026-07-12 day
+  # post. Marker → 0686b58; seen → 2026-07-13.
   # Covered through the project-side fairyfox-mesh onboarding (mesh-aware CLAUDE.md +
   # cross-project-sync adoption) and theming its Doxygen docs site to the fairyfox
   # design system (Case B — themed generator). Folded into the 2026-06-25 day post
@@ -88,9 +117,9 @@ pokered-save-editor-2:
   # 2026-07-06-adopting-updates.md still pending for the inbound report-review pass.)
 
 random-ai-prompt:
-  commit: 20e36af                                  # last commit dated 2026-07-11 (see the 07-12 note)
+  commit: 2f1459ff0d2eba7deba7e5396cefbec363d3ab4b
   branch: dev
-  seen: 2026-07-12
+  seen: 2026-07-13
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-06-26-adopting-updates.md             # folded into standards 0.9.1
     - 2026-06-26-adopting-updates-2.md           # digested 0.9.8 — CI-owns-tag release callout (git-workflow) + hub_version-placeholder backfill note (process-reports)
@@ -103,6 +132,28 @@ random-ai-prompt:
     - 2026-07-01-propose-git-workflow-backmerge.md # digested 0.12.0 — git-workflow dev-contains-main invariant + branch-sync.yml
     - 2026-07-01-upgrade-policy-proposal.md      # digested 0.12.0 — new dependencies.md standard
     - 2026-07-02-propose-scorecard-hardening.md  # digested 0.12.0 — new supply-chain-hardening.md (mandatory branch protection, reconciled release flow)
+  # 2026-07-13 round-up: clean fast-forward 20e36af → 2f1459f (36 commits), VERSION 2.58.0 → 2.60.1 — all
+  # commits dated 2026-07-12 by author date, so the marker now goes to HEAD (the previous pass had parked it
+  # at 20e36af because the tip was dated a day still in progress; that day is now complete). NOTE: RAP's own
+  # changelog dates the 2.60.1 entry 2026-07-13 while git says 2026-07-12 21:52 −0600 — a timezone artefact,
+  # not a second day; its session log for the whole run is notes/sessions/2026-07/2026-07-12.md, so the day
+  # post follows the session log. The day's theme is the same as PSE2's: MEASURE, don't assert. (1) 2.58.0
+  # put the mobile app in CI at all — every control PRESSED by a test rather than merely rendered, behind
+  # coverage gates; most of the work was fighting the harness (the emulator launching the app behind its own
+  # lock screen, a dark screen granting window focus to nobody, the LAUNCHER itself ANR-ing on top of the app
+  # under test). (2) 2.60.0 verified the headline 1000-prompt promise on a REAL Android runtime (Detox,
+  # release APK): 1000 prompts render in 253 ms with memory FLAT as the list grows 50× (110 MB vs 112 MB) —
+  # and the "defect" the gate first reported was THE TEST's own: results accumulate across rolls by design, so
+  # a test waiting for "200 generated" after a 20-prompt baseline (label reads "220") waited out a ten-minute
+  # timeout and reported it as the app being slow. The instrumentation added to diagnose it is what disproved
+  # it. Also: CI had been RED on dev while every local gate said green (format:check joined npm test); the last
+  # hand-port (the DPL insert grammar) moved into the engine; notes-first became a hard rule (§A0). (3) 2.60.1
+  # is a CRITICAL security fix CodeQL found on the release PR: /api/image/open and /api/image/reveal built a
+  # SHELL STRING around a request-derived path, so an image named `x" & calc & ".png` closes the quote and runs
+  # the rest (js/command-line-injection). Fixed structurally — no shell at all, program + argv handed to
+  # execFile — plus prototype pollution via mergeSidecar, a world-writable temp cache in os.tmpdir(), and three
+  # check-then-use races. Reconciled: projects.yml (RAP → 2.60.1 / Jul 12). Folded into the new 2026-07-12 day
+  # post. Marker → 2f1459f; seen → 2026-07-13.
   # 2026-06-28 report-review (0.9.8): digested the three reports above + PSE2's check-for-updates.
   # Folded Theme B (elevate CI-owns-tag to a callout in git-workflow.md "Cutting a release"),
   # Theme C (backfill note for stale hub_version placeholders in process-reports.md), and Theme D
@@ -290,13 +341,28 @@ random-ai-prompt:
   # 2026-07-09 and 2026-07-10 day posts. Marker → 3686435, VERSION 2.50.1 → 2.52.0.
 
 fairyfox-games:
-  commit: d5611b8c621946f0f54d69de6219c9b80766ee1f
+  commit: e3f9a7fc5e6e36897f6672fe166deeb17712e77e
   branch: dev
-  seen: 2026-07-12
+  seen: 2026-07-13
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-06-29-setup.md                 # digested 0.10.0 — collection/monorepo as a recorded exception; static site doubles as docs
     - 2026-06-29-onboarding-verify.md     # digested 0.10.0 — same-day setup cross-ref added to onboarding
     - 2026-06-30-docs-site-feedback.md    # digested 0.10.0 — one-seamless-site model (no back-button, shared chrome + submenu, Games nav slot); tags kept games-local
+  # 2026-07-13 round-up: clean fast-forward d5611b8 → e3f9a7f, VERSION 0.21.0 → 0.22.0 (all commits dated
+  # 2026-07-12). A GROW then a PLANT. Skyline got **the wind** (0.21.1) — its slabs now arrive as named,
+  # stage-gated patterns instead of textureless drift, bringing the 9th of the collection onto varied
+  # structure. Then **Brim** (0.22.0, MINOR) — the 13th game and a genuinely new verb: POUR. A vessel arrives
+  # with a fill LINE to reach and a RIM not to cross; you get ONE pour (hold to open the spout, release to
+  # close). The hook falls out of the physics rather than being bolted on: the stream is a DELAY LINE
+  # (CONFIG.LAG, 8 ticks ≈ 133 ms), so releasing stops the SOURCE, not the rise — the column already in the
+  # air keeps arriving. You cannot stop where you want; you must stop EARLY by exactly the amount still
+  # falling, and watch it land. Short of the line = a life; over the rim = a life; settling in the gold band
+  # under the rim = a BRIM, multiplier ×2…×9, while a timid land still scores but breaks the combo — greed and
+  # survival are the same act (the collection's core-fun test). Varied structure + progression from birth:
+  # Steady / Slow Draw (the greed window) / Stutter (trickle↔gush, so the carry changes size every vessel and
+  # a memorised release point is worse than useless) / Narrow Neck / Hairline / The Flood, each minStage-gated.
+  # Reconciled: projects.yml (games → 0.22.0 / Jul 12). Folded into the new 2026-07-12 day post.
+  # Marker → e3f9a7f; seen → 2026-07-13.
   # 2026-06-29: hub brought the games repo in as a tracked node — full-history dev mirror
   # cloned under assets/references/fairyfox-games. Repo is at VERSION 0.2.0 (two games:
   # Ink Bloom + Echo Chamber; themed docs site live, Netlify games.fairyfox.io mirror
@@ -404,10 +470,19 @@ fairyfox-games:
   # 0.20.2 / Jul 10). Folded into the 2026-07-08 and 2026-07-10 day posts. Marker → e7d2768.
 
 fairyfox-stories:
-  commit: 112f9a7cc9afd29923b954ef821742881b2df032
+  commit: 17fc7f300118c6478545ccc7d92ce224b09c7dde
   branch: dev
-  seen: 2026-07-12
+  seen: 2026-07-13
   reports_through: []          # digested-report filenames (append-only); see header
+  # 2026-07-13 round-up: clean fast-forward 112f9a7 → 17fc7f3, VERSION 0.3.3 → 0.3.4 (all commits dated
+  # 2026-07-12). A pure GROW day — The Wintering House, The Cartographer of Decks and The Cinderwick Job
+  # each gain a third chapter. No plant: the farm's own 3-day cadence gate said the next one was not due
+  # until 2026-07-13, and it HELD rather than planting early (recorded in its notes as a skipped run, which
+  # is the right kind of honesty for an automated farm). Plus a CI-only fix: `branch-sync` (the back-merge
+  # invariant guard) fired on push to main and checked dev instantly, but the back-merge lands seconds later
+  # by design — so it failed on every release. It now retries six times at 30s intervals; a genuinely skipped
+  # back-merge is still caught, ~2.5 minutes later. Reconciled: projects.yml (stories → 0.3.4 / Jul 12).
+  # Folded into the new 2026-07-12 day post. Marker → 17fc7f3; seen → 2026-07-13.
   # 2026-07-07 round-up: first pass for this newly-registered node — full-history dev mirror cloned fresh
   # under assets/references/fairyfox-stories (it became reference:true when the site registered it in 0.15.1).
   # At VERSION 0.2.0, HEAD 803db1f, all history dated 2026-07-06: an AI-managed Jekyll "story farm" whose

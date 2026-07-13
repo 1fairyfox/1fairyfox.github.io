@@ -3,7 +3,7 @@
 _Current state only._ For the chronological history see [`sessions/`](sessions/README.md);
 for the commit-by-commit changelog see [`version.md`](version.md).
 
-**Version:** `0.15.9` (single source of truth: repo-root `VERSION`; see
+**Version:** `0.15.10` (single source of truth: repo-root `VERSION`; see
 [`reference/versioning.md`](reference/versioning.md)).
 
 ## Current state (read this first)
@@ -127,14 +127,23 @@ The rest of the structure is in place end to end:
   engine, catalog, and store. The 2.53–2.58 line then **de-duplicated** those targets — one
   generated provider registry every runtime imports, the mobile app's 892-line hand-port and five
   drift checks deleted — removed the caps it had been quietly imposing on its own users, and put
-  the mobile app in CI) and Pokered Save Editor 2
-  (`0.16.6-alpha`, themed Doxygen docs; a Market **Exchange** — currency/healing/item-for-item —
-  and the name entry rebuilt from a character grid into a real **ASDF keyboard deck**; adopted
+  the mobile app in CI; the 2.58–2.60.1 line then **measured** the 1000-prompt promise on a real
+  Android runtime rather than asserting it — 253 ms to render, memory flat as the list grows 50× —
+  and closed a **critical command injection** in the local backend, found by CodeQL: a filename could
+  close the quote in a shell string, so the shell is gone entirely) and Pokered Save Editor 2
+  (`0.24.4-alpha`, themed Doxygen docs; a Market **Exchange** and the name entry rebuilt into a real
+  **ASDF keyboard deck**, then its biggest day yet — the map screen is now **genuinely emulated** (the
+  game's own overworld pipeline, with a legally backed-up cartridge in a headless emulator grading every
+  buffer byte for byte), the six **glitch palettes** render as the real article, a **Game Boy sound chip
+  + Gen 1's sequencer in C++** play all 46 tracks and their **105 inner voices** with the console
+  confirming the engine state frame by frame, and a years-old **save-corrupting bug** (shared collision
+  lists walked one step out of phase — a Poké Mart got a bedroom's walls) was found and pinned; adopted
   git-flow + process-reports + compliance + express-authorizations on 2026-06-26). The two
   integrated nodes are Fairy Fox Games
-  (`0.21.0` — twelve games, the newest being **Tether**, a swing/grapple pendulum; the current
-  growth lever is **depth inside the mechanic**, Polarity the reference build) and Fairy Fox
-  Stories (`0.3.3` — six books; the daily grow/plant automation now actually runs).
+  (`0.22.0` — thirteen games, the newest being **Brim**, a pour/fill game built on a delay line; the
+  current growth lever is **depth inside the mechanic**, Polarity the reference build) and Fairy Fox
+  Stories (`0.3.4` — six books; the daily grow/plant automation now actually runs, and holds its plant
+  when the cadence gate says it isn't due).
 - **Notes:** this living-notes system, mirroring the convention used across my
   projects.
 - **Sync:** the pull-only cross-project model is documented
