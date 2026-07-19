@@ -16,6 +16,7 @@ footer and each one drifted. Now there is a single source, and adopting it is a 
 | **Stylesheet** (palette, type, every chrome component) | the live master `assets/css/main.css` | **pull over git** (below) |
 | **Reader menu** behaviour | the live master `assets/js/reader.js` | **pull over git** |
 | **Nav** behaviour (hamburger, dropdowns) | the live master `assets/js/nav.js` | **pull over git** |
+| **Coins** behaviour (reading-engagement counter) | the live master `assets/js/coins.js` | **pull over git** |
 | **`<head>` chrome** (theme metas + pre-paint script + fonts) | [`head.html`](head.html) | copy verbatim |
 | **Header** (brand + fixed primary nav) | [`header.html`](header.html) | copy verbatim |
 | **Subnav** (section row) | [`subnav.html`](subnav.html) | copy, fill `{{FF_SUBNAV_ITEMS}}` |
@@ -41,8 +42,8 @@ your build already uses:
 # sparse/partial checkout of just the assets you need, into a build folder
 git clone --no-checkout --depth 1 https://github.com/1fairyfox/1fairyfox.github.io _ff && \
 cd _ff && git sparse-checkout set assets/css/main.css assets/js/reader.js assets/js/nav.js \
-  hub/standards/docs-site/chrome && git checkout
-# → copy assets/css/main.css, assets/js/{reader,nav}.js, and the chrome/*.html partials
+  assets/js/coins.js hub/standards/docs-site/chrome && git checkout
+# → copy assets/css/main.css, assets/js/{reader,nav,coins}.js, and the chrome/*.html partials
 #   into your project's build output / static dir.
 ```
 
@@ -59,8 +60,9 @@ Then, on every page the generator emits:
 3. (Recommended) Paste [`subnav.html`](subnav.html) below it; fill this project's pages.
 4. Paste [`footer.html`](footer.html) before the scripts; fill `{{FF_PROJECT_KEY}}` /
    `{{FF_PROJECT_NAME}}`.
-5. Load `nav.js` then `reader.js` (both `defer`) before `</body>`. `reader.js` injects
-   the "Aa" button into the header for you.
+5. Load `nav.js`, `reader.js`, then `coins.js` (all `defer`) before `</body>`. `reader.js`
+   injects the "Aa" button into the header for you; `coins.js` injects the coin button just
+   to its left.
 
 ## The placeholder contract
 

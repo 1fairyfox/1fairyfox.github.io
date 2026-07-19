@@ -81,18 +81,51 @@ visible "jump":
   Stories + Games sit inside the **Farms** dropdown (a single `details.dd`); everything
   else is a plain link. These point at the main-site sections (same origin for Pages
   projects). The set and order are fixed across the mesh — don't reorder, drop, or add
-  items per project. The exact markup is in [`reference/`](reference/); mark the current
-  top-level section `.active` (on a Stories/Games page, both the Farms `<summary>` and
-  the matching dropdown link).
-- **Submenu (recommended) — a secondary row directly below the primary nav** that
-  carries the **context** links and localizes you within a section. It's the same flat
-  pill style as the primary nav. Two canonical uses, identical in shape:
-  - On the **Projects** area, the submenu lists the projects.
-  - Inside a **project**, the submenu lists *that* project's own pages (Overview ·
-    Guides · Reference · Changelog …).
+  items per project. The exact markup is in [`reference/`](reference/).
 
-  The primary nav never changes between pages; the submenu is the part that changes.
-  Mark the current submenu item `.active`.
+  **Active state — a sub-project is always under `Projects`.** On every page of a
+  standalone project's docs site, the primary-nav item marked `.active` (with
+  `aria-current="page"`) is **`Projects`** — always, and **only** `Projects`, without
+  exception. A project lives under Projects and nowhere else, so a project page never marks
+  `Home`, `Docs`, `Updates`, or `About` active (those are the hub's own sections, not the
+  project's). Do not try to map a project's Overview to `Home` or its API docs to `Docs` —
+  the whole project sits under `Projects`. (The two integrated **farms**, Stories and Games,
+  are the hub's own top-level slots and mark **Farms**; that is a hub concern, not a
+  standalone sub-project. The "mark the current section" guidance elsewhere is about the
+  hub's own pages — on a sub-project it is always `Projects`.)
+- **Submenu (the section row) — a secondary row directly below the primary nav** that
+  carries the **context** links and localizes you within a section. It's the same flat
+  pill style as the primary nav. On the **Projects** area it lists the projects; inside a
+  **project** it follows the **canonical project subnav structure** below. The primary nav
+  never changes between pages; the submenu is the part that changes. Mark the current
+  submenu item `.active`. A project docs site **should** carry this row.
+
+### The canonical project subnav structure
+
+Inside a project, the subnav has a **fixed three-zone shape** so every project's docs site
+localizes the same way. Left → the project; centre → its pages; right → its repo:
+
+```
+[ <Project name> ]   Notes · Tutorials · Changelog · API · Download   [ Repository ↗ ]
+   (overview/home)            (the project's own doc pages)              (right-aligned)
+```
+
+- **Left — the project name**, which doubles as the **overview / home** link (the project's
+  README-equivalent landing page). This is the project's sub-brand locator; it is *not* a
+  replacement for the global brand/Home mark in the header above it.
+- **Centre — the project's own doc pages**, in a consistent order. The canonical set, include
+  the ones the project actually has: **Notes**, **Tutorials**, **Changelog**, **API**
+  (generated reference), **Download**. Name them consistently; don't invent parallel names for
+  the same role. A project with downloads **must** include **Download** here (see the
+  downloads requirement in
+  [`06-content-and-organization.md`](06-content-and-organization.md#downloads-a-real-page-when-a-project-offers-downloads)).
+- **Right — `Repository ↗`**, right-aligned (`.subnav-repo`, pushed over with
+  `margin-left:auto`), linking the project's GitHub repo.
+
+Mark the current centre item `.active aria-current="page"`. Every centre link must go to a
+real, chrome-wearing, comfortably-formatted page — never a raw generated index dumped outside
+the theme (see the quality bar in
+[`06-content-and-organization.md`](06-content-and-organization.md#page-quality-comfortable-formatted-connected)).
 - **Reader ("Aa") menu (required).** The header also carries the shared Kindle-style
   reader control, at the far right of the header (past the primary nav) — same on every site, wired to the
   origin-wide `fairyfox:reader` key so a theme/size/spacing/width choice carries across

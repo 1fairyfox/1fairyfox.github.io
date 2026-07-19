@@ -98,8 +98,13 @@ under one versioned origin-wide `localStorage` key so the setting is shared acro
 every same-origin `fairyfox.io` site**:
 
 - **Key:** `fairyfox:reader:b` → JSON `{ theme, accent, size, lh, width }`. The `:b`
-  suffix **versions the schema** — bump the suffix when the value shape changes, so a
-  site running the old model never mis-reads the new one (and vice versa).
+  suffix **versions the schema**. **Never lose a user's saved settings.** Prefer evolving
+  the value in place (merge unknown/missing fields against defaults, as `reader.js` does) so
+  a shape change needs no new key. If the suffix ever *must* bump, the new version **must
+  read the old key and migrate the data forward** (carry every still-meaningful field over),
+  never start empty — an orphaned old key is data loss, which is not allowed (see the
+  durability mandate in [`../coins.md`](../coins.md#durability--no-data-loss), which governs
+  the reader key too).
 - **Theme:** `system` (default) · `light` · `sepia` · `dark` → drives `data-theme`.
   Presented as **weather/time icon buttons** — sun (Light), sunset (Sepia), moon (Dark)
   — with an **Auto** toggle in the section header for `system`.
@@ -117,13 +122,14 @@ every same-origin `fairyfox.io` site**:
 - **Width:** `narrow 38rem` · `normal 46rem` (default) · `wide 58rem` → `--reading-width`
   (caps the reading measure on prose/doc pages). **Story-only** (see below).
 
-**Story-only controls.** Line spacing + width apply, and their controls un-lock, **only
-on story pages** — those that opt in with **`data-story` on `<html>`** (a book/chapter
-reading page). Everywhere else the two sit visible-but-disabled with an "Enables when
-reading a story" note, and reading keeps the designed defaults (`1.65` / `46rem`). **Text
-size, theme and accent apply on every page.** The saved values persist across the boundary
-either way — they're just not *applied* off a story. Detail:
-[`12-shared-chrome.md`](12-shared-chrome.md#the-readers-story-only-controls-data-story).
+**Reading-page controls.** Line spacing + width apply, and their controls un-lock, **only on
+pages meant to be read** — those that opt in with **`data-read` on `<html>`** (a note, a legal
+page, a guide, an article) or **`data-story`** (a book/chapter). **Non-reading surfaces —
+index/list/link pages, category pages, API reference, sidebars — omit the flag** and keep the
+designed defaults (`1.65` / `46rem`), the two controls sitting visible-but-disabled with an
+"Enables on reading pages" note. **Text size, theme and accent apply on every page.** The saved
+values persist across the boundary either way — they're just not *applied* off a reading page.
+Detail: [`12-shared-chrome.md`](12-shared-chrome.md#the-readers-story-only-controls-data-story).
 
 These constants are **normative** — keep them byte-identical across the mesh so a
 choice made on one site carries to the next. Apply the saved theme / accent / size /

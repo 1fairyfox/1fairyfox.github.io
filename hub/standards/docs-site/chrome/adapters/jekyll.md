@@ -5,7 +5,7 @@ its own `<head>`/layout. (The main site itself is Jekyll — this is how it's wi
 
 ## Wiring
 
-1. **Pull** `assets/css/main.css` and `assets/js/{reader,nav}.js` from the hub into the
+1. **Pull** `assets/css/main.css` and `assets/js/{reader,nav,coins}.js` from the hub into the
    project's own `assets/` (a build step or a committed vendored copy — not a runtime
    link to fairyfox.io).
 2. Drop the bundle HTML into `_includes/` as `header.html`, `subnav.html`,
@@ -25,6 +25,7 @@ its own `<head>`/layout. (The main site itself is Jekyll — this is how it's wi
   {%- include footer.html -%}
   <script src="{{ '/assets/js/nav.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/reader.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/coins.js' | relative_url }}" defer></script>
 </body>
 </html>
 ```

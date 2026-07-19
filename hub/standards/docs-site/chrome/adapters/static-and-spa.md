@@ -8,16 +8,16 @@ is Random AI Prompt's shape), MkDocs, Astro, plain templates.
 Paste the four HTML parts directly into your page (or your one shared template):
 [`head.html`](../head.html) in `<head>`, [`header.html`](../header.html) +
 [`subnav.html`](../subnav.html) after `<body>`, [`footer.html`](../footer.html) before
-the scripts, then `nav.js` + `reader.js` (both `defer`). Vendor `main.css` +
-the two JS files from the hub into your assets folder. Set the `.active` class by hand
+the scripts, then `nav.js`, `reader.js`, `coins.js` (all `defer`). Vendor `main.css` +
+the three JS files from the hub into your assets folder. Set the `.active` class by hand
 per page.
 
 ## React / Vite / other component apps
 
-1. **Vendor the assets, don't hot-link.** Pull `main.css`, `reader.js`, `nav.js` from
-   the hub into `public/` (or import `main.css` through the bundler). `reader.js` and
-   `nav.js` are plain IIFEs — load them as classic scripts (e.g. `<script defer>` in
-   `index.html`), not ES modules; they attach to the DOM on load.
+1. **Vendor the assets, don't hot-link.** Pull `main.css`, `reader.js`, `nav.js`, `coins.js`
+   from the hub into `public/` (or import `main.css` through the bundler). `reader.js`,
+   `nav.js`, and `coins.js` are plain IIFEs — load them as classic scripts (e.g.
+   `<script defer>` in `index.html`), not ES modules; they attach to the DOM on load.
 2. **The chrome is not React state.** Render the header/subnav/footer as a static
    `Chrome` component whose markup matches the bundle's HTML exactly (same classes,
    same fixed nav). Don't re-model the primary nav as data the app can reorder — it's
@@ -26,9 +26,10 @@ per page.
    inline in `index.html`'s `<head>` (before the app bundle) so the theme is applied
    before React mounts — the same no-flash guarantee as the static sites. If the app
    prerenders/hydrates, the chrome markup should be in the prerendered HTML too.
-4. `reader.js` inserts the "Aa" button into `.site-header .wrap`; make sure that
-   element exists in the initial DOM (prerendered or in `index.html`), not only after a
-   client render, or the button won't appear until hydration.
+4. `reader.js` inserts the "Aa" button into `.site-header .wrap` and `coins.js` inserts the
+   coin button just left of it; make sure that element exists in the initial DOM
+   (prerendered or in `index.html`), not only after a client render, or the buttons won't
+   appear until hydration.
 
 ## MkDocs / Astro / etc.
 

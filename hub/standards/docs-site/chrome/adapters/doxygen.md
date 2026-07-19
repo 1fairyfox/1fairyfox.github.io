@@ -12,7 +12,7 @@ DISABLE_INDEX          = NO
 HTML_HEADER            = docs/ff-header.html
 HTML_FOOTER            = docs/ff-footer.html
 HTML_EXTRA_STYLESHEET  = docs/main.css        # your pulled copy of the master
-HTML_EXTRA_FILES       = docs/reader.js docs/nav.js
+HTML_EXTRA_FILES       = docs/reader.js docs/nav.js docs/coins.js
 HTML_COLORSTYLE        = LIGHT                 # let the shared CSS/reader own theming
 ```
 
@@ -21,11 +21,12 @@ HTML_COLORSTYLE        = LIGHT                 # let the shared CSS/reader own t
    [`header.html`](../header.html) and [`subnav.html`](../subnav.html) right after
    `<body>`. Keep Doxygen's `$relpath^`, `$projectname`, and the required
    `<!--BEGIN/END-->` markers intact — paste the chrome *around* them.
-2. **`ff-footer.html`** = the bundle's [`footer.html`](../footer.html), then the two
-   `<script>` tags for `nav.js` + `reader.js`, then Doxygen's closing
-   `</body></html>` and its generated-timestamp block.
-3. Pull `main.css` + `reader.js` + `nav.js` from the hub into `docs/` as part of the
-   build; don't hot-link them.
+2. **`ff-footer.html`** = the bundle's [`footer.html`](../footer.html), then the
+   `<script>` tags for `nav.js`, `reader.js`, and `coins.js`, then just Doxygen's closing
+   `</body></html>`. **Drop Doxygen's own generated footer / timestamp bar** — the chrome
+   footer is the only footer; don't let the generated one render underneath it.
+3. Pull `main.css` + `reader.js` + `nav.js` + `coins.js` from the hub into `docs/` as part
+   of the build; don't hot-link them.
 
 ## The generated-reference boundary
 
