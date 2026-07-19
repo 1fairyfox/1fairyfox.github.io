@@ -9,6 +9,10 @@
   - The PRIMARY nav is the fixed mesh-wide set, identical on every page/project:
     Home · Projects · Farms (Stories · Games) · Docs · Updates · About (About last).
     Stories + Games sit inside the "Farms" dropdown (nav.js drives it).
+  - ACTIVE STATE: on a standalone sub-project's pages, mark ONLY "Projects" .active
+    (aria-current="page") — always, without exception; a project lives under Projects
+    and nowhere else. Never mark Home/Docs/Updates/About on a project page. (The hub's
+    own pages mark their current section; the farms mark Farms.)
   - The brand mark + the Home item ARE the way home — there is no separate
     "← Back to Fairy Fox" button.
   - Use absolute https://fairyfox.io/... URLs (shown) so the chrome works whether the
@@ -49,9 +53,15 @@
       <a href="https://fairyfox.io/about/">About</a>
     </nav>
 
-    <!-- Reader ("Aa") menu button — inserted here (at the far right, just AFTER .nav /
-         past "About") by the reader script on every site; the panel is appended to
-         <body>. See 04-components.md. -->
+    <!-- Coin button + reader ("Aa") button — both injected at the far right of .wrap
+         (just AFTER .nav / past "About") by their scripts on every site; the coin sits
+         just LEFT of the reader button. Their panels are appended to <body>. Do not
+         hard-code these; coins.js + reader.js insert them. Shown here for structure.
+         See 04-components.md. -->
+    <button class="ff-coin-btn" type="button" aria-label="Fairy Fox coins: 0"
+      aria-haspopup="dialog" aria-expanded="false" aria-controls="ff-coin-panel" title="Coins">
+      <span class="ff-coin-ic" aria-hidden="true"><!-- coin glyph --></span><span class="ff-coin-n">0</span>
+    </button>
     <button class="ff-reader-btn" type="button" aria-label="Reading settings"
       aria-haspopup="dialog" aria-expanded="false" aria-controls="ff-reader-panel" title="Reading settings">
       <span class="aa-lg">A</span><span class="aa-sm">a</span>
@@ -90,9 +100,12 @@
     </div>
     <div class="footer-col">
       <h4>This project</h4>
-      <!-- this project's own home, repo, notes (no hub-local node page) -->
+      <!-- this project's own home, repo, and its legal pages (no hub-local node page) -->
       <a href="https://fairyfox.io/&lt;key&gt;/">Project home</a>
       <a href="https://github.com/1fairyfox/&lt;key&gt;">Repository ↗</a>
+      <a href="https://fairyfox.io/&lt;key&gt;/legal/privacy/">Privacy</a>
+      <a href="https://fairyfox.io/&lt;key&gt;/legal/terms/">Terms</a>
+      <a href="https://fairyfox.io/&lt;key&gt;/legal/cookies/">Cookies</a>
     </div>
     <div class="footer-col">
       <h4>Elsewhere</h4>

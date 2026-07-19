@@ -39,7 +39,8 @@ Full inventory + the pull commands + the placeholder contract live in
 
 - **Pulled from the live master** (one source of truth, never stale): the stylesheet
   `assets/css/main.css`, the reader behaviour `assets/js/reader.js`, the nav behaviour
-  `assets/js/nav.js`.
+  `assets/js/nav.js`, the coins behaviour `assets/js/coins.js` (the reading-engagement
+  counter — injects the coin button beside the reader "Aa" button).
 - **Static HTML in the bundle** (the resolved form of the site's Liquid includes):
   [`chrome/head.html`](chrome/head.html), [`chrome/header.html`](chrome/header.html),
   [`chrome/subnav.html`](chrome/subnav.html), [`chrome/footer.html`](chrome/footer.html).
@@ -59,17 +60,21 @@ button, the palette, the footer structure. Fillable per project: `{{FF_CSS_HREF}
 dropdown link). Editing a fixed part is not a "deviation" — it's the drift this bundle
 exists to remove.
 
-## The reader's story-only controls (`data-story`)
+## The reader's reading-page controls (`data-read` / `data-story`) {#the-readers-story-only-controls-data-story}
 
-The reader menu's **line spacing** and **width** are **story-only**: they apply, and their
-controls un-lock, only on pages that opt in with **`data-story` on the `<html>` element**
-(e.g. a book/chapter reading page). Everywhere else the two controls sit
-visible-but-disabled with an "Enables when reading a story" note, and reading uses the
-designed default measure. **Text size, theme and accent apply on every page.** The signal
-lives on `<html>` (not `<body>`) so the pre-paint `head.html` script can read it before
-first paint. This is part of the fixed reader behaviour (`reader.js` + `head.html`) — a
-project doesn't reimplement it; it just adds `data-story` to the `<html>` of its own story
-pages when it wants those controls live there.
+The reader menu's **line spacing** and **width** are **reading-page only**: they apply, and
+their controls un-lock, only on a page **meant to be read** — one that opts in with
+**`data-read` on the `<html>` element** (a note, a legal page, a guide, an article) or
+**`data-story`** (a book/chapter; it implies readable). **Exclude the surfaces that aren't
+reading:** index/list/link pages, category pages, API reference, and sidebars **do not** get
+`data-read`, so their measure stays the designed default. Everywhere without the flag the two
+controls sit visible-but-disabled with an "Enables on reading pages" note. **Text size, theme
+and accent apply on every page.** The signal lives on `<html>` (not `<body>`) so the pre-paint
+`head.html` script can read it before first paint. This is fixed reader behaviour (`reader.js`
++ `head.html`) — a project doesn't reimplement it; it just adds `data-read` (or `data-story`)
+to the `<html>` of its own **readable** pages, and **omits it** on non-reading surfaces.
+**Notes and legal pages are the biggest readable cases** — mark them; don't mark the notes
+landing/index or a link list.
 
 ## Versioning & sync
 
@@ -90,8 +95,8 @@ First-time and refresh both run through the normal flow in
 [`09-adopting-and-maintaining.md`](09-adopting-and-maintaining.md) and
 [`../adopting-updates.md`](../adopting-updates.md) — check, report, wait, apply on
 go-ahead. For the chrome specifically: pull the three master assets, copy the four HTML
-parts via the matching [adapter](chrome/adapters/), fill the slots, load `nav.js` +
-`reader.js`, and record the adopted `chrome/VERSION`.
+parts via the matching [adapter](chrome/adapters/), fill the slots, load `nav.js`,
+`reader.js` + `coins.js`, and record the adopted `chrome/VERSION`.
 
 ## Verify (is it being followed?)
 

@@ -29,7 +29,7 @@ the lifecycle runbooks:
 
 1. **Read the spec** — all of [`README.md`](README.md) and files `01`–`12`.
 2. **Vendor the chrome bundle** — pull [`chrome/`](chrome/) (and the master
-   `main.css`/`reader.js`/`nav.js`) over git and wire it in via the matching
+   `main.css`/`reader.js`/`nav.js`/`coins.js`) over git and wire it in via the matching
    [adapter](chrome/adapters/); record the adopted `chrome/VERSION`
    ([`12-shared-chrome.md`](12-shared-chrome.md)).
 3. **Reproduce the rest in the project's stack** — the tokens, page/content components,

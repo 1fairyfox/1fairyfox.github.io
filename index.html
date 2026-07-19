@@ -9,7 +9,7 @@ title: null
       <p class="lead">Plus a running log of changes.</p>
       <div class="hero-actions">
         <a class="btn primary" href="#projects">Projects</a>
-        <a class="btn" href="https://github.com/1fairyfox">GitHub profile ↗</a>
+        <a class="btn" href="https://github.com/1fairyfox">GitHub</a>
       </div>
       {%- assign latest = site.posts | first -%}
       <p class="hero-stat">{{ site.data.projects | size }} projects{% if latest %} · updated <b>{{ latest.date | date: "%b %-d" }}</b>{% endif %}</p>
@@ -80,17 +80,25 @@ title: null
       <h2>Documentation</h2>
       <a class="more" href="{{ '/docs/' | relative_url }}">Full library →</a>
     </div>
+    {%- comment -%} Home shows a curated peek per category (top few by order), not every
+      doc link — the full, browsable set lives in the library at /docs/. Keeps the front
+      page scannable instead of towering. {%- endcomment -%}
+    {%- assign home_doc_cap = 4 -%}
     <div class="doc-cats">
       {%- for cat in site.data.doc_categories -%}
         {%- assign items = site.docs | where: "category", cat.slug | sort: "order" -%}
         {%- if items.size > 0 -%}
         <div class="doc-cat">
-          <div class="cat-title"><span class="bar" aria-hidden="true"></span>{{ cat.name }}</div>
+          <a class="cat-title" href="{{ '/docs/' | relative_url }}#{{ cat.slug }}"><span class="bar" aria-hidden="true"></span>{{ cat.name }}<span class="cat-count">{{ items.size }}</span></a>
           <ul>
-            {%- for d in items -%}
+            {%- for d in items limit: home_doc_cap -%}
             <li><a href="{{ d.url | relative_url }}">{{ d.nav_title | default: d.title }}</a></li>
             {%- endfor -%}
           </ul>
+          {%- if items.size > home_doc_cap -%}
+          {%- assign rest = items.size | minus: home_doc_cap -%}
+          <a class="cat-more" href="{{ '/docs/' | relative_url }}#{{ cat.slug }}">+{{ rest }} more →</a>
+          {%- endif -%}
         </div>
         {%- endif -%}
       {%- endfor -%}

@@ -3,7 +3,7 @@
 _Current state only._ For the chronological history see [`sessions/`](sessions/README.md);
 for the commit-by-commit changelog see [`version.md`](version.md).
 
-**Version:** `0.16.2` (single source of truth: repo-root `VERSION`; see
+**Version:** `0.18.0` (single source of truth: repo-root `VERSION`; see
 [`reference/versioning.md`](reference/versioning.md)).
 
 ## Current state (read this first)
@@ -58,6 +58,21 @@ through the `0.4.x` line; it now includes:
   "Enables when reading a story." note and reading uses the designed defaults. Text size,
   theme and accent apply on every page. On the hub nothing sets `data-story`, so the two
   stay locked here — the sibling reading sites un-lock them when they re-adopt the chrome.
+- **Nine cross-brand standards** (`0.18.0`): promoted from an owner-directed deep-read of the
+  siblings' `CLAUDE.md` + notes — eight new `hub/standards/` (**testing**, **engineering-quality**,
+  **repo-hygiene**, **docs-lifecycle**, **research-capture**, **working-rhythm**,
+  **self-hosted-assets**, **farm-operating-model**), each Verify-wired into `compliance.md`, plus a
+  standardized **release posture** (RAP's CI-gated PR gate) in `git-workflow.md`. The hub's own
+  Google-Fonts/cdnjs hot-link is a recorded self-hosted-assets exception to remediate. Report:
+  [`fairyfox-reports/2026-07-19-standards-deep-read.md`](fairyfox-reports/2026-07-19-standards-deep-read.md).
+- **Fairy Fox coins** (`0.18.0`): a subtle reading-engagement counter beside the reader
+  button (`assets/js/coins.js`), injected by the shared chrome. Opening a page you haven't
+  read **today** — anywhere same-origin under fairyfox.io — earns a coin (+1, 10% → +2; a
+  1%/repeat-view bonus capped at 10/day), with a playful coin-pop and a mini panel. State is
+  the origin-wide `fairyfox:coins:a` key; projects tap `window.FairyFoxCoins` as an **extra**
+  reward only — never a gate, never overused, never lost (durability mandate). Governed by
+  `hub/standards/coins.md`; explained at `/legal/coins/`. The hub also now serves its own
+  `/legal/{privacy,terms,cookies}/` pages (it had none). Chrome bundle → `2.1.0`.
 - **Trimmed to the projects** (`0.13.1`): removed the **Downloads** section (page, nav,
   data) and the **duplicated on-site per-project docs** (each project links to its own docs
   from its card); the Projects submenu no longer auto-enables (reserved for future project

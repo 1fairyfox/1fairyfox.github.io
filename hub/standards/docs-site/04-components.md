@@ -85,12 +85,14 @@ behaviour and constants are normative; see
   - **Text size** — a **slider** (`.ff-range`, `<input type="range">`) flanked by a small
     and a large "A". Not a `+`/`−` pair. Scales the document root font-size live. Live on
     **every** page.
-  - **Line spacing** — segmented Tight/Normal/Relaxed. **Story-only.**
-  - **Width** — segmented Narrow/Normal/Wide. **Story-only.**
-  - **Story-only lock.** Off a story page (no `data-story` on `<html>`) the line-spacing
-    and width sections carry `.is-locked`: the segmented buttons are `disabled` and a
-    `.ff-rp-note` reading "Enables when reading a story." shows. `reader.js` sets this on
-    load; text size / theme / accent stay live. See
+  - **Line spacing** — segmented Tight/Normal/Relaxed. **Reading-page only.**
+  - **Width** — segmented Narrow/Normal/Wide. **Reading-page only.**
+  - **Reading-page lock.** On a non-reading page (no `data-read`/`data-story` on `<html>` —
+    an index/list, category, API, or sidebar page) the line-spacing and width sections carry
+    `.is-locked`: the segmented buttons are `disabled` and a `.ff-rp-note` reading "Enables on
+    reading pages." shows. `reader.js` sets this on load; text size / theme / accent stay live.
+    Readable pages (notes, legal, guides, articles) opt in with `data-read`; books/chapters
+    with `data-story`. See
     [`12-shared-chrome.md`](12-shared-chrome.md#the-readers-story-only-controls-data-story).
   - A **footer** (`.ff-rp-foot`) with a "saved & shared" hint and a **Reset** button.
 
@@ -99,6 +101,20 @@ behaviour and constants are normative; see
 - Changes apply **live** and save immediately to `fairyfox:reader:b` (see
   [`02-design-tokens.md`](02-design-tokens.md#the-reader-menu-required-shared-component)
   for the model + constants).
+
+## Coin button + panel (`.ff-coin-btn` / `.ff-coin-panel`)
+
+- A small pill (same 40px height as the reader button) showing a gold coin glyph + a
+  running count, injected by `coins.js` **just left of the reader "Aa" button**. It is a
+  light **reading-engagement** counter, not a gate or an access currency.
+- Reading a page you haven't opened **today** (anywhere same-origin under fairyfox.io)
+  earns a coin — a playful coin-pop + floating `+1`/`+2` marks it (reduced-motion guarded).
+- Clicking opens a mini popover (reuses `.ff-reader-panel` positioning): balance, earned
+  today, lifetime, and a one-line "how it works". Only one popover open at a time.
+- State saves to the versioned origin-wide key **`fairyfox:coins:a`**; projects read/spend
+  it via `window.FairyFoxCoins` (`get` · `onChange` · `spend` · `reward`) and the
+  `fairyfox:coins` DOM event. Use it for **extra** reward only — never to lock the core
+  experience behind coins.
 
 ## Buttons (`.btn`)
 

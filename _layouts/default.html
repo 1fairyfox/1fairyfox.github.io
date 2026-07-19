@@ -1,8 +1,9 @@
 <!doctype html>
-{%- comment -%} `data-story` opts a page into the reader's story controls (line spacing +
-  width). Set `story: true` in a page's front matter; on every other page those two
-  controls stay locked and reading falls back to the normal defaults. {%- endcomment -%}
-<html lang="en"{% if page.story %} data-story{% endif %}>
+{%- comment -%} Reader reading-controls (line spacing + width) un-lock on pages meant to be
+  READ. Set `read: true` (a note, a legal page, a guide) or `story: true` (a book/chapter) in
+  a page's front matter → `data-read` / `data-story`. On index/list/API/category pages those
+  two controls stay locked and reading falls back to the normal defaults. {%- endcomment -%}
+<html lang="en"{% if page.story %} data-story{% endif %}{% if page.read %} data-read{% endif %}>
 <head>
   {%- include head.html -%}
 </head>
@@ -15,5 +16,6 @@
   {%- include footer.html -%}
   <script src="{{ '/assets/js/nav.js' | relative_url }}?{{ site.time | date: '%s' }}" defer></script>
   <script src="{{ '/assets/js/reader.js' | relative_url }}?{{ site.time | date: '%s' }}" defer></script>
+  <script src="{{ '/assets/js/coins.js' | relative_url }}?{{ site.time | date: '%s' }}" defer></script>
 </body>
 </html>

@@ -42,6 +42,10 @@ record the deviation (see [`09-adopting-and-maintaining.md`](09-adopting-and-mai
       **Line spacing + width are story-only** — locked (disabled + "reading a story" note)
       unless the page carries `data-story` on `<html>`; text size / theme / accent stay
       live everywhere.
+- [ ] The **coin button** is present in the header (injected by the shared `coins.js`,
+      just left of the "Aa" button), counting to the origin-wide `fairyfox:coins:a` key.
+      Nothing in the project is gated on coins; any project-added coin moments are subtle
+      and optional (see [`../coins.md`](../coins.md#verify-is-it-being-followed)).
 - [ ] `:focus-visible` shows the accent outline on every interactive element.
 
 ## Chrome, cross-linking & branding
@@ -50,7 +54,7 @@ record the deviation (see [`09-adopting-and-maintaining.md`](09-adopting-and-mai
 
 - [ ] The chrome is the **vendored [`chrome/`](chrome/) bundle** (copied verbatim +
       pulled over git), **not** a hand-built lookalike: header/subnav/footer markup and
-      the `main.css`/`reader.js`/`nav.js` match the master; only `{{FF_*}}` slots +
+      the `main.css`/`reader.js`/`nav.js`/`coins.js` match the master; only `{{FF_*}}` slots +
       `.active` differ; no runtime hot-link to fairyfox.io; the adopted `chrome/VERSION`
       is recorded. Full check: [`12-shared-chrome.md`](12-shared-chrome.md#verify-is-it-being-followed).
 - [ ] The **shared header** is present with the **global primary nav** in the fixed
@@ -58,13 +62,18 @@ record the deviation (see [`09-adopting-and-maintaining.md`](09-adopting-and-mai
       reordered or trimmed per project; Stories + Games under the **Farms** dropdown).
 - [ ] The **brand mark and `Home` nav item link to `https://fairyfox.io/`** — this is
       the way home. There is **no separate "← Back to Fairy Fox" back-button**.
+- [ ] **Active primary-nav item is `Projects` — always, and only `Projects`** — on every
+      page of a standalone sub-project (never Home/Docs/Updates/About). See
+      [`05-navigation-and-cross-linking.md`](05-navigation-and-cross-linking.md).
 - [ ] The site is reachable at `fairyfox.io/<key>/` and the registry entry
       (`docs:`, `repo:`) is accurate so the main site links *in* resolve.
 
-**Recommended (absence is not a failure):**
+**Recommended (absence is not a failure), but when present follow the canonical shape:**
 
-- [ ] A **submenu** row below the primary nav for section/context links (the project's
-      own pages, or the projects list), in the shared pill style.
+- [ ] A **submenu** row below the primary nav following the **canonical three-zone
+      structure** — `[Project name = overview] · Notes · Tutorials · Changelog · API ·
+      Download · [Repository ↗]` — in the shared pill style, current item `.active`
+      ([`05-navigation-and-cross-linking.md`](05-navigation-and-cross-linking.md#the-canonical-project-subnav-structure)).
 - [ ] A footer linking the project's repo, notes, and the main-site sections.
 - [ ] A breadcrumb/locator near the page top.
 
@@ -85,8 +94,30 @@ the brand/Home way-home — not by brand precedence.
 
 - [ ] Pages cover the recommended roles (overview, getting started, reference,
       changelog) grouped by category.
-- [ ] Generated API docs are linked from Reference as a clear boundary, skinned where
-      possible, with a way back.
+- [ ] **API docs** (most projects should have them) are generated, themed/boundaried, and
+      appear **only** in the **API** section — never bleeding into non-API pages.
+- [ ] Generated API docs are linked from the **API** subnav item as a clear boundary,
+      skinned where possible, with a way back.
+- [ ] The generator's **sidebar lists only API pages** — no chrome nav/subnav items and no
+      hand-authored pages leaked in (audit regularly; generators re-add them).
+- [ ] The generator's **own footer is gone** — the shared chrome footer is the only footer
+      (no Doxygen/JSDoc generated footer rendering).
+- [ ] If the project renders its `notes/` on the site, it's under a **single `Notes`**
+      subnav item and **fully navigable**: a landing (root intro + section cards), a left
+      sidebar listing **every note** organised by section, the sidebar **excluding the
+      README/overview** and any non-note pages (not scattered across links, none unreachable).
+      See [`06`](06-content-and-organization.md#notes-on-the-site-a-landing--a-sidebar).
+- [ ] **Reader reading-controls follow readability** — readable pages (notes, legal, guides,
+      articles) carry `data-read`/`data-story` so line-spacing + width apply; index/list,
+      category, API, and sidebar pages **omit it** and keep the designed measure.
+- [ ] If the project **offers downloads**, a **Downloads** page exists (linked as
+      **Download**), sourced from GitHub releases, comfortably formatted, kept current, with
+      a perma-"latest" section where latest-links exist
+      ([`06`](06-content-and-organization.md#downloads-a-real-page-when-a-project-offers-downloads)).
+- [ ] **No orphan / disconnected pages** and **no "Related"-style raw-link dumps**; every
+      page is reachable, comfortably formatted, and its living parts (version, latest
+      download, changelog, status) are kept current
+      ([`06`](06-content-and-organization.md#page-quality-comfortable-formatted-connected)).
 - [ ] Public/website voice; refers to the parent as Fairy Fox / fairyfox.io.
 
 ## Accessibility (WCAG 2.1 AA)
