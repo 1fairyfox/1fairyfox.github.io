@@ -3,7 +3,7 @@
 _Current state only._ For the chronological history see [`sessions/`](sessions/README.md);
 for the commit-by-commit changelog see [`version.md`](version.md).
 
-**Version:** `0.20.2` (single source of truth: repo-root `VERSION`; see
+**Version:** `0.20.3` (single source of truth: repo-root `VERSION`; see
 [`reference/versioning.md`](reference/versioning.md)).
 
 ## Current state (read this first)
@@ -191,7 +191,7 @@ The rest of the structure is in place end to end:
 
 ## In flight / awaiting
 
-- **Warm redesign is shipped (`0.4.x`; the repo is now at `0.9.5`).** The design language, the
+- **Warm redesign is shipped (`0.4.x`; the repo is now at `0.20.3`).** The design language, the
   **portal home** (hero + static activity panel), the **standardized status cards**, the
   **day-centric updates feed**, the **clickable cards / simpler nav** review pass, and the
   **project node pages** (`/projects/<key>/`) are all live — built increment-by-increment,

@@ -37,10 +37,10 @@
     soundtrack played by a Game Boy sound chip in C++.
   tags: [Qt 6, C++, QML, Desktop]
   lifecycle: alpha
-  version: "0.43.4"
+  version: "0.43.6"
   activity: active
-  updated: "Jul 18, 2026"
-  updated_iso: "2026-07-18"
+  updated: "Jul 19, 2026"
+  updated_iso: "2026-07-19"
   color: "#e6488f"
   icon: pse2
   featured: true
@@ -100,10 +100,10 @@
     you can read before you start.
   tags: [Jekyll, Ruby, Web]
   lifecycle: alpha
-  version: "0.5.3"
+  version: "0.5.5"
   activity: active
-  updated: "Jul 18, 2026"
-  updated_iso: "2026-07-18"
+  updated: "Jul 19, 2026"
+  updated_iso: "2026-07-19"
   integrated: true
   color: "#b06ad0"
   icon: stories
@@ -125,10 +125,10 @@
     beat-your-own-score kind, each splitting pure, tested logic from rendering.
   tags: [JavaScript, Canvas, Web]
   lifecycle: alpha
-  version: "0.24.2"
+  version: "0.24.4"
   activity: active
-  updated: "Jul 18, 2026"
-  updated_iso: "2026-07-18"
+  updated: "Jul 19, 2026"
+  updated_iso: "2026-07-19"
   integrated: true
   color: "#8b7bff"
   icon: games
@@ -146,10 +146,10 @@
     carrying the shared engineering standards and the cross-project sync model.
   tags: [Jekyll, Ruby, Web]
   lifecycle: beta
-  version: "0.16.1"
+  version: "0.20.3"
   activity: active
-  updated: "Jul 19, 2026"
-  updated_iso: "2026-07-19"
+  updated: "Jul 20, 2026"
+  updated_iso: "2026-07-20"
   meta: true
   color: "#ff7a5e"
   icon: fox
