@@ -13,9 +13,9 @@
 # pass — see hub/standards/process-reports.md. [] = none digested yet.
 
 pokered-save-editor-2:
-  commit: 4d2ffc8c63c3d8e0e60d65ddccee448a67bd1950
+  commit: 5ae9dad3a2e9cf38a78b75a3bcbce09d1f752a22
   branch: dev
-  seen: 2026-07-19
+  seen: 2026-07-20
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-06-26-adopting-updates.md             # folded into standards 0.9.1
     - 2026-06-26-adopting-updates-express-auth.md # folded into standards 0.9.3 (verification floor + this marker scheme)
@@ -27,6 +27,21 @@ pokered-save-editor-2:
     - 2026-07-02-check-for-updates.md            # 2026-07-19 report-review — check-only, no-change confirming pass
     - 2026-07-06-adopting-updates.md             # 2026-07-19 report-review — run feedback (successful adopt), no standalone standard change
     - 2026-07-19-adopting-updates.md             # 2026-07-19 report-review — run feedback (successful adopt), no standalone standard change
+  # 2026-07-20 round-up: clean fast-forward 4d2ffc8c → 5ae9dad3, VERSION 0.43.4-alpha → 0.43.6-alpha, 14
+  # commits ALL dated 2026-07-19 (a complete day — today is 07-20). Two strands. (1) The map reads a save's
+  # real progress: 0.43.5 retires the "Custom (matches no researched state)" row — the app scores every
+  # resting stage against dead-giveaway flags + missables + step byte and picks the closest (later stage wins
+  # ties), and every raw script-table step is now an italic "Step N" entry; tst_map_states pins all 98
+  # blueprints answering with a state. 0.43.6 gives all 228 filter flags researched lifecycles (five classes),
+  # the state matcher reads a stage's own new giveaways (a played Pallet Town → "3. The journey underway"), an
+  # "Idle (script parked)" rename, and — the visible fix — the canvas redraws a filter flag the moment it
+  # changes. Plus a notes/tooling piece: the global progression graph (only 70 of 2,560 flags ever reset, five
+  # classes, mandatory M0–M20 spine; new game-progression.md + miner). (2) Adopted the fairyfox shared-chrome
+  # bundle (chrome 2.0.0 then 2.2.1 coins) replacing hand-built chrome, and ran a professional-tone doc scrub
+  # across CLAUDE.md + notes (emoji/metaphor removal, first-person → role-based leadership). Reconciled:
+  # projects.yml (PSE2 → 0.43.6 / Jul 19). Folded into the new 2026-07-19 day post. Marker → 5ae9dad3; seen →
+  # 2026-07-20. (New reports 2026-07-19-adopting-updates-chrome-2.2.1.md + 2026-07-19-check-for-updates.md
+  # left for the inbound report-review pass.)
   # 2026-07-19 round-up: clean fast-forward 1679d2f0 → 4d2ffc8c, VERSION 0.42.13-alpha → 0.43.4-alpha, 5
   # commits ALL dated 2026-07-18 (a complete day — today is 07-19). Map states went LIVE, then a consistency
   # overhaul of the map screen. (1) 0.43.0 — the 07-17 progression blueprints become a live picker: roll a map
@@ -284,9 +299,9 @@ pokered-save-editor-2:
   # 2026-07-06-adopting-updates.md still pending for the inbound report-review pass.)
 
 random-ai-prompt:
-  commit: 2f1459ff0d2eba7deba7e5396cefbec363d3ab4b
+  commit: 35b1370a882381511e854f8b3a75fcc2d4b07679
   branch: dev
-  seen: 2026-07-19
+  seen: 2026-07-20
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-06-26-adopting-updates.md             # folded into standards 0.9.1
     - 2026-06-26-adopting-updates-2.md           # digested 0.9.8 — CI-owns-tag release callout (git-workflow) + hub_version-placeholder backfill note (process-reports)
@@ -307,6 +322,13 @@ random-ai-prompt:
     - 2026-07-04-propose-regression-testing-standard.md # digested 0.18.0 testing.md; demonstrate-fail-then-pass + right-home nuance folded 0.20.0
     - 2026-07-05-adopt-docs-chrome-reader.md     # 2026-07-19 report-review — node docs-chrome/reader adoption feedback, already reflected
     - 2026-07-09-propose-maintenance-sweep-standard.md # digested 0.20.0 — new maintenance-sweep.md
+  # 2026-07-20 round-up: clean fast-forward 2f1459f → 35b1370 (5 commits, all dated 2026-07-19), VERSION
+  # unchanged at 2.60.1 — docs/adoption only, no engine change. RAP's docs site adopted the hub's new coins
+  # counter into its chrome and took six of the new mesh standards in as reference notes (a check-for-updates
+  # report vs hub 0.20.2; CodeRabbit review addressed on PR #55). No product change, so projects.yml stays at
+  # 2.60.1 / Jul 12; RAP is tagged in the new 2026-07-19 day post for the docs adoption. Marker → 35b1370;
+  # seen → 2026-07-20. (New reports 2026-07-19-adopting-updates.md + 2026-07-19-check-for-updates.md left for
+  # the inbound report-review pass.)
   # 2026-07-19 report-review (0.20.0): read the eight RAP reports above past the 0.12.0 marker. The three
   # proposals were folded — shareable-systems-roundup + regression-testing into the 0.18.0 batch
   # (repo-hygiene/docs-lifecycle/testing), maintenance-sweep into new 0.20.0 maintenance-sweep.md; the run
@@ -545,9 +567,9 @@ random-ai-prompt:
   # 2026-07-09 and 2026-07-10 day posts. Marker → 3686435, VERSION 2.50.1 → 2.52.0.
 
 fairyfox-games:
-  commit: 5d89b0cc2d2557013af01741507335327b840a97
+  commit: a690442f69a202b148b7c937314a64b87760194d
   branch: dev
-  seen: 2026-07-19
+  seen: 2026-07-20
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-06-29-setup.md                 # digested 0.10.0 — collection/monorepo as a recorded exception; static site doubles as docs
     - 2026-06-29-onboarding-verify.md     # digested 0.10.0 — same-day setup cross-ref added to onboarding
@@ -559,6 +581,17 @@ fairyfox-games:
     - 2026-07-06-adopting-updates.md      # 2026-07-19 report-review — run feedback (successful adopt), no standard change
     - 2026-07-18-adopting-updates.md      # 2026-07-19 report-review — run feedback (successful adopt), no standard change
     - 2026-07-18-update-check.md          # 2026-07-19 report-review — check-only, no standard change
+  # 2026-07-20 round-up: clean fast-forward 5d89b0c → a690442, VERSION 0.24.2 → 0.24.4 (commits dated
+  # 2026-07-19). A GROW then a standards adoption. (1) 0.24.3 GROW — Skyline gets "depth inside the mechanic"
+  # (7th game on the layer, the oldest still without it): a razor Keystone sub-window (1.2px) inside the flush
+  # window, a Jet Stream doubling the next 3 drops after 3 keystones, speedOf turned into a no-plateau score
+  # asymptote (was flat from score ≈44), a secret Exosphere stage at 240. (2) 0.24.4 — adopted the hub
+  # standards batch v0.16.0→v0.20.2 (coins initiative phase 1): ten new reference notes (coins,
+  # farm-operating-model, engineering-quality, testing, repo-hygiene, maintenance-sweep, docs-lifecycle,
+  # research-capture, self-hosted-assets, working-rhythm) + five refreshed; docs-only, no game code, the
+  # coins feature itself deferred to later phases. Reconciled: projects.yml (games → 0.24.4 / Jul 19).
+  # Folded into the new 2026-07-19 day post. Marker → a690442; seen → 2026-07-20. (New report
+  # 2026-07-19-update-check.md left for the inbound report-review pass.)
   # 2026-07-19 round-up: clean fast-forward 728a76f → 5d89b0c, VERSION 0.23.2 → 0.24.2 (commits dated
   # 2026-07-18). A PLANT + a GROW + housekeeping. (1) PLANT 0.24.0 (MINOR) — Ward, the 15th game and the
   # collection's FIRST defence verb: orbit one shield around a core and parry converging shards (turn-rate cap
@@ -765,12 +798,21 @@ fairyfox-games:
   # 0.20.2 / Jul 10). Folded into the 2026-07-08 and 2026-07-10 day posts. Marker → e7d2768.
 
 fairyfox-stories:
-  commit: 82b5a5b8c566536a50013b62247749fd096acb3f
+  commit: fb160a580349f4e1b866367a49dcae32d5c5d00d
   branch: dev
-  seen: 2026-07-19
+  seen: 2026-07-20
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-07-06-setup.md                 # 2026-07-19 report-review — setup run feedback, no standalone standard change
     - 2026-07-18-adopting-updates.md      # 2026-07-19 report-review — run feedback (successful adopt), no standard change
+  # 2026-07-20 round-up: clean fast-forward 82b5a5b → fb160a5, VERSION 0.5.3 → 0.5.5 (commits dated
+  # 2026-07-19). A GROW then a standards adoption. (1) 0.5.4 GROW — The Blindfold Act ch.3 "The Tells"
+  # (~2,100w); no random override (roll 49 vs ≤18), blend leader picked clean (0.833, 2/6 + 2 days stale),
+  # exactly as 07-18 predicted; book at 3/6. (2) 0.5.5 — adopted fairyfox standards 0.16.1→0.20.2 phase 1:
+  # ten new reference notes + three refreshed, the release-by-default posture, and the repo-hygiene gates
+  # (check-links + check-tidy) wired into npm test/CI; the visual coins/reader/chrome-2.2.1 work deliberately
+  # deferred to a Phase 2 browser session (no UI ships unseen). Reconciled: projects.yml (stories → 0.5.5 /
+  # Jul 19). Folded into the new 2026-07-19 day post. Marker → fb160a5; seen → 2026-07-20. (New report
+  # 2026-07-19-adopting-updates.md left for the inbound report-review pass.)
   # 2026-07-19 round-up: clean fast-forward c677b3f → 82b5a5b, VERSION 0.4.2 → 0.5.3 (commits dated 2026-07-18).
   # A GROW, a PLANT, a hub-adopt, and two owner-directed fixes. (1) GROW 0.4.3 — Every Lock but Hers ch.5, The
   # Wintering House ch.7, The Cinderwick Job ch.6; no override (clean blend, top three straight down). (2) PLANT
