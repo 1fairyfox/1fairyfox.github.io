@@ -33,10 +33,12 @@ hub makes **no third-party presentation request** and fully complies with this s
 - **Fonts (0.22.0).** The three OFL variable subsets (Fraunces / Inter / JetBrains Mono) live in
   `assets/fonts/` with a local `fonts.css`; the shared chrome bundle (2.3.0) ships the same
   self-hosted fonts, so **no node needs the font deviation** any more.
-- **Font Awesome (0.22.2).** Font Awesome Free 6.5.2 is vendored under `assets/vendor/font-awesome/`
+- **Font Awesome (0.22.2).** Font Awesome Free 6.5.2 is vendored under `assets/font-awesome/`
   (`css/all.min.css` + `webfonts/*.woff2`) and served from origin; `_includes/head.html` no longer
   references `cdnjs.cloudflare.com`. The farms (games, stories) carry no Font Awesome, so this was
-  hub-only.
+  hub-only. (Note: NOT under `assets/vendor/` — the repo's `.gitignore` excludes any `vendor/` dir
+  for Bundler, which would silently drop the committed assets; keep self-hosted vendor assets on a
+  non-`vendor/` path.)
 
 This section is kept as the record that the exception existed and was closed; there is **no open
 hub exception** at present. If a new one ever arises, record it here with a remediation path (rule 4).
