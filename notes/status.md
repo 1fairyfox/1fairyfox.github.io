@@ -3,11 +3,20 @@
 _Current state only._ For the chronological history see [`sessions/`](sessions/README.md);
 for the commit-by-commit changelog see [`version.md`](version.md).
 
-**Version:** `1.5.1` — a **maintenance round-up** (2026-07-24): reconciled the data files to three
-siblings' new releases (DespawnedItems `1.5.0`, Fairy Fox Games `0.25.3`, Fairy Fox Stories `0.7.2`),
-brought the site's own meta card current (`0.20.7 → 1.5.1`, `beta → released`), surfaced four new
-standards in the docs library (docker · ci-secrets · checklists-are-contracts · mandate-ledger), and
-blogged the 22nd + 23rd. Prior: `1.5.0` — **Docker standard**: `hub/standards/docker.md` — use Docker locally
+**Version:** `1.6.1` — a **maintenance round-up** (2026-07-25): reconciled the data files to the
+farms' 2026-07-24 production — Fairy Fox Games `0.25.3 → 0.26.0` (Loom, the 17th game, a new *weave*
+verb), Fairy Fox Stories `0.7.2 → 0.8.0` (*The Wind She Would Not Keep*, the tenth book), and Despawned
+Items' standards-adoption day (held at `1.5.0`; adopted hub 1.5.1, self-hosted fonts, first
+maintenance-sweep, Fabric client build repaired) — retimed the pulse ticker, advanced the round-up
+markers, and blogged the 24th (one merged sibling day post). Prior: `1.6.0` — new standard
+**README structure & cross-linking** (`hub/standards/readme.md`): a project's README must carry the
+mesh links in its own text (a docs link near the top, a grouped "Get it" section, a fairyfox footer
+near the bottom), because it travels to GitHub / npm / registries / mirrors where the site chrome
+doesn't render. Prior: `1.5.1` — a **maintenance round-up** (2026-07-24): reconciled the data files
+to three siblings' releases (Despawned Items `1.5.0`, Fairy Fox Games `0.25.3`, Fairy Fox Stories
+`0.7.2`), brought the site's own meta card current (`0.20.7 → 1.5.1`, `beta → released`), surfaced
+four new standards in the docs library, and blogged the 22nd + 23rd. Prior: `1.5.0` — **Docker
+standard**: `hub/standards/docker.md` — use Docker locally
 whenever possible (Linux-only build/test/setup runs on the desktop, not deferred to online CI;
 fix Docker issues, don't write them off), wired into `compliance.md` + the CLAUDE template.
 The `fairyfox.io` custom domain is **kept** (a year's renewal was covered, 2026-07-24) — the
