@@ -122,9 +122,11 @@ through the `0.4.x` line; it now includes:
   `/fairyfox-stories/`; **Stories + Games grouped under the "Farms" dropdown** in `0.16.0`).
   The first **project category** landed in `0.20.4` and broadened to **"Minecraft Projects"**
   in `0.20.7` (renamed from "PaperMC Plugins"). It now holds two members: **DespawnedItems** —
-  a Paper server plugin (`v1.4.8`, Paper 1.21.11 / Java 21) — and **Minecraft Automated Driver**
-  (`v0.1.2`, pre-alpha), an MCP server that drives the whole Minecraft dev loop (build/boot/drive/
-  watch) using client- and server-side in-game agents. A `category` field drives the section;
+  a Paper server plugin (`v1.5.0`, Paper 1.21.11 / Java 21) — and **Minecraft Automated Driver**
+  (`v0.11.0`, pre-alpha), an MCP server that drives the whole Minecraft dev loop (build/boot/drive/
+  watch) using client- and server-side in-game agents; its **onboarding is now complete** —
+  `adopts_hub: true`, its fairyfox-themed docs site live at `fairyfox.io/minecraft-automated-driver/`,
+  and its card now carries an icon (`assets/icons/mad.png`). A `category` field drives the section;
   categorized projects are excluded from the flat `/projects/` grid but still appear in the home
   grid in normal recent-update order. `0.20.7` also **fixed the category grid** so a one- or
   two-card section keeps normal card width instead of stretching a lone card full-bleed (a `.lean`

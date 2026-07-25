@@ -102,7 +102,7 @@
 - name: Minecraft Automated Driver
   key: minecraft-automated-driver
   repo: https://github.com/1fairyfox/minecraft-automated-driver
-  docs: null
+  docs: https://fairyfox.io/minecraft-automated-driver/
   notes: https://github.com/1fairyfox/minecraft-automated-driver/tree/main/notes
   blurb: >-
     An MCP server that puts the whole Minecraft development loop behind one tool
@@ -113,16 +113,19 @@
     server side — control a live game semantically (menus and widgets by name,
     movement, teleports, state queries). Targets Minecraft 1.21.11 / Java 21 /
     Node 20; agents ship disabled by default and are distributed via GitHub
-    releases only. Pre-alpha: an MCP skeleton today, with the quality gates
-    (≥90% coverage, CI, CodeQL, Scorecard) already wired in.
+    releases only. Pre-alpha: the build/test, server- and client-lifecycle,
+    protocol-bot, and semantic in-game control layers are landing phase by phase
+    (instanced client spawn and goal-level navigation are live), with the quality
+    gates (≥90% coverage, CI, CodeQL, Scorecard) wired in from the start.
   tags: [MCP, JavaScript, Node, Kotlin]
   lifecycle: alpha
-  version: "0.1.2"
+  version: "0.11.0"
   activity: active
-  updated: "Jul 22, 2026"
-  updated_iso: "2026-07-22"
+  updated: "Jul 24, 2026"
+  updated_iso: "2026-07-24"
   category: minecraft
   color: "#43a047"
+  icon: mad
   featured: true
   reference: true
 
