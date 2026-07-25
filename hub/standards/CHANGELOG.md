@@ -10,6 +10,24 @@ anchor, then adopt + record in the [adoption manifest](../templates/notes-skelet
 Newest on top. This changelog starts at 0.21.0; earlier standards history lives in the
 hub's own `notes/version/` changelog.
 
+## 1.6.0 — README structure & cross-linking
+
+Owner directive (2026-07-24): a project's README must carry the mesh links in its own text —
+the README travels to GitHub/npm/plugin registries/mirrors where the **site chrome doesn't
+exist**, so it can't lean on the header/nav/footer the way the docs pages do.
+
+**New standard**
+- **`readme.md`** — worded README cross-links, complete by default: a **docs link near the
+  top** (to `fairyfox.io/<key>/`, not only the docs badge), a grouped, labelled **"Get it"
+  section** covering every real destination (live app · download/releases · each
+  store/registry it publishes to · source), and a **fairyfox mesh footer near the bottom**.
+  Docs link + footer always required; publish/deploy rows present whenever the destination
+  exists; present-destination omissions take a recorded user exception, never a silent drop.
+  Companion to `badges.md` (badges are glanceable image-signals; these are the worded links a
+  reader follows and that survive where badges don't render). `## Verify` + a `compliance.md`
+  matrix row; a new `templates/README-links.md` copy-paste block (added to the templates
+  index); onboarding + new-project-setup gain a README-cross-links step and Verify row.
+
 ## 1.5.0 — Docker: local-first build/test/setup
 
 Owner directive (2026-07-23): projects should use Docker whenever possible — the developer runs

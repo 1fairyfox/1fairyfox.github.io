@@ -16,6 +16,7 @@ in [`../standards/`](../standards/) for the *why* behind each.
 | `dependabot.yml` | `.github/dependabot.yml` | Weekly grouped updates targeting `dev` + the `github-actions` ecosystem. Follows [`../standards/dependencies.md`](../standards/dependencies.md). |
 | `branch-sync.yml` | `.github/workflows/branch-sync.yml` | Fails when `dev` drifts behind `main` (the back-merge guard). Follows [`../standards/git-workflow.md`](../standards/git-workflow.md). |
 | `README-badges.md` | top of the project `README` | The applicable status-badge block. Follows [`../standards/badges.md`](../standards/badges.md). |
+| `README-links.md` | into the `README` (docs link near top; mesh footer near bottom) | The worded cross-links the chrome can't provide off-site — docs link, a grouped "Get it" section, and the fairyfox mesh footer. Follows [`../standards/readme.md`](../standards/readme.md). |
 | `legal/` | the app's own origin (e.g. `public/legal/`) | Self-hosted Privacy/Terms/Cookies — **rewrite to match the code**. Follows [`../standards/legal-docs.md`](../standards/legal-docs.md). |
 
 ## One-time adoption (run inside the project)
