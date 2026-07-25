@@ -121,8 +121,8 @@ through the `0.4.x` line; it now includes:
   About** (**Stories** added `0.15.0`, left of Games — a `/stories/` stub →
   `/fairyfox-stories/`; **Stories + Games grouped under the "Farms" dropdown** in `0.16.0`).
   The first **project category** landed in `0.20.4` and broadened to **"Minecraft Projects"**
-  in `0.20.7` (renamed from "PaperMC Plugins"). It now holds two members: **DespawnedItems** —
-  a Paper server plugin (`v1.5.0`, Paper 1.21.11 / Java 21) — and **Minecraft Automated Driver**
+  in `0.20.7` (renamed from "PaperMC Plugins"). It now holds two members: **Despawned Items** —
+  a Paper server plugin (`v1.5.0`, Paper 1.21.11 / Java 21) — and **Automated Driver**
   (`v0.11.0`, pre-alpha), an MCP server that drives the whole Minecraft dev loop (build/boot/drive/
   watch) using client- and server-side in-game agents; its **onboarding is now complete** —
   `adopts_hub: true`, its fairyfox-themed docs site live at `fairyfox.io/minecraft-automated-driver/`,

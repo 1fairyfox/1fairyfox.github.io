@@ -73,7 +73,7 @@
 # Minecraft-related work — server plugins and dev tooling. `category: minecraft`
 # groups them into their own section on /projects/ (see projects.md); they still
 # appear in the home grid in the normal recent-order flow. More are on the way.
-- name: DespawnedItems
+- name: Despawned Items
   key: papermc-despawned-items
   repo: https://github.com/1fairyfox/papermc-despawned-items
   docs: https://fairyfox.io/papermc-despawned-items/
@@ -99,7 +99,7 @@
   featured: true
   reference: true
 
-- name: Minecraft Automated Driver
+- name: Automated Driver
   key: minecraft-automated-driver
   repo: https://github.com/1fairyfox/minecraft-automated-driver
   docs: https://fairyfox.io/minecraft-automated-driver/
