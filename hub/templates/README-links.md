@@ -23,7 +23,7 @@
 |---|---|
 | **Try it live** | <https://<key>.example.netlify.app> · or Pages: <https://fairyfox.io/<key>/> |
 | **Download** | [GitHub Releases](https://github.com/1fairyfox/<repo>/releases) |
-| **Get it on** | [Modrinth](…) · [Hangar](…) · [CurseForge](…) · [npm](…) · [crates.io](…) |
+| **Get it on** | [Modrinth](https://modrinth.com/plugin/<key>) · [Hangar](https://hangar.papermc.io/1fairyfox/<key>) · [CurseForge](https://www.curseforge.com/minecraft/mc-mods/<key>) · [npm](https://www.npmjs.com/package/<key>) · [crates.io](https://crates.io/crates/<key>) |
 | **Source** | [Repository](https://github.com/1fairyfox/<repo>) · [Notes](https://github.com/1fairyfox/<repo>/tree/main/notes) |
 
 <!-- ── Near the bottom, the README's stand-in for the site footer ──────────────── -->

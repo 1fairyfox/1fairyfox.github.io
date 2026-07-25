@@ -91,8 +91,8 @@
   lifecycle: released
   version: "1.5.0"
   activity: active
-  updated: "Jul 22, 2026"
-  updated_iso: "2026-07-22"
+  updated: "Jul 24, 2026"
+  updated_iso: "2026-07-24"
   category: minecraft
   color: "#2f9bd4"
   icon: despi
@@ -163,10 +163,10 @@
     you can read before you start.
   tags: [Jekyll, Ruby, Web]
   lifecycle: alpha
-  version: "0.7.2"
+  version: "0.8.0"
   activity: active
-  updated: "Jul 23, 2026"
-  updated_iso: "2026-07-23"
+  updated: "Jul 24, 2026"
+  updated_iso: "2026-07-24"
   integrated: true
   color: "#b06ad0"
   icon: stories
@@ -188,10 +188,10 @@
     beat-your-own-score kind, each splitting pure, tested logic from rendering.
   tags: [JavaScript, Canvas, Web]
   lifecycle: alpha
-  version: "0.25.3"
+  version: "0.26.0"
   activity: active
-  updated: "Jul 23, 2026"
-  updated_iso: "2026-07-23"
+  updated: "Jul 24, 2026"
+  updated_iso: "2026-07-24"
   integrated: true
   color: "#8b7bff"
   icon: games
@@ -209,10 +209,10 @@
     carrying the shared engineering standards and the cross-project sync model.
   tags: [Jekyll, Ruby, Web]
   lifecycle: released
-  version: "1.5.1"
+  version: "1.6.1"
   activity: active
-  updated: "Jul 24, 2026"
-  updated_iso: "2026-07-24"
+  updated: "Jul 25, 2026"
+  updated_iso: "2026-07-25"
   meta: true
   color: "#ff7a5e"
   icon: fox
