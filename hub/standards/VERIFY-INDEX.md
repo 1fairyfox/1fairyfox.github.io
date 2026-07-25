@@ -286,6 +286,9 @@ The per-standard slice the [compliance audit](compliance.md) aggregates — repo
   accent/icon) — blanks only on a recorded user exception; social/preview image exempt.
 - The README opens with the **full 20-badge set in the canonical order** ([badges](badges.md)),
   each slot the right per-project source; omissions only on a recorded user exception.
+- The README carries the worded mesh cross-links ([readme](readme.md)) — a docs link near the
+  top, a grouped "Get it" section covering every real publish/deploy destination, and a
+  fairyfox mesh footer near the bottom; the always-required docs link + footer present.
 - The docs site loads at `fairyfox.io/<key>/`, **wears the shared fairyfox chrome**
   (header, nav + submenu, footer) so it reads as a page of the site, with the
   **brand/Home link as the way home** and **no separate back-button** — **look at the
@@ -345,6 +348,7 @@ gate; the recurring whole-set check (every standard, re-runnable anytime) is the
 | 6 | **Docs site is a page of fairyfox** | `fairyfox.io/<key>/` serves a site **wearing the shared fairyfox chrome** (header, nav + submenu, footer) so it reads as a page of the site, with the **brand/Home link as the way home** and **no separate back-button** (project-forward branding is fine). **Look at the actual page.** Default-theme JSDoc/Doxygen output — **or any stack's default theme with only cosmetic changes (a couple recoloured variables + one footer mention)** — or a `docs:` URL that merely resolves, is `missing`, not `partial`; the tool's own default chrome must be removed, not left meshing with the fairyfox chrome. Deploy target matches the project's kind ([deployment](deployment.md)). Bar: [`docs-site/08-compliance-checklist.md`](docs-site/08-compliance-checklist.md). |
 | 7 | Hub registration | Resolves in **both** registries with honest `adopts_hub` / `notes_system` flags; node + docs pages present. The `_data/projects.yml` row has its **project details filled by default** (blurb/tags/lifecycle/version/activity/links/accent/icon) — blanks only on a recorded user exception; social/preview image exempt. |
 | 7b | README badges | README opens with the **full 20-badge set in the canonical order** ([badges](badges.md)), each slot the right per-project source; any omission carries a recorded user exception (not an AI call). |
+| 7c | README cross-links | The README carries the worded mesh links the chrome can't provide off-site ([readme](readme.md)): a docs link to `fairyfox.io/<key>/` near the top, a grouped/labelled "Get it" section covering every real publish/deploy destination, and a fairyfox mesh footer near the bottom. Missing links for destinations that exist need a recorded user exception. |
 | 8 | Process report | `notes/fairyfox-reports/` holds this onboarding's report, committed, with the reconcile friction and an honest outcome — [process-reports](process-reports.md). |
 | 9 | **Adoption manifest seeded + first compliance pass** | `notes/reference/adoption-manifest.md` exists with a row per hub standard (`implemented`/`copied-only`/`gap(due)`/`N-A(reason)`), and the full [compliance matrix](compliance.md) was run once — so the day-one state is a recorded per-standard result, and every not-yet-adopted standard is a **dated `gap`**, not prose. No `Standards adopted ✅` without backing rows ([checklists-are-contracts](checklists-are-contracts.md)). |
 
@@ -393,6 +397,22 @@ Row 6 still gets its real look at a rendered page.
 - The review pass **spot-checked each report's adoption/completion claims against the
   node's manifest + tree** (step 3a) and recorded any unbacked claim as a finding — a
   report is not digested by reading it alone.
+
+## Standard: README Structure & Cross-Linking  
+<sub>[`readme.md`](readme.md#verify-is-it-being-followed)</sub>
+
+The per-standard slice the [compliance audit](compliance.md) aggregates — report
+`done`/`partial`/`missing`:
+
+| Passes only when… | How to check |
+|-------------------|--------------|
+| A **worded docs link to `fairyfox.io/<key>/`** sits near the top (not only the docs badge) | open the README; look above the fold |
+| A single **organized "Get it" section** gathers the project's links, grouped + labelled (not a raw URL wall) | read the section; is it scannable and labelled |
+| The **live-app / deploy** link is present when the project has one (Netlify app, or Pages at `fairyfox.io/<key>/`); absent only if nothing is deployed yet | cross-check against the project's real deploy ([deployment](deployment.md)) |
+| **Every publish target** the project actually ships to has a labelled row (Hangar/Modrinth/CurseForge/npm/crates.io/store) | list the project's real registries; each appears |
+| A **mesh footer near the bottom** links back to fairyfox.io and states the project is part of the Fairy Fox mesh | read the README's end |
+| **Any missing link for a destination that DOES exist** carries a recorded user exception — no link dropped on the AI's own "not needed" call | diff expected vs. present links; each gap has a dated manifest exception (none → `missing`) |
+| Links point at **canonical destinations** and don't restate the registry/docs (link, not copy) | spot-check a couple of links + the surrounding prose |
 
 ## Standard: Repo Hygiene  
 <sub>[`repo-hygiene.md`](repo-hygiene.md#verify-is-it-being-followed)</sub>

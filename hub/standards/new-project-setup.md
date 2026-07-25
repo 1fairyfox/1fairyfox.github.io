@@ -43,8 +43,9 @@ The end state — tick every box before calling a project done:
 | Security | `SECURITY.md`, least-privilege + SHA-pinned workflows, signed releases, `main` branch-protected (solo config), Dependabot — [supply-chain-hardening](supply-chain-hardening.md). |
 | Legal | Self-hosted, code-accurate Privacy/Terms/Cookies — [legal-docs](legal-docs.md). |
 | Badges | The README opens with the **full 20-badge set in the canonical order** (swap per-project equivalents; omit only on a recorded user exception) — [badges](badges.md). |
+| README cross-links | The README carries the worded mesh links the chrome can't provide off-site — a docs link near the top, a grouped "Get it" section (live app · download · each store/registry · source), and a fairyfox mesh footer near the bottom — [readme](readme.md). |
 | Project details | The `_data/projects.yml` row is **filled by default** — blurb/tags/lifecycle/version/activity/links/accent/icon; blanks only on a recorded user exception; social/preview image exempt. |
-| Standards adopted | The project follows the hub's git, versioning, notes, AI-context, supply-chain, dependencies, legal-docs, agent-tooling, and badges standards (copied in, not linked). |
+| Standards adopted | The project follows the hub's git, versioning, notes, AI-context, supply-chain, dependencies, legal-docs, agent-tooling, badges, and readme standards (copied in, not linked). |
 | Registered | The project is listed in the hub's [`registry.yml`](../registry.yml) **and** the site's `_data/projects.yml`. |
 | Docs site | A documentation site published at `fairyfox.io/<key>/`, built to the [docs-site design system](docs-site/) so it **appears as a page of fairyfox.io** (shared chrome; brand/Home is the way home). For a **static** project the published site can double as the docs site — one surface, not two. |
 | Process report | A `notes/fairyfox-reports/` folder exists (from the skeleton) and this setup run is written up in it — see [process-reports](process-reports.md). |
@@ -98,6 +99,7 @@ cp    $H/dependabot.yml         .github/dependabot.yml            # dependencies
 cp    $H/branch-sync.yml        .github/workflows/branch-sync.yml # git-workflow back-merge guard
 cp -r $H/legal                  ./public/legal       # legal-docs — place per the app's origin
 # README badges: paste the FULL ordered block from $H/README-badges.md (all 20, swap equivalents; badges standard)
+# README cross-links: add the worded links from $H/README-links.md (docs link near top, "Get it" section, mesh footer; readme standard)
 ```
 
 Then, still part of setup: enable **branch protection** on `main` (solo config) and wire
@@ -219,6 +221,9 @@ never be committed (committing it nests repos and bloats history).
   accent/icon) — blanks only on a recorded user exception; social/preview image exempt.
 - The README opens with the **full 20-badge set in the canonical order** ([badges](badges.md)),
   each slot the right per-project source; omissions only on a recorded user exception.
+- The README carries the worded mesh cross-links ([readme](readme.md)) — a docs link near the
+  top, a grouped "Get it" section covering every real publish/deploy destination, and a
+  fairyfox mesh footer near the bottom; the always-required docs link + footer present.
 - The docs site loads at `fairyfox.io/<key>/`, **wears the shared fairyfox chrome**
   (header, nav + submenu, footer) so it reads as a page of the site, with the
   **brand/Home link as the way home** and **no separate back-button** — **look at the
