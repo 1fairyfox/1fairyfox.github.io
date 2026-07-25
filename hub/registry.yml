@@ -70,15 +70,15 @@ projects:
 
   # Minecraft dev-loop MCP server (Node/JS host + Kotlin in-game agents on both the
   # client and server side) — greenfield, scaffolded straight onto the mesh standards
-  # (seeded from the despawned-items node). Mesh-aware CLAUDE.md, the shared notes
-  # system, the git model, and the quality gates are all in place, but the
-  # fairyfox-themed docs site is still pending (planned Phase 7), so adopts_hub is
-  # left FALSE — partial, honestly. Category `minecraft` in ../_data/projects.yml.
-  # Pre-alpha (v0.1.2, Phase 0 scaffold).
+  # (seeded from the despawned-items node). Onboarding is now complete: mesh-aware
+  # CLAUDE.md, the shared notes system, the git model, and the quality gates were
+  # already in place, and the fairyfox-themed docs site is now live at
+  # fairyfox.io/minecraft-automated-driver/ (wearing the shared chrome), so adopts_hub
+  # is TRUE. Category `minecraft` in ../_data/projects.yml. Pre-alpha (v0.11.0).
   - key: minecraft-automated-driver
     repo: https://github.com/1fairyfox/minecraft-automated-driver
     branch: dev
-    adopts_hub: false
+    adopts_hub: true
     notes_system: true
     last_seen: null
 
