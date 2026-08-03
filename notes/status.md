@@ -3,7 +3,18 @@
 _Current state only._ For the chronological history see [`sessions/`](sessions/README.md);
 for the commit-by-commit changelog see [`version.md`](version.md).
 
-**Version:** `1.6.1` — a **maintenance round-up** (2026-07-25): reconciled the data files to the
+**Version:** `1.6.2` — a **maintenance round-up** (2026-08-02): reconciled the data files to the
+whole mesh's **2026-07-25** day, which had landed after the 1.6.1 pass ran that same day and so had
+gone unblogged. The theme was one shared adoption wave — every sibling pulled the standards span
+`0.20.2 → 1.6.1` forward — plus two farm-growth items and the story farm's first stable release:
+Fairy Fox Stories `0.8.0 → 1.0.0` (**first stable release, Fairy Fox's call**, lifecycle
+`alpha → released`), Fairy Fox Games `0.26.0 → 0.27.2` (Sluice depth clears the retrofit list, then
+standards + CI badge services + a token-backed Scorecard), Random AI Prompt `2.60.1 → 2.60.2`
+(standards + four Dependabot groups), Despawned Items `1.5.0 → 1.5.1` (README cross-linking standard),
+and Pokered Save Editor 2 **held at `0.43.6-alpha`** (a hardening day — supply-chain, legal-docs, CI
+services, and landing the in-progress map-screen work; the MINOR waits for the feature to ship).
+Retimed the pulse ticker, advanced all five round-up markers, and blogged the 25th (one merged sibling
+day post). Prior: `1.6.1` — a **maintenance round-up** (2026-07-25): reconciled the data files to the
 farms' 2026-07-24 production — Fairy Fox Games `0.25.3 → 0.26.0` (Loom, the 17th game, a new *weave*
 verb), Fairy Fox Stories `0.7.2 → 0.8.0` (*The Wind She Would Not Keep*, the tenth book), and Despawned
 Items' standards-adoption day (held at `1.5.0`; adopted hub 1.5.1, self-hosted fonts, first

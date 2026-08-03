@@ -17,6 +17,7 @@ first).
 
 | Month | Notes |
 |-------|-------|
+| [August 2026](version/2026-08.md) | Maintenance round-ups |
 | [July 2026](version/2026-07.md) | Maintenance round-ups |
 | [June 2026](version/2026-06.md) | Project created |
 
