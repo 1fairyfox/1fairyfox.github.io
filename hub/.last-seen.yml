@@ -13,9 +13,9 @@
 # pass — see hub/standards/process-reports.md. [] = none digested yet.
 
 pokered-save-editor-2:
-  commit: b31286522b85d2301b27186754ba9a2876f85e34
+  commit: 750dee7d0462e9dc12ee0ff087f843c0199960c5
   branch: dev
-  seen: 2026-07-25
+  seen: 2026-08-02
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-06-26-adopting-updates.md             # folded into standards 0.9.1
     - 2026-06-26-adopting-updates-express-auth.md # folded into standards 0.9.3 (verification floor + this marker scheme)
@@ -29,6 +29,18 @@ pokered-save-editor-2:
     - 2026-07-19-adopting-updates.md             # 2026-07-19 report-review — run feedback (successful adopt), no standalone standard change
     - 2026-07-19-check-for-updates.md            # 2026-07-23 report-review (0.21.0) — run feedback; recurring asks folded (chrome CHANGELOG, standards CHANGELOG)
     - 2026-07-19-adopting-updates-chrome-2.2.1.md # 2026-07-23 report-review (0.21.0) — chrome-2.2.1/coins adopt; Doxygen HTML_EXTRA_FILES note + chrome CHANGELOG folded
+  # 2026-08-02 round-up: clean fast-forward b3128652 → 750dee7d, 11 commits ALL dated 2026-07-25, VERSION
+  # held at 0.43.6-alpha (docs/CI/compliance only — no engine milestone). A below-the-waterline hardening day:
+  # adopted the fairyfox standards span 1.6.1 + chrome 2.3.0 (adoption manifest seeded); full supply-chain
+  # hardening (SHA-pinned Actions, CodeQL SAST, SLSA provenance, Scorecard, coverage gate, mandate ledger,
+  # maintenance-sweep); self-hosted legal-docs (Privacy/Terms/Cookies written to the app's real behaviour);
+  # wired the three authenticated CI services (Sonar/Codecov/Scorecard); main branch protection set + release
+  # reconciled to PR-based. Also LANDED the in-progress map-screen work (ColourPicker/MapNamePicker/mapmodel;
+  # OutsideIsPicker removed) that had left dev red, and fixed a tests_all copy-paste bug that kept tst_map_states
+  # from ever building in CI — restoring dev CI green (92/92). VERSION deliberately unmoved (the MINOR waits for
+  # the map screen to ship). Reconciled: projects.yml (PSE2 date → Jul 25; version held 0.43.6). Folded into the
+  # new 2026-07-25 day post. Marker → 750dee7d; seen → 2026-08-02. (New report 2026-07-25-adopting-updates.md
+  # left for the inbound report-review pass.)
   # 2026-07-25 round-up: "Already up to date" at b3128652 (still 0.43.6-alpha) — no commits dated 2026-07-24;
   # the tip is still the 07-20 de-personalization commit, five quiet days now. Nothing to reconcile (projects.yml
   # left at 0.43.6 / Jul 20) or blog; PSE2 is absent from the new 2026-07-24 sibling day post's tags. Marker
@@ -319,9 +331,9 @@ pokered-save-editor-2:
   # 2026-07-06-adopting-updates.md still pending for the inbound report-review pass.)
 
 random-ai-prompt:
-  commit: 35b1370a882381511e854f8b3a75fcc2d4b07679
+  commit: 24f266ba627f05ec04daaadb26bf8ac329bef64b
   branch: dev
-  seen: 2026-07-25
+  seen: 2026-08-02
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-06-26-adopting-updates.md             # folded into standards 0.9.1
     - 2026-06-26-adopting-updates-2.md           # digested 0.9.8 — CI-owns-tag release callout (git-workflow) + hub_version-placeholder backfill note (process-reports)
@@ -344,6 +356,17 @@ random-ai-prompt:
     - 2026-07-09-propose-maintenance-sweep-standard.md # digested 0.20.0 — new maintenance-sweep.md
     - 2026-07-19-check-for-updates.md            # 2026-07-23 report-review (0.21.0) — run feedback; per-standard version-stamp ask folded (hub/standards/CHANGELOG.md)
     - 2026-07-19-adopting-updates.md             # 2026-07-23 report-review (0.21.0) — run feedback; "already-practiced now-filed" + coins-is-chrome folded into adopting-updates.md
+  # 2026-08-02 round-up: clean fast-forward 35b1370 → 24f266b, VERSION 2.60.1 → 2.60.2. Two 2026-07-20 Dependabot
+  # commits plus a run of 2026-07-25 commits. Two strands, both 07-25: (1) adopted the fairyfox 0.20.2 → 1.6.1
+  # standards span (docs/notes + README only, no version move) — seeded its first adoption-manifest, took in four
+  # new standard notes (checklists-are-contracts, mandate-ledger, docker, readme), folded material changes into
+  # planning/engineering-quality/git-workflow/coins/compliance + CLAUDE.md, and brought the README to the
+  # cross-linking standard; browser-gated chrome 2.2.1→2.3.0 + subnav/coins-presence deferred as a tracked gap.
+  # (2) shipped 2.60.2 — folded four pending Dependabot groups (superset-wins after the bot regenerated two
+  # mid-release): engine deps (eslint 10.8.0, prettier 3.9.6, playwright 1.62.0, compromise, stylelint) + action
+  # pins across all nine workflow files. As the mesh's only standards-bearing sibling, no hub standard moved this
+  # pass. Reconciled: projects.yml (RAP → 2.60.2 / Jul 25). Folded into the new 2026-07-25 day post. Marker →
+  # 24f266b; seen → 2026-08-02. (New report 2026-07-25-adopting-updates.md left for the inbound report-review pass.)
   # 2026-07-25 round-up: "Already up to date" at 35b1370 (still 2.60.1) — no commits dated 2026-07-24, five quiet
   # days now; the tip is still the 07-19 docs-adoption commit. Nothing to reconcile (projects.yml left at 2.60.1 /
   # Jul 12) or blog; RAP is absent from the new 2026-07-24 sibling day post's tags. As the mesh's only standards-
@@ -607,9 +630,9 @@ random-ai-prompt:
   # 2026-07-09 and 2026-07-10 day posts. Marker → 3686435, VERSION 2.50.1 → 2.52.0.
 
 papermc-despawned-items:
-  commit: e0b9ed85aa07f5909f40a9a9ddcde06a552cf395
+  commit: 62cbd59d8438dbe19f35ffb5fee06b77efbd9b11
   branch: dev
-  seen: 2026-07-25
+  seen: 2026-08-02
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-07-19-onboarding.md                                 # 2026-07-23 report-review (0.21.0) — JVM/Gradle/Dokka aside + publish-ownership folded into onboarding/new-project-setup
     - 2026-07-20-adopt-docs-chrome.md                          # 2026-07-23 report-review (0.21.0) — new chrome/adapters/dokka.md + main.css load-order note
@@ -619,6 +642,14 @@ papermc-despawned-items:
     - 2026-07-21-ship-contract-and-repo-hardening-proposal.md  # 2026-07-23 report-review (0.21.0) — ship-contract (engineering-quality) + full-CI-before-main + provenance-asset + dep guardrails + badges
     - 2026-07-21-subnav-standard-proposal.md                   # 2026-07-23 report-review (0.21.0) — adaptive three-zone subnav (docs-site 05 + chrome/subnav.html)
     - 2026-07-21-testing-and-quality-gap-analysis.md           # 2026-07-23 report-review (0.21.0) — testing coverage floor + probe-the-mock + gate-the-gates + SAST-outlives-toolchain
+  # 2026-08-02 round-up: clean fast-forward e0b9ed8 → 62cbd59, 3 commits dated 2026-07-25, VERSION 1.5.0 → 1.5.1
+  # (docs-only PATCH). Adopted the one hub standard that had landed since its 07-24 catch-up: the README
+  # structure & cross-linking standard (hub 1.6.0). Applied to README.md — a worded docs link near the top, an
+  # organized "Get it" section (Documentation · Download/Releases · Source, with Modrinth/Hangar/CurseForge rows
+  # noted pending until those pages exist), and a mesh footer. Verify recorded (readme → implemented, baseline
+  # 1.6.0); check-links green (40 files). Reconciled: projects.yml (Despawned → 1.5.1 / Jul 25). Folded into the
+  # new 2026-07-25 day post. Marker → 62cbd59; seen → 2026-08-02. (New report 2026-07-25-adopting-updates.md left
+  # for the inbound report-review pass.)
   # 2026-07-25 round-up: clean fast-forward f3a2d01 → e0b9ed8, 7 commits ALL dated 2026-07-24, VERSION unchanged
   # at 1.5.0 (the 1.5.0 dev tip released to main; these are same-day follow-on work). A standards-adoption day:
   # ran the fairyfox check/adopt flow and pulled shared standards 0.20.2 → 1.5.1 (0.21.0 checklists-are-contracts +
@@ -696,9 +727,9 @@ papermc-despawned-items:
   # v1.3.4); seen → 2026-07-21. (07-21 v1.3.5 — a docs-site notes-README render fix — left for the next pass.)
 
 fairyfox-games:
-  commit: cfaf7535c43078708cd559fdda10314c7f7ea01b
+  commit: 6744d2cc18796b6db192315a5e33d387b0e844a3
   branch: dev
-  seen: 2026-07-25
+  seen: 2026-08-02
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-06-29-setup.md                 # digested 0.10.0 — collection/monorepo as a recorded exception; static site doubles as docs
     - 2026-06-29-onboarding-verify.md     # digested 0.10.0 — same-day setup cross-ref added to onboarding
@@ -712,6 +743,18 @@ fairyfox-games:
     - 2026-07-18-update-check.md          # 2026-07-19 report-review — check-only, no standard change
     - 2026-07-19-update-check.md          # 2026-07-23 report-review (0.21.0) — run feedback; coins-is-chrome + applicability-hint folded (adopting-updates, coins.md)
     - 2026-07-20-adopting-updates.md      # 2026-07-23 report-review (0.21.0) — run feedback; agent-tooling .NET-abs-path + jekyll-serve-baseurl + coins off-chrome (games) folded
+  # 2026-08-02 round-up: clean fast-forward cfaf753 → 6744d2c, VERSION 0.26.0 → 0.27.2, commits ALL dated
+  # 2026-07-25. Three strands. (1) v0.26.1 GROW: Sluice gains the "depth inside the mechanic" layer — the 12th
+  # game and the LAST one still named as missing it, so the retrofit list is now empty (newer games ship depth
+  # from birth). (2) v0.27.0 STANDARDS: adopted the fairyfox hub batch 0.20.2 → 1.6.1 in full — every game's
+  # README to the full ordered 20-badge block + docs link + Get-it + mesh footer, 5 new standards vendored, a new
+  # adoption manifest, scripts/check-standards.mjs. (3) v0.27.1 + v0.27.2 CI: wired Codecov (99.84% line cov),
+  # a dormant SonarCloud workflow, CodeFactor, and a token-backed OpenSSF Scorecard workflow with the shared
+  # repo-tokens.ps1 provisioning tool — all non-blocking; badges go green after a one-time owner enablement.
+  # No game logic touched beyond Sluice; 783/783 green. (NOTE: node status.md still reads 0.27.1, one behind its
+  # own VERSION file 0.27.2 — a node-side lag, not reconciled here.) Reconciled: projects.yml (Games → 0.27.2 /
+  # Jul 25). Folded into the new 2026-07-25 day post. Marker → 6744d2c; seen → 2026-08-02. (New reports
+  # 2026-07-25-adopting-updates.md + 2026-07-25-fairyfox-standards-adoption.md left for the inbound report-review pass.)
   # 2026-07-25 round-up: clean fast-forward 78a9b05 → cfaf753, VERSION 0.25.3 → 0.26.0, commits dated 2026-07-24.
   # One GROW + one PLANT. 0.25.4 Arc gets "depth inside the mechanic" (11th on the layer): a razor PIN window
   # hidden dead-centre in the scoring pad (+2 on the bullseye, streaks), an ONSLAUGHT reversal (3 pins → the next
@@ -979,13 +1022,23 @@ fairyfox-games:
   # 0.20.2 / Jul 10). Folded into the 2026-07-08 and 2026-07-10 day posts. Marker → e7d2768.
 
 fairyfox-stories:
-  commit: 699201b6bf29144f5eb1ebf4bac07676ffc26811
+  commit: 8635273aed992d0ab302dc72d854f894a8d527e1
   branch: dev
-  seen: 2026-07-25
+  seen: 2026-08-02
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-07-06-setup.md                 # 2026-07-19 report-review — setup run feedback, no standalone standard change
     - 2026-07-18-adopting-updates.md      # 2026-07-19 report-review — run feedback (successful adopt), no standard change
     - 2026-07-19-adopting-updates.md      # 2026-07-23 report-review (0.21.0) — run feedback (+Phase 2 coins); repo-hygiene SKIP classes + code-span fix, phasing-a-mixed-adoption, legal-coins-timing, coins read-time/drop-cap folded
+  # 2026-08-02 round-up: clean fast-forward 699201b → 8635273, VERSION 0.8.0 → 1.0.0, commits ALL dated
+  # 2026-07-25. The farm cut its FIRST STABLE RELEASE — 1.0.0, a MAJOR and therefore Fairy Fox's explicit call
+  # (owner asked for 1.0). Three commits: v0.8.1 grow (The Hundredth Wind ch.3 "The First Try", 3/7 — mastery
+  # fails); v0.9.0 MINOR Phase 1 (adopt the fairyfox 0.20.2 → 1.6.1 span: 20 mirrored standards + 5 new, first
+  # adoption-manifest, CodeQL SAST); then v1.0.0 (restored main branch protection with the full CI suite as
+  # required checks — lost in the account rename; OpenSSF Scorecard wired; README badge block 4 → 16 of 20; cut
+  # via release/1.0.0 → CI-gated PR to protected main → back-merge). lifecycle alpha → RELEASED. The 4 SaaS badge
+  # slots + the docs-chrome browser pass are owner-gated (manifest, due 2026-08-08, none overdue). Reconciled:
+  # projects.yml (Stories → 1.0.0 / Jul 25, lifecycle released). Folded into the new 2026-07-25 day post. Marker →
+  # 8635273; seen → 2026-08-02. (New report 2026-07-25-adopting-updates.md left for the inbound report-review pass.)
   # 2026-07-25 round-up: clean fast-forward 36307bd → 699201b, VERSION 0.7.2 → 0.8.0, shelf 9 → 10 books, commits
   # dated 2026-07-24. One GROW + one PLANT. 0.7.3 GROW: override roll 9 (≤18) FIRES (2nd firing in farm history),
   # random pick → The Blindfold Act ch.4 "The Understudy" (4/6), the complicity beat. 0.8.0 PLANT: The Wind She

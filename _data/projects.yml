@@ -42,8 +42,8 @@
   lifecycle: alpha
   version: "0.43.6"
   activity: active
-  updated: "Jul 20, 2026"
-  updated_iso: "2026-07-20"
+  updated: "Jul 25, 2026"
+  updated_iso: "2026-07-25"
   color: "#e6488f"
   icon: pse2
   featured: true
@@ -60,10 +60,10 @@
     hosted site, desktop app, Android app, CLI, or ComfyUI node.
   tags: [JavaScript, Node 24, Web UI, Desktop, Android, CLI]
   lifecycle: released
-  version: "2.60.1"
+  version: "2.60.2"
   activity: active
-  updated: "Jul 12, 2026"
-  updated_iso: "2026-07-12"
+  updated: "Jul 25, 2026"
+  updated_iso: "2026-07-25"
   color: "#2dd4a7"
   icon: rap
   featured: true
@@ -89,10 +89,10 @@
     including a real server boot and an in-game bot that plays the plugin.
   tags: [Kotlin, Java 21, Gradle, Paper 1.21.11, Server]
   lifecycle: released
-  version: "1.5.0"
+  version: "1.5.1"
   activity: active
-  updated: "Jul 24, 2026"
-  updated_iso: "2026-07-24"
+  updated: "Jul 25, 2026"
+  updated_iso: "2026-07-25"
   category: minecraft
   color: "#2f9bd4"
   icon: despi
@@ -162,11 +162,11 @@
     books set in living, cross-linked universes, each shipping a public blueprint
     you can read before you start.
   tags: [Jekyll, Ruby, Web]
-  lifecycle: alpha
-  version: "0.8.0"
+  lifecycle: released
+  version: "1.0.0"
   activity: active
-  updated: "Jul 24, 2026"
-  updated_iso: "2026-07-24"
+  updated: "Jul 25, 2026"
+  updated_iso: "2026-07-25"
   integrated: true
   color: "#b06ad0"
   icon: stories
@@ -188,10 +188,10 @@
     beat-your-own-score kind, each splitting pure, tested logic from rendering.
   tags: [JavaScript, Canvas, Web]
   lifecycle: alpha
-  version: "0.26.0"
+  version: "0.27.2"
   activity: active
-  updated: "Jul 24, 2026"
-  updated_iso: "2026-07-24"
+  updated: "Jul 25, 2026"
+  updated_iso: "2026-07-25"
   integrated: true
   color: "#8b7bff"
   icon: games
@@ -209,10 +209,10 @@
     carrying the shared engineering standards and the cross-project sync model.
   tags: [Jekyll, Ruby, Web]
   lifecycle: released
-  version: "1.6.1"
+  version: "1.6.2"
   activity: active
-  updated: "Jul 25, 2026"
-  updated_iso: "2026-07-25"
+  updated: "Aug 2, 2026"
+  updated_iso: "2026-08-02"
   meta: true
   color: "#ff7a5e"
   icon: fox
