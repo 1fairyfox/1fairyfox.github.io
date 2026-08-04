@@ -3,7 +3,23 @@
 _Current state only._ For the chronological history see [`sessions/`](sessions/README.md);
 for the commit-by-commit changelog see [`version.md`](version.md).
 
-**Version:** `1.6.2` — a **maintenance round-up** (2026-08-02): reconciled the data files to the
+**Version:** `1.6.3` — a **maintenance round-up** (2026-08-04): reconciled the data files + updates
+feed to two complete, unblogged days — **2026-08-02** and **2026-08-03** — the days after the
+standards-adoption wave. **08-02** was the mesh's first full *post-adoption compliance audits*: each
+node walked its own `## Verify` checks and fixed the supply-chain gaps the audit surfaced — Random AI
+Prompt `2.60.2 → 2.60.3` (cleared the OpenSSF Scorecard Vulnerabilities check to zero, verified with
+osv-scanner), Despawned Items `1.5.1 → 1.5.2` (Dockerfile digest pin + a nine-PR Dependabot triage +
+Paper-smoke required checks, live Scorecard 7.9), Fairy Fox Stories `1.0.0 → 1.1.2` (SHA-pin
+workflows + provenance asset + an invariant gate) — while the farms produced under them: Stories
+planted **The Overcount** (the 11th book, a generation-ship SF thriller in the Long Quiet, present
+tense — a shelf first) and grew two more chapters; Games shipped **Reel** (the 18th game, a
+give-and-take verb) and gave Tether the collection's first cross-run unlock. **08-03** shipped two
+things that had been groundwork: Pokered Save Editor 2 `0.43.6 → 0.43.21-alpha` (the map screen
+became a usable editing surface — randomize/revert on every field, a sortable/searchable map list)
+and Fairy Fox Games `0.27.2 → 0.29.0` (**Span**, the 19th game, a build/bridge verb). Reconciled
+`projects.yml` (all five sibling rows + the meta card) and `pulse.yml`, advanced all five round-up
+markers, and blogged both days. `registry.yml` / the `_docs` library / About / nav were already
+accurate. Prior: `1.6.2` — a **maintenance round-up** (2026-08-02): reconciled the data files to the
 whole mesh's **2026-07-25** day, which had landed after the 1.6.1 pass ran that same day and so had
 gone unblogged. The theme was one shared adoption wave — every sibling pulled the standards span
 `0.20.2 → 1.6.1` forward — plus two farm-growth items and the story farm's first stable release:

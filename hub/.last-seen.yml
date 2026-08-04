@@ -13,9 +13,9 @@
 # pass — see hub/standards/process-reports.md. [] = none digested yet.
 
 pokered-save-editor-2:
-  commit: 750dee7d0462e9dc12ee0ff087f843c0199960c5
+  commit: 4037bf8818081f36277ac2c3e76facf556be56d0
   branch: dev
-  seen: 2026-08-02
+  seen: 2026-08-04
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-06-26-adopting-updates.md             # folded into standards 0.9.1
     - 2026-06-26-adopting-updates-express-auth.md # folded into standards 0.9.3 (verification floor + this marker scheme)
@@ -29,6 +29,14 @@ pokered-save-editor-2:
     - 2026-07-19-adopting-updates.md             # 2026-07-19 report-review — run feedback (successful adopt), no standalone standard change
     - 2026-07-19-check-for-updates.md            # 2026-07-23 report-review (0.21.0) — run feedback; recurring asks folded (chrome CHANGELOG, standards CHANGELOG)
     - 2026-07-19-adopting-updates-chrome-2.2.1.md # 2026-07-23 report-review (0.21.0) — chrome-2.2.1/coins adopt; Doxygen HTML_EXTRA_FILES note + chrome CHANGELOG folded
+  # 2026-08-04 round-up: clean fast-forward 750dee7d → 4037bf88, VERSION 0.43.6-alpha → 0.43.21-alpha, spanning
+  # two days. 08-02 was CI/tooling groundwork (repo-tokens tool vendored, ci-secrets complete, README badge set
+  # completed, SonarCloud org key kept at junebug12851 after the rename) — no version move. 08-03 SHIPPED the map
+  # screen's editing surface (0.43.7 → 0.43.21): field randomize + revert buttons, a shared sortable/searchable
+  # map list + "show unused maps" toggle, sprites/NPCs recolouring with the colour filter, tileset/blocks folded
+  # into the map-selection panel, doubled-default-window-size fix. Reconciled: projects.yml (PSE2 → 0.43.21 / Aug 3).
+  # Folded into the new 2026-08-02 (groundwork) + 2026-08-03 (map screen ships) day posts. Marker → 4037bf88;
+  # seen → 2026-08-04. (New report notes/fairyfox-reports/2026-07-25-adopting-updates.md still pending inbound review.)
   # 2026-08-02 round-up: clean fast-forward b3128652 → 750dee7d, 11 commits ALL dated 2026-07-25, VERSION
   # held at 0.43.6-alpha (docs/CI/compliance only — no engine milestone). A below-the-waterline hardening day:
   # adopted the fairyfox standards span 1.6.1 + chrome 2.3.0 (adoption manifest seeded); full supply-chain
@@ -331,9 +339,9 @@ pokered-save-editor-2:
   # 2026-07-06-adopting-updates.md still pending for the inbound report-review pass.)
 
 random-ai-prompt:
-  commit: 24f266ba627f05ec04daaadb26bf8ac329bef64b
+  commit: 3129f1d5c38412ea6d3aea67109e8222c4b2fba8
   branch: dev
-  seen: 2026-08-02
+  seen: 2026-08-04
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-06-26-adopting-updates.md             # folded into standards 0.9.1
     - 2026-06-26-adopting-updates-2.md           # digested 0.9.8 — CI-owns-tag release callout (git-workflow) + hub_version-placeholder backfill note (process-reports)
@@ -356,6 +364,13 @@ random-ai-prompt:
     - 2026-07-09-propose-maintenance-sweep-standard.md # digested 0.20.0 — new maintenance-sweep.md
     - 2026-07-19-check-for-updates.md            # 2026-07-23 report-review (0.21.0) — run feedback; per-standard version-stamp ask folded (hub/standards/CHANGELOG.md)
     - 2026-07-19-adopting-updates.md             # 2026-07-23 report-review (0.21.0) — run feedback; "already-practiced now-filed" + coins-is-chrome folded into adopting-updates.md
+  # 2026-08-04 round-up: clean fast-forward 24f266b → 3129f1d, VERSION 2.60.2 → 2.60.3, all dated 2026-08-02. A
+  # first full compliance audit (25/30 standards implemented; headline: live Scorecard 6.7 < the 7.0 ship-contract
+  # floor), then v2.60.3 remediation — cleared the Scorecard Vulnerabilities check to zero via root/web npm fixes,
+  # pinned mobile deps (postcss/brace-expansion), and osv-scanner.toml files documenting the genuine no-fix
+  # Tauri/Rust advisories, verified with osv-scanner v2.4.0 ("No issues found"). Reconciled: projects.yml (RAP →
+  # 2.60.3 / Aug 2). Folded into the new 2026-08-02 day post. Marker → 3129f1d; seen → 2026-08-04. (New reports
+  # 2026-08-02-compliance-audit.md + 2026-08-02-scorecard-remediation.md left for the inbound report-review pass.)
   # 2026-08-02 round-up: clean fast-forward 35b1370 → 24f266b, VERSION 2.60.1 → 2.60.2. Two 2026-07-20 Dependabot
   # commits plus a run of 2026-07-25 commits. Two strands, both 07-25: (1) adopted the fairyfox 0.20.2 → 1.6.1
   # standards span (docs/notes + README only, no version move) — seeded its first adoption-manifest, took in four
@@ -630,9 +645,9 @@ random-ai-prompt:
   # 2026-07-09 and 2026-07-10 day posts. Marker → 3686435, VERSION 2.50.1 → 2.52.0.
 
 papermc-despawned-items:
-  commit: 62cbd59d8438dbe19f35ffb5fee06b77efbd9b11
+  commit: 104c3d819aaff61bf97c3c1232f7f0e029744ca0
   branch: dev
-  seen: 2026-08-02
+  seen: 2026-08-04
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-07-19-onboarding.md                                 # 2026-07-23 report-review (0.21.0) — JVM/Gradle/Dokka aside + publish-ownership folded into onboarding/new-project-setup
     - 2026-07-20-adopt-docs-chrome.md                          # 2026-07-23 report-review (0.21.0) — new chrome/adapters/dokka.md + main.css load-order note
@@ -642,6 +657,15 @@ papermc-despawned-items:
     - 2026-07-21-ship-contract-and-repo-hardening-proposal.md  # 2026-07-23 report-review (0.21.0) — ship-contract (engineering-quality) + full-CI-before-main + provenance-asset + dep guardrails + badges
     - 2026-07-21-subnav-standard-proposal.md                   # 2026-07-23 report-review (0.21.0) — adaptive three-zone subnav (docs-site 05 + chrome/subnav.html)
     - 2026-07-21-testing-and-quality-gap-analysis.md           # 2026-07-23 report-review (0.21.0) — testing coverage floor + probe-the-mock + gate-the-gates + SAST-outlives-toolchain
+  # 2026-08-04 round-up: clean fast-forward 62cbd59 → 104c3d8, VERSION 1.5.1 → 1.5.2, dated 2026-08-02 (the five
+  # Dependabot bump commits carry 07-27 author dates but shipped inside the 08-02 v1.5.2 release). A full fairyfox
+  # compliance sweep (live Scorecard 7.9): Dockerfile base image SHA-pinned, a nine-PR Dependabot backlog triaged
+  # (green bumps merged; Paper-major/Kotlin/ktlint ones closed with reasons + ignores added), two Paper-smoke jobs
+  # added to main's required checks, and a dating-accuracy fix (the prior adoption day's artifacts had been stamped
+  # 07-25, the hub commit date, instead of the real 08-02). NOTE: despawned's v1.5.1 (README adoption) was blogged
+  # by the 1.6.2 pass in the 07-25 day post before this re-dating — history left as-is per the workflow. Reconciled:
+  # projects.yml (Despawned → 1.5.2 / Aug 2). Folded (v1.5.2) into the new 2026-08-02 day post. Marker → 104c3d8;
+  # seen → 2026-08-04. (New report 2026-08-02-compliance-audit.md left for the inbound report-review pass.)
   # 2026-08-02 round-up: clean fast-forward e0b9ed8 → 62cbd59, 3 commits dated 2026-07-25, VERSION 1.5.0 → 1.5.1
   # (docs-only PATCH). Adopted the one hub standard that had landed since its 07-24 catch-up: the README
   # structure & cross-linking standard (hub 1.6.0). Applied to README.md — a worded docs link near the top, an
@@ -727,9 +751,9 @@ papermc-despawned-items:
   # v1.3.4); seen → 2026-07-21. (07-21 v1.3.5 — a docs-site notes-README render fix — left for the next pass.)
 
 fairyfox-games:
-  commit: 6744d2cc18796b6db192315a5e33d387b0e844a3
+  commit: d98922515653f975b6c82e57b5179b75b2f13c74
   branch: dev
-  seen: 2026-08-02
+  seen: 2026-08-04
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-06-29-setup.md                 # digested 0.10.0 — collection/monorepo as a recorded exception; static site doubles as docs
     - 2026-06-29-onboarding-verify.md     # digested 0.10.0 — same-day setup cross-ref added to onboarding
@@ -743,6 +767,14 @@ fairyfox-games:
     - 2026-07-18-update-check.md          # 2026-07-19 report-review — check-only, no standard change
     - 2026-07-19-update-check.md          # 2026-07-23 report-review (0.21.0) — run feedback; coins-is-chrome + applicability-hint folded (adopting-updates, coins.md)
     - 2026-07-20-adopting-updates.md      # 2026-07-23 report-review (0.21.0) — run feedback; agent-tooling .NET-abs-path + jekyll-serve-baseurl + coins off-chrome (games) folded
+  # 2026-08-04 round-up: clean fast-forward 6744d2c → d989225, VERSION 0.27.2 → 0.29.0, spanning two days. 08-02:
+  # v0.27.4 gave Tether the collection's first CROSS-RUN UNLOCK (Windfall, at 150 lifetime whips — the
+  # varied-structure standard's meta-drives-variation rule made real), then Reel (v0.28.0) the 18th game — a
+  # give-and-take/resist-vs-yield verb with a razor "haul" depth window — plus its icon + a branch-sync back-merge
+  # grace window + a SonarCloud org-key fix. 08-03: Span (v0.29.0) the 19th game — a build/bridge verb (grow a beam,
+  # release to drop it across the gap; two-sided miss; a hidden "plumb" centre window, six gated crossings). Both
+  # ship depth from birth; pure tick-split cores (+32, +34 tests). Reconciled: projects.yml (Games → 0.29.0 / Aug 3).
+  # Folded into the 2026-08-02 (Reel, Windfall) + 2026-08-03 (Span) day posts. Marker → d989225; seen → 2026-08-04.
   # 2026-08-02 round-up: clean fast-forward cfaf753 → 6744d2c, VERSION 0.26.0 → 0.27.2, commits ALL dated
   # 2026-07-25. Three strands. (1) v0.26.1 GROW: Sluice gains the "depth inside the mechanic" layer — the 12th
   # game and the LAST one still named as missing it, so the retrofit list is now empty (newer games ship depth
@@ -1022,13 +1054,21 @@ fairyfox-games:
   # 0.20.2 / Jul 10). Folded into the 2026-07-08 and 2026-07-10 day posts. Marker → e7d2768.
 
 fairyfox-stories:
-  commit: 8635273aed992d0ab302dc72d854f894a8d527e1
+  commit: 97e1487ba3be3e989be2c83fc7637d3fe8c46574
   branch: dev
-  seen: 2026-08-02
+  seen: 2026-08-04
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-07-06-setup.md                 # 2026-07-19 report-review — setup run feedback, no standalone standard change
     - 2026-07-18-adopting-updates.md      # 2026-07-19 report-review — run feedback (successful adopt), no standard change
     - 2026-07-19-adopting-updates.md      # 2026-07-23 report-review (0.21.0) — run feedback (+Phase 2 coins); repo-hygiene SKIP classes + code-span fix, phasing-a-mixed-adoption, legal-coins-timing, coins read-time/drop-cap folded
+  # 2026-08-04 round-up: clean fast-forward 8635273 → 97e1487, VERSION 1.0.0 → 1.1.2, all dated 2026-08-02. The
+  # farm's busiest day in a while: v1.0.1 grow (The One-O'Clock Bus ch.3); v1.1.0 THE OVERCOUNT — the 11th book, a
+  # generation-ship SF thriller in the Long Quiet, a Cartographer sequel-in-realm told by a NEW persona (Aster
+  # Coyle) in PRESENT TENSE (a shelf first, chosen for a ticking hunt); v1.1.1 grow (The Wind She Would Not Keep
+  # ch.2); v1.1.2 a full compliance sweep (SHA-pin workflows, provenance release asset, a check-standards.mjs
+  # invariant gate). Reconciled: projects.yml (Stories → 1.1.2 / Aug 2). Folded into the new 2026-08-02 day post.
+  # Marker → 97e1487; seen → 2026-08-04. (New report 2026-08-02-compliance-audit.md left for the inbound
+  # report-review pass.)
   # 2026-08-02 round-up: clean fast-forward 699201b → 8635273, VERSION 0.8.0 → 1.0.0, commits ALL dated
   # 2026-07-25. The farm cut its FIRST STABLE RELEASE — 1.0.0, a MAJOR and therefore Fairy Fox's explicit call
   # (owner asked for 1.0). Three commits: v0.8.1 grow (The Hundredth Wind ch.3 "The First Try", 3/7 — mastery
