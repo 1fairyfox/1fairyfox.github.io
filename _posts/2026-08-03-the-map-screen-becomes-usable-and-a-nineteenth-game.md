@@ -25,6 +25,16 @@ opens at its true design size after a doubled-default-size bug was found and cor
 these are small; together they are the difference between a screen you can demonstrate and a screen
 you can work in — the feature the earlier plumbing was always for.
 
+A second cleanup wave followed, to **0.43.22-alpha**, this time on the top bar itself. The single
+"show useless edits" toggle became a dropdown of *tiers* of abnormal values — "Unused & unstable"
+(values the game reads and acts on but were never meant for play, up to and including crashes) and
+"No-effect edits" (overwritten on load, read-only, or simply never read) — with a level light that
+shifts grey to blue to red to show which tier is currently revealed; the map list's separate
+unused-maps filter folded into that one global switch. The list also gained two more ways to sort —
+by semantic size bucket, and grouped by a map's connection signature — with the sort selector moved
+up beside the search box, and the tileset and blockset controls gained explicit Separate and Merge
+buttons in place of the automatic split.
+
 ## Fairy Fox Games: Span, the nineteenth game
 
 The collection planted **Span**, its nineteenth game and a new verb: building, or bridging. You are
