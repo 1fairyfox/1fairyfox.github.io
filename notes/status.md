@@ -3,7 +3,18 @@
 _Current state only._ For the chronological history see [`sessions/`](sessions/README.md);
 for the commit-by-commit changelog see [`version.md`](version.md).
 
-**Version:** `1.6.3` — a **maintenance round-up** (2026-08-04): reconciled the data files + updates
+**Version:** `1.6.4` — a **maintenance round-up** (2026-08-05): only **Pokered Save Editor 2** had
+moved since the last pass — one commit, `0.43.21 → 0.43.22-alpha`, a **second cleanup wave on the map
+top bar** (the "!" chip became a dropdown of *tiers* of abnormal values — "Unused & unstable" vs.
+"No-effect edits" — with a grey→blue→red level light; the map-list unused-maps filter folded into that
+one switch; new **by-size** and connection-signature **by-connections** sorts; the sort selector moved
+beside the search box; tileset/blocks gained explicit **Separate/Merge** buttons). It lands the same
+map-screen day the 08-04 pass had already posted (pse2's own changelog dates it 08-03; git author date
+08-04). Reconciled `projects.yml` (PSE2 → 0.43.22, date held Aug 3; the site's meta card → 1.6.4) and
+`pulse.yml` (new ticker entry, retimed), **folded the follow-on into the existing 2026-08-03 day post**
+rather than a new one, and advanced the pse2 round-up marker (the other four siblings were unchanged).
+`registry.yml` / the `_docs` library / About / nav were already accurate. Prior:
+`1.6.3` — a **maintenance round-up** (2026-08-04): reconciled the data files + updates
 feed to two complete, unblogged days — **2026-08-02** and **2026-08-03** — the days after the
 standards-adoption wave. **08-02** was the mesh's first full *post-adoption compliance audits*: each
 node walked its own `## Verify` checks and fixed the supply-chain gaps the audit surfaced — Random AI

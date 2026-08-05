@@ -13,9 +13,9 @@
 # pass — see hub/standards/process-reports.md. [] = none digested yet.
 
 pokered-save-editor-2:
-  commit: 4037bf8818081f36277ac2c3e76facf556be56d0
+  commit: 88936d6e
   branch: dev
-  seen: 2026-08-04
+  seen: 2026-08-05
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-06-26-adopting-updates.md             # folded into standards 0.9.1
     - 2026-06-26-adopting-updates-express-auth.md # folded into standards 0.9.3 (verification floor + this marker scheme)
@@ -29,6 +29,15 @@ pokered-save-editor-2:
     - 2026-07-19-adopting-updates.md             # 2026-07-19 report-review — run feedback (successful adopt), no standalone standard change
     - 2026-07-19-check-for-updates.md            # 2026-07-23 report-review (0.21.0) — run feedback; recurring asks folded (chrome CHANGELOG, standards CHANGELOG)
     - 2026-07-19-adopting-updates-chrome-2.2.1.md # 2026-07-23 report-review (0.21.0) — chrome-2.2.1/coins adopt; Doxygen HTML_EXTRA_FILES note + chrome CHANGELOG folded
+  # 2026-08-05 round-up: clean fast-forward 4037bf88 → 88936d6e, one commit, VERSION 0.43.21-alpha → 0.43.22-alpha.
+  # The only sibling that moved this pass. A second cleanup wave on the map top bar (changelog dates it 08-03,
+  # git author date 08-04 — same map-screen day, arrived after the 08-04 pass): the single "show useless edits"
+  # toggle became a dropdown of abnormal-value TIERS (Unused & unstable vs. No-effect edits) with a grey→blue→red
+  # level light; the map-list unused-maps filter (mapShowGlitch → showUnused) folded into that one global switch;
+  # new "By size" (semantic area buckets) + connection-signature "By connections" sorts; sort selector moved
+  # beside the search box; tileset/blocks gained explicit Separate/Merge buttons. tst_qml_screens 28/28.
+  # Reconciled: projects.yml (PSE2 version 0.43.21 → 0.43.22, date held Aug 3 per pse2's own changelog) + pulse.yml
+  # ticker. Folded into the existing 2026-08-03 day post (the same map-screen day). Marker → 88936d6e; seen → 2026-08-05.
   # 2026-08-04 round-up: clean fast-forward 750dee7d → 4037bf88, VERSION 0.43.6-alpha → 0.43.21-alpha, spanning
   # two days. 08-02 was CI/tooling groundwork (repo-tokens tool vendored, ci-secrets complete, README badge set
   # completed, SonarCloud org key kept at junebug12851 after the rename) — no version move. 08-03 SHIPPED the map
@@ -341,7 +350,7 @@ pokered-save-editor-2:
 random-ai-prompt:
   commit: 3129f1d5c38412ea6d3aea67109e8222c4b2fba8
   branch: dev
-  seen: 2026-08-04
+  seen: 2026-08-05
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-06-26-adopting-updates.md             # folded into standards 0.9.1
     - 2026-06-26-adopting-updates-2.md           # digested 0.9.8 — CI-owns-tag release callout (git-workflow) + hub_version-placeholder backfill note (process-reports)
@@ -364,6 +373,9 @@ random-ai-prompt:
     - 2026-07-09-propose-maintenance-sweep-standard.md # digested 0.20.0 — new maintenance-sweep.md
     - 2026-07-19-check-for-updates.md            # 2026-07-23 report-review (0.21.0) — run feedback; per-standard version-stamp ask folded (hub/standards/CHANGELOG.md)
     - 2026-07-19-adopting-updates.md             # 2026-07-23 report-review (0.21.0) — run feedback; "already-practiced now-filed" + coins-is-chrome folded into adopting-updates.md
+  # 2026-08-05 round-up: "Already up to date" at 3129f1d (still 2.60.3) — no new commits since the 08-04 pass.
+  # Nothing to reconcile or blog; RAP absent from this pass's ticker. As the mesh's only standards-bearing
+  # sibling, an unchanged RAP means no hub standard could have moved. Marker unchanged; seen → 2026-08-05.
   # 2026-08-04 round-up: clean fast-forward 24f266b → 3129f1d, VERSION 2.60.2 → 2.60.3, all dated 2026-08-02. A
   # first full compliance audit (25/30 standards implemented; headline: live Scorecard 6.7 < the 7.0 ship-contract
   # floor), then v2.60.3 remediation — cleared the Scorecard Vulnerabilities check to zero via root/web npm fixes,
@@ -647,7 +659,7 @@ random-ai-prompt:
 papermc-despawned-items:
   commit: 104c3d819aaff61bf97c3c1232f7f0e029744ca0
   branch: dev
-  seen: 2026-08-04
+  seen: 2026-08-05
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-07-19-onboarding.md                                 # 2026-07-23 report-review (0.21.0) — JVM/Gradle/Dokka aside + publish-ownership folded into onboarding/new-project-setup
     - 2026-07-20-adopt-docs-chrome.md                          # 2026-07-23 report-review (0.21.0) — new chrome/adapters/dokka.md + main.css load-order note
@@ -657,6 +669,8 @@ papermc-despawned-items:
     - 2026-07-21-ship-contract-and-repo-hardening-proposal.md  # 2026-07-23 report-review (0.21.0) — ship-contract (engineering-quality) + full-CI-before-main + provenance-asset + dep guardrails + badges
     - 2026-07-21-subnav-standard-proposal.md                   # 2026-07-23 report-review (0.21.0) — adaptive three-zone subnav (docs-site 05 + chrome/subnav.html)
     - 2026-07-21-testing-and-quality-gap-analysis.md           # 2026-07-23 report-review (0.21.0) — testing coverage floor + probe-the-mock + gate-the-gates + SAST-outlives-toolchain
+  # 2026-08-05 round-up: "Already up to date" at 104c3d8 (still 1.5.2) — no new commits since the 08-04 pass.
+  # Nothing to reconcile or blog; Despawned Items absent from this pass's ticker. Marker unchanged; seen → 2026-08-05.
   # 2026-08-04 round-up: clean fast-forward 62cbd59 → 104c3d8, VERSION 1.5.1 → 1.5.2, dated 2026-08-02 (the five
   # Dependabot bump commits carry 07-27 author dates but shipped inside the 08-02 v1.5.2 release). A full fairyfox
   # compliance sweep (live Scorecard 7.9): Dockerfile base image SHA-pinned, a nine-PR Dependabot backlog triaged
@@ -753,7 +767,7 @@ papermc-despawned-items:
 fairyfox-games:
   commit: d98922515653f975b6c82e57b5179b75b2f13c74
   branch: dev
-  seen: 2026-08-04
+  seen: 2026-08-05
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-06-29-setup.md                 # digested 0.10.0 — collection/monorepo as a recorded exception; static site doubles as docs
     - 2026-06-29-onboarding-verify.md     # digested 0.10.0 — same-day setup cross-ref added to onboarding
@@ -767,6 +781,8 @@ fairyfox-games:
     - 2026-07-18-update-check.md          # 2026-07-19 report-review — check-only, no standard change
     - 2026-07-19-update-check.md          # 2026-07-23 report-review (0.21.0) — run feedback; coins-is-chrome + applicability-hint folded (adopting-updates, coins.md)
     - 2026-07-20-adopting-updates.md      # 2026-07-23 report-review (0.21.0) — run feedback; agent-tooling .NET-abs-path + jekyll-serve-baseurl + coins off-chrome (games) folded
+  # 2026-08-05 round-up: "Already up to date" at d989225 (still 0.29.0) — no new commits since the 08-04 pass.
+  # Nothing to reconcile or blog; Fairy Fox Games absent from this pass's ticker. Marker unchanged; seen → 2026-08-05.
   # 2026-08-04 round-up: clean fast-forward 6744d2c → d989225, VERSION 0.27.2 → 0.29.0, spanning two days. 08-02:
   # v0.27.4 gave Tether the collection's first CROSS-RUN UNLOCK (Windfall, at 150 lifetime whips — the
   # varied-structure standard's meta-drives-variation rule made real), then Reel (v0.28.0) the 18th game — a
@@ -1056,11 +1072,13 @@ fairyfox-games:
 fairyfox-stories:
   commit: 97e1487ba3be3e989be2c83fc7637d3fe8c46574
   branch: dev
-  seen: 2026-08-04
+  seen: 2026-08-05
   reports_through:             # digested-report filenames (append-only); see header
     - 2026-07-06-setup.md                 # 2026-07-19 report-review — setup run feedback, no standalone standard change
     - 2026-07-18-adopting-updates.md      # 2026-07-19 report-review — run feedback (successful adopt), no standard change
     - 2026-07-19-adopting-updates.md      # 2026-07-23 report-review (0.21.0) — run feedback (+Phase 2 coins); repo-hygiene SKIP classes + code-span fix, phasing-a-mixed-adoption, legal-coins-timing, coins read-time/drop-cap folded
+  # 2026-08-05 round-up: "Already up to date" at 97e1487 (still 1.1.2) — no new commits since the 08-04 pass.
+  # Nothing to reconcile or blog; Fairy Fox Stories absent from this pass's ticker. Marker unchanged; seen → 2026-08-05.
   # 2026-08-04 round-up: clean fast-forward 8635273 → 97e1487, VERSION 1.0.0 → 1.1.2, all dated 2026-08-02. The
   # farm's busiest day in a while: v1.0.1 grow (The One-O'Clock Bus ch.3); v1.1.0 THE OVERCOUNT — the 11th book, a
   # generation-ship SF thriller in the Long Quiet, a Cartographer sequel-in-realm told by a NEW persona (Aster
