@@ -8,8 +8,8 @@ source "https://rubygems.org"
 gem "jekyll", "~> 4.3"
 
 group :jekyll_plugins do
-  gem "jekyll-feed",     "~> 0.17"   # /feed.xml Atom feed
-  gem "jekyll-seo-tag",  "~> 2.8"    # <head> SEO + Open Graph tags
+  gem "jekyll-feed",     "~> 0.18"   # /feed.xml Atom feed
+  gem "jekyll-seo-tag",  "~> 2.9"    # <head> SEO + Open Graph tags
   gem "jekyll-sitemap",  "~> 1.4"    # sitemap.xml
 end
 
